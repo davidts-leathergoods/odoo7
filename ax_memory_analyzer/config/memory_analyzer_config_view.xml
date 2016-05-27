@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_audaxis_memory_analyzer_settings" model="ir.ui.view">
+            <field name="name">audaxis_memory_analyzer_config_settings_view</field>
+            <field name="model">ax.memory_analyzer.settings</field>
+            <field name="arch" type="xml">
+                <form string="Configure audaxis Memory Analyzer" version="7.0" class="oe_form_configuration">
+                    <header>
+                        <button string="Apply" type="object" name="execute" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" type="object" name="cancel" class="oe_link"/>
+                    </header>
+
+                    <separator string="Python gc module settings"/>
+                    <group>
+                        <label for="id" string="Dump File Path"/>
+                        <div name="ik_file_path">
+                            <div>
+                                <label for="dump_files_path"/>
+                                <field name="dump_files_path" class="oe_inline"/>
+                            </div>
+                        </div>
+                        <label for="id" string="Python gc module flags"/>
+                        <div name="gc_config">
+                            <div>
+                                <label for="debug_stats"/>
+                                <field name="debug_stats" class="oe_inline"/>
+                            </div>
+                            <div>
+                                <label for="debug_collectable"/>
+                                <field name="debug_collectable" class="oe_inline"/>
+                            </div>
+                            <div>
+                                <label for="debug_uncollectable"/>
+                                <field name="debug_uncollectable" class="oe_inline"/>
+                            </div>
+                            <div>
+                                <label for="debug_instances"/>
+                                <field name="debug_instances" class="oe_inline"/>
+                            </div>
+                            <div>
+                                <label for="debug_objects"/>
+                                <field name="debug_objects" class="oe_inline"/>
+                            </div>
+                            <div>
+                                <label for="debug_saveall"/>
+                                <field name="debug_saveall" class="oe_inline"/>
+                            </div>
+                            <div>
+                                <label for="debug_leak"/>
+                                <field name="debug_leak" class="oe_inline"/>
+                            </div>
+                        </div>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_audaxis_memory_analyzer_config" model="ir.actions.act_window">
+            <field name="name">Configure Audaxis Memory Analyzer</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ax.memory_analyzer.settings</field>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+        </record>
+
+        <menuitem id="menu_audaxis_memory_analyzer_config" name="Audaxis Memory Analyzer" parent="base.menu_config"
+            sequence="14" action="action_audaxis_memory_analyzer_config"/>
+
+    </data>
+</openerp>

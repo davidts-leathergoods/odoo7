@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+
+		<record model="ir.ui.view" id="charte_tree_view">
+			<field name="name">charte.tree</field>
+			<field name="model">charte</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Charters">
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+
+
+
+		<record model="ir.ui.view" id="charte_form_view">
+			<field name="name">charte.form</field>
+			<field name="model">charte</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Charters" version="7.0">
+					<sheet>
+						<group>
+							<field name="name" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+
+
+
+		<record model="ir.actions.act_window" id="act_charte">
+			<field name="name">Charters</field>
+			<field name="res_model">charte</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="context">{'search_default_Responsable':uid} </field>
+		</record>
+
+
+
+
+
+		<menuitem id="menu_charte_fournisseur" name="Charter provider" parent="purchase.menu_purchase_config_purchase" />
+
+		<menuitem action="act_charte" id="menu_charte" name="Charters" parent="menu_charte_fournisseur" />
+	</data>
+</openerp>

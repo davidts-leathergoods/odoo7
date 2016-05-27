@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_davidts_account_form" model="ir.ui.view">
+            <field name="name">davidts_account_form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="sale_crm.account_invoice_form"/>
+            <field name="arch" type="xml">
+                <field name="partner_id" position="after">
+                    <field name="warning" attrs="{'invisible': ['|',('partner_id','=', False),('warning','=', False)]}"  />
+               </field>
+                <xpath expr="//form/sheet/group/group/field[@name='fiscal_position']" position="after">
+                    <field name="prompt_payment_discount_rate"  string="Discount rate" attrs="{'invisible': [('partner_id','=', False)]}"  />
+                </xpath>
+                <xpath expr="//form/sheet/group/group/field[@name='prompt_payment_discount_rate']" position="after">
+                    <field name="escompte" attrs="{'invisible': ['|',('prompt_payment_discount_rate','=', 0),('partner_id','=', False)]}" />
+                </xpath>
+               <xpath expr="//form/sheet/group/group/field[@name='fiscal_position']" position="after">
+                    <field name="davidts_expedition_id" context="{'expedition_adr': partner_id}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

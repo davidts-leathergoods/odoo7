@@ -1,0 +1,1308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<!-- Product View -->
+		<record id="product_normal_form_view_inherit_bpso" model="ir.ui.view">
+			<field name="name">product.normal.form.inherit.bpso</field>
+			<field name="model">product.product</field>
+			<field name="inherit_id" ref="product.product_normal_form_view" />
+			<field name="arch" type="xml">
+				<field name="warranty" class="oe_inline" position="replace" />
+				<label for="warranty" position="replace" />
+				<!-- permet de bien repositioner le champ sale_delay dans le group Sale 
+					Conditions -->
+				<xpath expr="//group[@string='Sale Conditions']" position="inside">
+					<label string="" />
+				</xpath>
+				<xpath expr="//notebook/page[@string='Information']" position="after">
+					<page string="Referential" attrs="{'invisible': [('type','=', 'service')]}">
+						<field name="enable_measure_capacity" invisible="1" />
+						<field name="enable_measure_payload" invisible="1" />
+						<field name="enable_wheel" invisible="1" />
+
+						<field name="enable_luggage_business" invisible="1" />
+						<field name="enable_luggage_travel" invisible="1" />
+
+						<field name="enable_dimension" invisible="1" />
+						<field name="enable_garantee" invisible="1" />
+						<field name="enable_pocket" invisible="1" />
+						<field name="enable_compartment_sorter" invisible="1" />
+						<field name="enable_pocket_floating" invisible="1" />
+
+						<field name="enable_computer" invisible="1" />
+
+						<field name="enable_tablet" invisible="1" />
+
+						<field name="enable_clothing_hanger_webbing" invisible="1" />
+						<field name="enable_clothing_webbing" invisible="1" />
+
+						<field name="enable_organizer" invisible="1" />
+
+						<field name="enable_lock" invisible="1" />
+						<field name="enable_lock_tsa" invisible="1" />
+
+						<field name="enable_accessory_rings" invisible="1" />
+						<field name="enable_accessory_tag" invisible="1" />
+						<field name="enable_accessory_scratchpad" invisible="1" />
+						<field name="enable_accessory_calculator" invisible="1" />
+						<field name="enable_accessory_elastic" invisible="1" />
+						<field name="enable_accessory_mirror" invisible="1" />
+						<field name="enable_accessory_shoulderstrap" invisible="1" />
+						<field name="enable_accessory_trolley" invisible="1" />
+
+						<field name="enable_handle_number" invisible="1" />
+						<field name="enable_handle_adjustable" invisible="1" />
+
+						<field name="enable_strap" invisible="1" />
+
+						<field name="enable_puller_sections" invisible="1" />
+						<field name="enable_puller_telescopic" invisible="1" />
+						<field name="enable_puller_folding" invisible="1" />
+						<field name="enable_puller_adjustable" invisible="1" />
+						<field name="enable_puller_fixed" invisible="1" />
+						<field name="enable_platform" invisible="1" />
+						<field name="enable_box" invisible="1" />
+						<notebook>
+							<page string="Dimensions">
+								<group col="2">
+									<group>
+										<field name="length"
+											attrs="{'readonly':[('enable_dimension','=',False)]}" />
+										<field name="height"
+											attrs="{'readonly':[('enable_dimension','=',False)]}" />
+										<field name="width"
+											attrs="{'readonly':[('enable_dimension','=',False)]}" />
+									</group>
+									<group>
+										<field name="measure_capacity"
+											attrs="{'readonly':[('enable_measure_capacity','=',False)]}" />
+										<field name="garantee"
+											attrs="{'readonly':[('enable_garantee','=',False)]}"
+											invisible="1" />
+										<field name="measure_payload"
+											attrs="{'readonly':[('enable_measure_payload','=',False)]}" />
+									</group>
+									<group>
+										<field name="weight" />
+									</group>
+								</group>
+							</page>
+							<page string="Guarantee">
+								<group col="2">
+									<field name="garantee"
+										attrs="{'readonly':[('enable_garantee','=',False)]}"
+										invisible="1" />
+									<label for="warranty" />
+									<div>
+										<field name="warranty" class="oe_inline" />
+										year
+									</div>
+								</group>
+							</page>
+							<page string="Wheels">
+								<group col="2">
+									<group>
+										<field name="wheel_number" attrs="{'readonly':[('enable_wheel','=',False)]}" />
+										<field name="wheel_diameter_front" attrs="{'readonly':[('enable_wheel','=',False)]}" />
+										<field name="wheel_diameter_rear" attrs="{'readonly':[('enable_wheel','=',False)]}" />
+
+										<field name="wheel_relativeweight" attrs="{'readonly':[('enable_wheel','=',False)]}" />
+										<field name="wheel_staircase" attrs="{'readonly':[('enable_wheel','=',False)]}" />
+										<field name="wheel_easyrepair" attrs="{'readonly':[('enable_wheel','=',False)]}" />
+										<field name="wheel_removable" attrs="{'readonly':[('enable_wheel','=',False)]}" />
+									</group>
+									<group>
+										<field name="wheel_front" widget="selection"
+											attrs="{'readonly':[('enable_wheel','=',False)]}" />
+										<field name="wheel_back" widget="selection"
+											attrs="{'readonly':[('enable_wheel','=',False)]}" />
+										<field name="wheel_fixed" widget="selection"
+											attrs="{'readonly':[('enable_wheel','=',False)]}" />
+										<field name="wheel_multidirectional" widget="selection"
+											attrs="{'readonly':[('enable_wheel','=',False)]}" />
+										<field name="wheel_ballbearing" widget="selection"
+											attrs="{'readonly':[('enable_wheel','=',False)]}" />
+									</group>
+								</group>
+							</page>
+							<page string="Luggage Type">
+								<group col="8" colspan="2">
+
+									<field colspan="2" name="luggage_hand"
+										attrs="{'readonly':[('enable_luggage_business','=',False)]}" />
+									<newline />
+
+
+									<field name="luggage_hold" colspan="2"
+										attrs="{'readonly':[('enable_luggage_travel','=',False)]}" />
+									<field name="luggage_hold_comment" colspan="6"
+										attrs="{'readonly':[('enable_luggage_travel','=',False)]}" />
+
+									<field name="luggage_cabin" colspan="2"
+										attrs="{'readonly':[('enable_luggage_travel','=',False)]}" />
+									<field name='luggage_accepting_airlines' colspan="6"
+										readonly='1' attrs="{'readonly':[('enable_luggage_travel','=',False)]}" />
+
+								</group>
+							</page>
+							<page string="Compartments &amp; Pockets">
+								<group col="3">
+									<group>
+										<field name="pocket_insidezipper" attrs="{'readonly':[('enable_pocket','=',False)]}" />
+										<field name="pocket_insidesliding" attrs="{'readonly':[('enable_pocket','=',False)]}" />
+										<field name="compartment" attrs="{'readonly':[('enable_pocket','=',False)]}" />
+									</group>
+									<group>
+										<field name="pocket_ousidezipper" attrs="{'readonly':[('enable_pocket','=',False)]}" />
+										<field name="pocket_outsidesliding" attrs="{'readonly':[('enable_pocket','=',False)]}" />
+										<field name="compartment_expandable" attrs="{'readonly':[('enable_pocket','=',False)]}" />
+									</group>
+									<group>
+
+										<field name="compartment_insulated" attrs="{'readonly':[('enable_pocket','=',False)]}" />
+										<field name="compartment_sorter"
+											attrs="{'readonly':[('enable_compartment_sorter','=',False)]}" />
+										<field name="pocket_floating"
+											attrs="{'readonly':[('enable_pocket_floating','=',False)]}" />
+									</group>
+								</group>
+								<group col="3">
+									<group string="Laptop Compartment">
+										<field name="computer"
+											attrs="{'readonly':[('enable_computer','=',False)]}" />
+										<field name="computer_length"
+											attrs="{'readonly':[('enable_computer','=',False)]}" />
+										<field name="computer_height"
+											attrs="{'readonly':[('enable_computer','=',False)]}" />
+										<field name="computer_width"
+											attrs="{'readonly':[('enable_computer','=',False)]}" />
+										<field name="computer_size" widget="selection"
+											attrs="{'readonly':[('enable_computer','=',False)]}" />
+									</group>
+									<group string="Tablet Pocket">
+										<field name="tablet" attrs="{'readonly':[('enable_tablet','=',False)]}" />
+										<field name="tablet_size" attrs="{'readonly':[('enable_tablet','=',False)]}" />
+										<field name="tablet_width" attrs="{'readonly':[('enable_tablet','=',False)]}" />
+										<field name="tablet_height" attrs="{'readonly':[('enable_tablet','=',False)]}" />
+									</group>
+									<group string="Clothing with Straps">
+										<field name="clothing_webbing"
+											attrs="{'readonly':[('enable_clothing_webbing','=',False)]}" />
+										<field name="clothing_hanger"
+											attrs="{'readonly':[('enable_clothing_hanger_webbing','=',False)]}" />
+									</group>
+									<group string="Organizer">
+										<field name="organizer"
+											attrs="{'readonly':[('enable_organizer','=',False)]}" />
+									</group>
+								</group>
+
+							</page>
+							<page string="Locks">
+								<group col="2">
+									<group>
+										<field name="lock" attrs="{'readonly':[('enable_lock','=',False)]}" />
+										<field name="lock_tsa"
+											attrs="{'readonly':[('enable_lock_tsa','=',False)]}" />
+										<field name="lock_easychange" attrs="{'readonly':[('enable_lock','=',False)]}" />
+									</group>
+									<group>
+										<field name="lock_type" widget="selection"
+											attrs="{'readonly':[('enable_lock','=',False)]}" />
+										<field name="lock_tsa_type" widget="selection"
+											attrs="{'readonly':[('enable_lock_tsa','=',False)]}" />
+									</group>
+								</group>
+							</page>
+							<page string="Accessories">
+								<group col="2">
+									<group>
+										<field name="accessory_rings"
+											attrs="{'readonly':[('enable_accessory_rings','=',False)]}" />
+										<field name="accessory_tag"
+											attrs="{'readonly':[('enable_accessory_tag','=',False)]}" />
+										<field name="accessory_scratchpad"
+											attrs="{'readonly':[('enable_accessory_scratchpad','=',False)]}" />
+										<field name="accessory_calculator"
+											attrs="{'readonly':[('enable_accessory_calculator','=',False)]}" />
+									</group>
+									<group>
+										<field name="accessory_elastic"
+											attrs="{'readonly':[('enable_accessory_elastic','=',False)]}" />
+										<field name="accessory_mirror"
+											attrs="{'readonly':[('enable_accessory_mirror','=',False)]}" />
+										<field name="accessory_shoulderstrap"
+											attrs="{'readonly':[('enable_accessory_shoulderstrap','=',False)]}" />
+										<field name="accessory_trolley"
+											attrs="{'readonly':[('enable_accessory_trolley','=',False)]}" />
+									</group>
+								</group>
+							</page>
+							<page string="Handles">
+								<group col="2">
+									<group>
+										<field name="handle_adjustable"
+											attrs="{'readonly':[('enable_handle_adjustable','=',False)]}" />
+									</group>
+									<group>
+										<field name="handle_number"
+											attrs="{'readonly':[('enable_handle_adjustable','=',False)]}" />
+									</group>
+								</group>
+							</page>
+							<page string="Suspenders">
+								<group col="2">
+									<group>
+										<field name="strap" attrs="{'readonly':[('enable_strap','=',False)]}" />
+										<field name="strap_chest" attrs="{'readonly':[('enable_strap','=',False)]}" />
+									</group>
+									<group>
+										<field name="strap_hip" attrs="{'readonly':[('enable_strap','=',False)]}" />
+										<field name="strap_compression" attrs="{'readonly':[('enable_strap','=',False)]}" />
+									</group>
+								</group>
+							</page>
+							<page string="Arms">
+								<group col="2">
+									<group>
+										<field name="puller_sections"
+											attrs="{'readonly':[('enable_puller_sections','=',False)]}" />
+										<field name="puller_telescopic"
+											attrs="{'readonly':[('enable_puller_telescopic','=',False)]}" />
+										<field name="puller_folding"
+											attrs="{'readonly':[('enable_puller_folding','=',False)]}" />
+									</group>
+									<group>
+										<field name="puller_adjustable"
+											attrs="{'readonly':[('enable_puller_adjustable','=',False)]}" />
+										<field name="puller_fixed"
+											attrs="{'readonly':[('enable_puller_fixed','=',False)]}" />
+									</group>
+								</group>
+							</page>
+							<page string="Caddy Frame">
+								<group col="2">
+									<group>
+										<field name="platform"
+											attrs="{'readonly':[('enable_platform','=',False)]}" />
+									</group>
+									<group>
+									</group>
+								</group>
+							</page>
+							<page string="Boxes &amp; Cases">
+								<group col="2">
+									<group>
+										<field name="box_stackable" attrs="{'readonly':[('enable_box','=',False)]}" />
+									</group>
+									<group>
+										<field name="box_type" widget="selection"
+											attrs="{'readonly':[('enable_box','=',False)]}" />
+									</group>
+								</group>
+								<group col="2">
+									<group string="Box with one function">
+										<field name="box_lid" attrs="{'readonly':[('enable_box','=',False)]}"
+											widget="selection" />
+										<field name="box_implement" attrs="{'readonly':[('enable_box','=',False)]}" />
+									</group>
+									<group string="Box multi-fonctions">
+										<field name="box_tray" attrs="{'readonly':[('enable_box','=',False)]}" />
+										<field name="box_drawer" attrs="{'readonly':[('enable_box','=',False)]}" />
+										<field name="box_tray_type" widget="selection"
+											attrs="{'readonly':[('enable_box','=',False)]}" />
+										<field name="box_drawer_type" widget="selection"
+											attrs="{'readonly':[('enable_box','=',False)]}" />
+									</group>
+									<group string="Cases">
+										<field name="case_type" widget="selection"
+											attrs="{'readonly':[('enable_box','=',False)]}" />
+										<field name="case_closing" widget="selection"
+											attrs="{'readonly':[('enable_box','=',False)]}" />
+									</group>
+								</group>
+							</page>
+							<page string="Insert">
+								<group col="2">
+									<group>
+										<field name="insert" attrs="{'readonly':[('enable_box','=',False)]}" />
+									</group>
+									<group>
+										<field name="insert_type" widget="selection"
+											attrs="{'readonly':[('enable_box','=',False)]}" />
+									</group>
+									<group>
+										<field name="insert_number" attrs="{'readonly':[('enable_box','=',False)]}" />
+									</group>
+								</group>
+							</page>
+							<page string="Winders">
+								<group col="2">
+									<group>
+										<field name="watchwinder_timer" attrs="{'readonly':[('enable_box','=',False)]}" />
+										<field name="watchwinder_watchs" attrs="{'readonly':[('enable_box','=',False)]}" />
+										<field name="watchwinder_programs" attrs="{'readonly':[('enable_box','=',False)]}" />
+									</group>
+									<group>
+										<field name="watchwinder_compartment" attrs="{'readonly':[('enable_box','=',False)]}" />
+										<field name="watchwinder_plug" widget="selection"
+											attrs="{'readonly':[('enable_box','=',False)]}" />
+									</group>
+								</group>
+							</page>
+						</notebook>
+					</page>
+
+				</xpath>
+			</field>
+		</record>
+
+		<!-- Product Template View -->
+		<record id="product_template_form_view_inherit_bpso" model="ir.ui.view">
+			<field name="name">product.template.form.inherit.bpso</field>
+			<field name="model">product.template</field>
+			<field name="inherit_id" ref="product.product_template_form_view" />
+			<field name="arch" type="xml">
+				<field name="warranty" position="replace" />
+				<xpath expr="//notebook/page[@string='Information']" position="after">
+					<page string="Referential" attrs="{'invisible': [('type','=', 'service')]}">
+						<field name="enable_measure_capacity" invisible="1" />
+						<field name="enable_measure_payload" invisible="1" />
+						<field name="enable_wheel" invisible="1" />
+
+						<field name="enable_luggage_business" invisible="1" />
+						<field name="enable_luggage_travel" invisible="1" />
+
+						<field name="enable_dimension" invisible="1" />
+						<field name="enable_garantee" invisible="1" />
+						<field name="enable_pocket" invisible="1" />
+						<field name="enable_compartment_sorter" invisible="1" />
+						<field name="enable_pocket_floating" invisible="1" />
+
+						<field name="enable_computer" invisible="1" />
+
+						<field name="enable_tablet" invisible="1" />
+
+						<field name="enable_clothing_hanger_webbing" invisible="1" />
+						<field name="enable_clothing_webbing" invisible="1" />
+
+						<field name="enable_organizer" invisible="1" />
+
+						<field name="enable_lock" invisible="1" />
+						<field name="enable_lock_tsa" invisible="1" />
+
+						<field name="enable_accessory_rings" invisible="1" />
+						<field name="enable_accessory_tag" invisible="1" />
+						<field name="enable_accessory_scratchpad" invisible="1" />
+						<field name="enable_accessory_calculator" invisible="1" />
+						<field name="enable_accessory_elastic" invisible="1" />
+						<field name="enable_accessory_mirror" invisible="1" />
+						<field name="enable_accessory_shoulderstrap" invisible="1" />
+						<field name="enable_accessory_trolley" invisible="1" />
+
+						<field name="enable_handle_number" invisible="1" />
+						<field name="enable_handle_adjustable" invisible="1" />
+
+						<field name="enable_strap" invisible="1" />
+
+						<field name="enable_puller_sections" invisible="1" />
+						<field name="enable_puller_telescopic" invisible="1" />
+						<field name="enable_puller_folding" invisible="1" />
+						<field name="enable_puller_adjustable" invisible="1" />
+						<field name="enable_puller_fixed" invisible="1" />
+						<field name="enable_platform" invisible="1" />
+						<field name="enable_box" invisible="1" />
+						<notebook>
+							<page string="Dimensions">
+								<group col="2">
+									<group>
+										<field name="length"
+											attrs="{'readonly':[('enable_dimension','=',False)]}" />
+										<field name="height"
+											attrs="{'readonly':[('enable_dimension','=',False)]}" />
+										<field name="width"
+											attrs="{'readonly':[('enable_dimension','=',False)]}" />
+									</group>
+									<group>
+										<field name="measure_capacity"
+											attrs="{'readonly':[('enable_measure_capacity','=',False)]}" />
+										<field name="garantee"
+											attrs="{'readonly':[('enable_garantee','=',False)]}"
+											invisible="1" />
+										<field name="measure_payload"
+											attrs="{'readonly':[('enable_measure_payload','=',False)]}" />
+									</group>
+									<group>
+										<field name="weight" />
+									</group>
+								</group>
+							</page>
+							<page string="Guarantee">
+								<group col="2">
+									<field name="garantee"
+										attrs="{'readonly':[('enable_garantee','=',False)]}"
+										invisible="1" />
+									<label for="warranty" />
+									<div>
+										<field name="warranty" class="oe_inline" />
+										year
+									</div>
+								</group>
+							</page>
+							<page string="Wheels">
+								<group col="2">
+									<group>
+										<field name="wheel_number" attrs="{'readonly':[('enable_wheel','=',False)]}" />
+										<field name="wheel_diameter_front" attrs="{'readonly':[('enable_wheel','=',False)]}" />
+										<field name="wheel_diameter_rear" attrs="{'readonly':[('enable_wheel','=',False)]}" />
+
+										<field name="wheel_relativeweight" attrs="{'readonly':[('enable_wheel','=',False)]}" />
+										<field name="wheel_staircase" attrs="{'readonly':[('enable_wheel','=',False)]}" />
+										<field name="wheel_easyrepair" attrs="{'readonly':[('enable_wheel','=',False)]}" />
+										<field name="wheel_removable" attrs="{'readonly':[('enable_wheel','=',False)]}" />
+									</group>
+									<group>
+										<field name="wheel_front" widget="selection"
+											attrs="{'readonly':[('enable_wheel','=',False)]}" />
+										<field name="wheel_back" widget="selection"
+											attrs="{'readonly':[('enable_wheel','=',False)]}" />
+										<field name="wheel_fixed" widget="selection"
+											attrs="{'readonly':[('enable_wheel','=',False)]}" />
+										<field name="wheel_multidirectional" widget="selection"
+											attrs="{'readonly':[('enable_wheel','=',False)]}" />
+										<field name="wheel_ballbearing" widget="selection"
+											attrs="{'readonly':[('enable_wheel','=',False)]}" />
+									</group>
+								</group>
+							</page>
+							<page string="Luggage Type">
+								<group col="8" colspan="2">
+
+									<field colspan="2" name="luggage_hand"
+										attrs="{'readonly':[('enable_luggage_business','=',False)]}" />
+									<newline />
+
+
+									<field name="luggage_hold" colspan="2"
+										attrs="{'readonly':[('enable_luggage_travel','=',False)]}" />
+									<field name="luggage_hold_comment" colspan="6"
+										attrs="{'readonly':[('enable_luggage_travel','=',False)]}" />
+
+									<field name="luggage_cabin" colspan="2"
+										attrs="{'readonly':[('enable_luggage_travel','=',False)]}" />
+									<field name='luggage_accepting_airlines' colspan="6"
+										readonly='1' attrs="{'readonly':[('enable_luggage_travel','=',False)]}" />
+
+								</group>
+							</page>
+							<page string="Compartments &amp; Pockets">
+								<group col="3">
+									<group>
+										<field name="pocket_insidezipper" attrs="{'readonly':[('enable_pocket','=',False)]}" />
+										<field name="pocket_insidesliding" attrs="{'readonly':[('enable_pocket','=',False)]}" />
+										<field name="compartment" attrs="{'readonly':[('enable_pocket','=',False)]}" />
+									</group>
+									<group>
+										<field name="pocket_ousidezipper" attrs="{'readonly':[('enable_pocket','=',False)]}" />
+										<field name="pocket_outsidesliding" attrs="{'readonly':[('enable_pocket','=',False)]}" />
+										<field name="compartment_expandable" attrs="{'readonly':[('enable_pocket','=',False)]}" />
+									</group>
+									<group>
+
+										<field name="compartment_insulated" attrs="{'readonly':[('enable_pocket','=',False)]}" />
+										<field name="compartment_sorter"
+											attrs="{'readonly':[('enable_compartment_sorter','=',False)]}" />
+										<field name="pocket_floating"
+											attrs="{'readonly':[('enable_pocket_floating','=',False)]}" />
+									</group>
+								</group>
+								<group col="3">
+									<group string="Laptop Compartment">
+										<field name="computer"
+											attrs="{'readonly':[('enable_computer','=',False)]}" />
+										<field name="computer_length"
+											attrs="{'readonly':[('enable_computer','=',False)]}" />
+										<field name="computer_height"
+											attrs="{'readonly':[('enable_computer','=',False)]}" />
+										<field name="computer_width"
+											attrs="{'readonly':[('enable_computer','=',False)]}" />
+										<field name="computer_size" widget="selection"
+											attrs="{'readonly':[('enable_computer','=',False)]}" />
+									</group>
+									<group string="Tablet Pocket">
+										<field name="tablet" attrs="{'readonly':[('enable_tablet','=',False)]}" />
+										<field name="tablet_size" attrs="{'readonly':[('enable_tablet','=',False)]}" />
+										<field name="tablet_width" attrs="{'readonly':[('enable_tablet','=',False)]}" />
+										<field name="tablet_height" attrs="{'readonly':[('enable_tablet','=',False)]}" />
+									</group>
+									<group string="Clothing with Straps">
+										<field name="clothing_webbing"
+											attrs="{'readonly':[('enable_clothing_webbing','=',False)]}" />
+										<field name="clothing_hanger"
+											attrs="{'readonly':[('enable_clothing_hanger_webbing','=',False)]}" />
+									</group>
+									<group string="Organizer">
+										<field name="organizer"
+											attrs="{'readonly':[('enable_organizer','=',False)]}" />
+									</group>
+								</group>
+
+							</page>
+							<page string="Locks">
+								<group col="2">
+									<group>
+										<field name="lock" attrs="{'readonly':[('enable_lock','=',False)]}" />
+										<field name="lock_tsa"
+											attrs="{'readonly':[('enable_lock_tsa','=',False)]}" />
+										<field name="lock_easychange" attrs="{'readonly':[('enable_lock','=',False)]}" />
+									</group>
+									<group>
+										<field name="lock_type" widget="selection"
+											attrs="{'readonly':[('enable_lock','=',False)]}" />
+										<field name="lock_tsa_type" widget="selection"
+											attrs="{'readonly':[('enable_lock_tsa','=',False)]}" />
+									</group>
+								</group>
+							</page>
+							<page string="Accessories">
+								<group col="2">
+									<group>
+										<field name="accessory_rings"
+											attrs="{'readonly':[('enable_accessory_rings','=',False)]}" />
+										<field name="accessory_tag"
+											attrs="{'readonly':[('enable_accessory_tag','=',False)]}" />
+										<field name="accessory_scratchpad"
+											attrs="{'readonly':[('enable_accessory_scratchpad','=',False)]}" />
+										<field name="accessory_calculator"
+											attrs="{'readonly':[('enable_accessory_calculator','=',False)]}" />
+									</group>
+									<group>
+										<field name="accessory_elastic"
+											attrs="{'readonly':[('enable_accessory_elastic','=',False)]}" />
+										<field name="accessory_mirror"
+											attrs="{'readonly':[('enable_accessory_mirror','=',False)]}" />
+										<field name="accessory_shoulderstrap"
+											attrs="{'readonly':[('enable_accessory_shoulderstrap','=',False)]}" />
+										<field name="accessory_trolley"
+											attrs="{'readonly':[('enable_accessory_trolley','=',False)]}" />
+									</group>
+								</group>
+							</page>
+							<page string="Handles">
+								<group col="2">
+									<group>
+										<field name="handle_adjustable"
+											attrs="{'readonly':[('enable_handle_adjustable','=',False)]}" />
+									</group>
+									<group>
+										<field name="handle_number"
+											attrs="{'readonly':[('enable_handle_adjustable','=',False)]}" />
+									</group>
+								</group>
+							</page>
+							<page string="Suspenders">
+								<group col="2">
+									<group>
+										<field name="strap" attrs="{'readonly':[('enable_strap','=',False)]}" />
+										<field name="strap_chest" attrs="{'readonly':[('enable_strap','=',False)]}" />
+									</group>
+									<group>
+										<field name="strap_hip" attrs="{'readonly':[('enable_strap','=',False)]}" />
+										<field name="strap_compression" attrs="{'readonly':[('enable_strap','=',False)]}" />
+									</group>
+								</group>
+							</page>
+							<page string="Arms">
+								<group col="2">
+									<group>
+										<field name="puller_sections"
+											attrs="{'readonly':[('enable_puller_sections','=',False)]}" />
+										<field name="puller_telescopic"
+											attrs="{'readonly':[('enable_puller_telescopic','=',False)]}" />
+										<field name="puller_folding"
+											attrs="{'readonly':[('enable_puller_folding','=',False)]}" />
+									</group>
+									<group>
+										<field name="puller_adjustable"
+											attrs="{'readonly':[('enable_puller_adjustable','=',False)]}" />
+										<field name="puller_fixed"
+											attrs="{'readonly':[('enable_puller_fixed','=',False)]}" />
+									</group>
+								</group>
+							</page>
+							<page string="Caddy Frame">
+								<group col="2">
+									<group>
+										<field name="platform"
+											attrs="{'readonly':[('enable_platform','=',False)]}" />
+									</group>
+									<group>
+									</group>
+								</group>
+							</page>
+							<page string="Boxes &amp; Cases">
+								<group col="2">
+									<group>
+										<field name="box_stackable" attrs="{'readonly':[('enable_box','=',False)]}" />
+									</group>
+									<group>
+										<field name="box_type" widget="selection"
+											attrs="{'readonly':[('enable_box','=',False)]}" />
+									</group>
+								</group>
+								<group col="2">
+									<group string="Box with one function">
+										<field name="box_lid" attrs="{'readonly':[('enable_box','=',False)]}"
+											widget="selection" />
+										<field name="box_implement" attrs="{'readonly':[('enable_box','=',False)]}" />
+									</group>
+									<group string="Box multi-fonctions">
+										<field name="box_tray" attrs="{'readonly':[('enable_box','=',False)]}" />
+										<field name="box_drawer" attrs="{'readonly':[('enable_box','=',False)]}" />
+										<field name="box_tray_type" widget="selection"
+											attrs="{'readonly':[('enable_box','=',False)]}" />
+										<field name="box_drawer_type" widget="selection"
+											attrs="{'readonly':[('enable_box','=',False)]}" />
+									</group>
+									<group string="Cases">
+										<field name="case_type" widget="selection"
+											attrs="{'readonly':[('enable_box','=',False)]}" />
+										<field name="case_closing" widget="selection"
+											attrs="{'readonly':[('enable_box','=',False)]}" />
+									</group>
+								</group>
+							</page>
+							<page string="Insert">
+								<group col="2">
+									<group>
+										<field name="insert" attrs="{'readonly':[('enable_box','=',False)]}" />
+									</group>
+									<group>
+										<field name="insert_type" widget="selection"
+											attrs="{'readonly':[('enable_box','=',False)]}" />
+									</group>
+									<group>
+										<field name="insert_number" attrs="{'readonly':[('enable_box','=',False)]}" />
+									</group>
+								</group>
+							</page>
+							<page string="Winders">
+								<group col="2">
+									<group>
+										<field name="watchwinder_timer" attrs="{'readonly':[('enable_box','=',False)]}" />
+										<field name="watchwinder_watchs" attrs="{'readonly':[('enable_box','=',False)]}" />
+										<field name="watchwinder_programs" attrs="{'readonly':[('enable_box','=',False)]}" />
+									</group>
+									<group>
+										<field name="watchwinder_compartment" attrs="{'readonly':[('enable_box','=',False)]}" />
+										<field name="watchwinder_plug" widget="selection"
+											attrs="{'readonly':[('enable_box','=',False)]}" />
+									</group>
+								</group>
+							</page>
+						</notebook>
+					</page>
+				</xpath>
+			</field>
+		</record>
+
+
+		<!-- Product Wheels -->
+
+		<record id="view_bpso_product_wheel_tree" model="ir.ui.view">
+			<field name="name">Product Wheel Tree View</field>
+			<field name="model">product.product.wheel</field>
+			<field name="arch" type="xml">
+				<tree string="Products Wheels" version="7.0">
+					<field name="name" />
+					<field name="code" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_bpso_product_wheel_form" model="ir.ui.view">
+			<field name="name">Product Wheel Form View</field>
+			<field name="model">product.product.wheel</field>
+			<field name="arch" type="xml">
+				<form string="Products Wheels" version="7.0">
+					<sheet>
+						<div class="oe_title">
+							<h1>
+								Product Wheel
+							</h1>
+						</div>
+						<group>
+							<group>
+								<field name="code" />
+							</group>
+							<group>
+								<field name="name" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_bpso_product_wheel_search" model="ir.ui.view">
+			<field name="name">Product Wheel Search View</field>
+			<field name="model">product.product.wheel</field>
+			<field name="arch" type="xml">
+				<search string="Products Wheels" version="7.0">
+					<field name="name"
+						filter_domain="['|', ('name','ilike',self), ('name','ilike',self)]"
+						string="Name" />
+					<field name="code" />
+					<separator />
+					<filter string="Front Wheels" domain="[('code', '=', 'WF')]" />
+					<filter string="Back Wheels" domain="[('code', '=', 'WB')]" />
+					<filter string="Fixed Wheels" domain="[('code', '=', 'WX')]" />
+					<filter string="Multidirectional Wheels" domain="[('code', '=', 'WM')]" />
+					<filter string="Ballbearing Wheels" domain="[('code', '=', 'WR')]" />
+					<group expand="0" string="Group By...">
+						<filter string="Code" domain="[]" context="{'group_by':'code'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<record id="action_bpso_product_wheel" model="ir.actions.act_window">
+			<field name="name">Products Wheels</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">product.product.wheel</field>
+			<field name="view_type">form</field>
+		</record>
+
+		<menuitem id="menu_bpso_product_referential" parent="base.menu_base_config"
+			name="Products Referential" groups="base.group_system" />
+
+		<menuitem action="action_bpso_product_wheel" id="menu_bpso_product_referential_wheels"
+			parent="menu_bpso_product_referential" name="Wheels" />
+
+
+
+		<!-- Product Luggage -->
+
+		<record id="view_bpso_product_luggage_tree" model="ir.ui.view">
+			<field name="name">Product Luggage Tree View</field>
+			<field name="model">product.product.luggage</field>
+			<field name="arch" type="xml">
+				<tree string="Products Luggages" version="7.0">
+					<field name="name" />
+					<field name="code" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_bpso_product_luggage_form" model="ir.ui.view">
+			<field name="name">Product Luggage Form View</field>
+			<field name="model">product.product.luggage</field>
+			<field name="arch" type="xml">
+				<form string="Products Luggages" version="7.0">
+					<sheet>
+						<div class="oe_title">
+							<h1>
+								Product Luggage
+							</h1>
+						</div>
+						<group>
+							<group>
+								<field name="code" />
+							</group>
+							<group>
+								<field name="name" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_bpso_product_luggage_search" model="ir.ui.view">
+			<field name="name">Product Luggage Search View</field>
+			<field name="model">product.product.luggage</field>
+			<field name="arch" type="xml">
+				<search string="Products Luggages" version="7.0">
+					<field name="name"
+						filter_domain="['|', ('name','ilike',self), ('name','ilike',self)]"
+						string="Name" />
+					<field name="code" />
+					<separator />
+					<filter string="Cabin Luggages Airlines" domain="[('code', '=', 'LA')]" />
+					<group expand="0" string="Group By...">
+						<filter string="Code" domain="[]" context="{'group_by':'code'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<record id="action_bpso_product_luggage" model="ir.actions.act_window">
+			<field name="name">Products luggages</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">product.product.luggage</field>
+			<field name="view_type">form</field>
+		</record>
+
+		<menuitem action="action_bpso_product_luggage" id="menu_bpso_product_referential_luggage"
+			parent="menu_bpso_product_referential" name="Luggages" />
+
+
+		<!-- Product Computer Size -->
+
+		<record id="view_bpso_product_computer_size_tree" model="ir.ui.view">
+			<field name="name">Product Computer Size Tree View</field>
+			<field name="model">product.product.computer_size</field>
+			<field name="arch" type="xml">
+				<tree string="Products Computer Size" version="7.0">
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_bpso_product_computer_size_form" model="ir.ui.view">
+			<field name="name">Product Computer Size Form View</field>
+			<field name="model">product.product.computer_size</field>
+			<field name="arch" type="xml">
+				<form string="Products Computer Size" version="7.0">
+					<sheet>
+						<div class="oe_title">
+							<h1>
+								Product Computer Size
+							</h1>
+						</div>
+						<group>
+							<field name="name" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_bpso_product_computer_size_search" model="ir.ui.view">
+			<field name="name">Product Computer Size Search View</field>
+			<field name="model">product.product.computer_size</field>
+			<field name="arch" type="xml">
+				<search string="Products Computer Size" version="7.0">
+					<field name="name"
+						filter_domain="['|', ('name','ilike',self), ('name','ilike',self)]"
+						string="Name" />
+				</search>
+			</field>
+		</record>
+
+		<record id="action_bpso_product_computer_size" model="ir.actions.act_window">
+			<field name="name">Products Computer Size</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">product.product.computer_size</field>
+			<field name="view_type">form</field>
+		</record>
+
+		<menuitem action="action_bpso_product_computer_size"
+			id="menu_bpso_product_referential_computer_size" parent="menu_bpso_product_referential"
+			name="Computers Size" />
+
+
+
+		<!-- Product Tablet Size : product.product.tablet_size -->
+
+
+		<record id="view_bpso_product_tablet_size_tree" model="ir.ui.view">
+			<field name="name">Product Tablet Size Tree View</field>
+			<field name="model">product.product.tablet_size</field>
+			<field name="arch" type="xml">
+				<tree string="Products Tablet Size" version="7.0">
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_bpso_product_tablet_size_form" model="ir.ui.view">
+			<field name="name">Product Computer Size Form View</field>
+			<field name="model">product.product.computer_size</field>
+			<field name="arch" type="xml">
+				<form string="Products Computer Size" version="7.0">
+					<sheet>
+						<div class="oe_title">
+							<h1>
+								Product Tablet Size
+							</h1>
+						</div>
+						<group>
+							<field name="name" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_bpso_product_tablet_size_search" model="ir.ui.view">
+			<field name="name">Product Tablet Size Search View</field>
+			<field name="model">product.product.tablet_size</field>
+			<field name="arch" type="xml">
+				<search string="Products Tablet Size" version="7.0">
+					<field name="name"
+						filter_domain="['|', ('name','ilike',self), ('name','ilike',self)]"
+						string="Name" />
+				</search>
+			</field>
+		</record>
+
+		<record id="action_bpso_product_tablet_size" model="ir.actions.act_window">
+			<field name="name">Products Computer Size</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">product.product.tablet_size</field>
+			<field name="view_type">form</field>
+		</record>
+
+		<menuitem action="action_bpso_product_tablet_size" id="menu_bpso_product_referential_tablet_size"
+			parent="menu_bpso_product_referential" name="Tablet Size" />
+
+
+
+
+		<!-- Product Lock -->
+
+		<record id="view_bpso_product_lock_tree" model="ir.ui.view">
+			<field name="name">Product Lock Tree View</field>
+			<field name="model">product.product.lock</field>
+			<field name="arch" type="xml">
+				<tree string="Products Locks" version="7.0">
+					<field name="name" />
+					<field name="code" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_bpso_product_lock_form" model="ir.ui.view">
+			<field name="name">Product Lock Form View</field>
+			<field name="model">product.product.lock</field>
+			<field name="arch" type="xml">
+				<form string="Products Locks" version="7.0">
+					<sheet>
+						<div class="oe_title">
+							<h1>
+								Product Lock
+							</h1>
+						</div>
+						<group>
+							<group>
+								<field name="code" />
+							</group>
+							<group>
+								<field name="name" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_bpso_product_lock_search" model="ir.ui.view">
+			<field name="name">Product Lock Search View</field>
+			<field name="model">product.product.lock</field>
+			<field name="arch" type="xml">
+				<search string="Products Locks" version="7.0">
+					<field name="name"
+						filter_domain="['|', ('name','ilike',self), ('name','ilike',self)]"
+						string="Name" />
+					<field name="code" />
+					<separator />
+					<filter string="Lock Type" domain="[('code', '=', 'LT')]" />
+					<filter string="Lock TSA Type" domain="[('code', '=', 'LS')]" />
+					<group expand="0" string="Group By...">
+						<filter string="Code" domain="[]" context="{'group_by':'code'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<record id="action_bpso_product_lock" model="ir.actions.act_window">
+			<field name="name">Products Locks</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">product.product.lock</field>
+			<field name="view_type">form</field>
+		</record>
+
+		<menuitem action="action_bpso_product_lock" id="menu_bpso_product_referential_lock"
+			parent="menu_bpso_product_referential" name="Locks" />
+
+
+		<!-- Product Box -->
+
+		<record id="view_bpso_product_box_tree" model="ir.ui.view">
+			<field name="name">Product Box Tree View</field>
+			<field name="model">product.product.box</field>
+			<field name="arch" type="xml">
+				<tree string="Products Boxs" version="7.0">
+					<field name="name" />
+					<field name="code" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_bpso_product_box_form" model="ir.ui.view">
+			<field name="name">Product Box Form View</field>
+			<field name="model">product.product.box</field>
+			<field name="arch" type="xml">
+				<form string="Products Boxs" version="7.0">
+					<sheet>
+						<div class="oe_title">
+							<h1>
+								Product Box
+							</h1>
+						</div>
+						<group>
+							<group>
+								<field name="code" />
+							</group>
+							<group>
+								<field name="name" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_bpso_product_box_search" model="ir.ui.view">
+			<field name="name">Product Box Search View</field>
+			<field name="model">product.product.box</field>
+			<field name="arch" type="xml">
+				<search string="Products Boxs" version="7.0">
+					<field name="name"
+						filter_domain="['|', ('name','ilike',self), ('name','ilike',self)]"
+						string="Name" />
+					<field name="code" />
+					<separator />
+					<filter string="Box Type" domain="[('code', '=', 'BT')]" />
+					<filter string="Box Tray Type" domain="[('code', '=', 'BY')]" />
+					<filter string="Box Drawer Type" domain="[('code', '=', 'BD')]" />
+					<filter string="Case Type" domain="[('code', '=', 'BC')]" />
+					<filter string="Case Closing" domain="[('code', '=', 'BS')]" />
+					<group expand="0" string="Group By...">
+						<filter string="Code" domain="[]" context="{'group_by':'code'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<record id="action_bpso_product_box" model="ir.actions.act_window">
+			<field name="name">Products Boxs</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">product.product.box</field>
+			<field name="view_type">form</field>
+		</record>
+
+		<menuitem action="action_bpso_product_box" id="menu_bpso_product_referential_box"
+			parent="menu_bpso_product_referential" name="Boxs" />
+
+
+		<!-- Product Insert -->
+
+		<record id="view_bpso_product_insert_tree" model="ir.ui.view">
+			<field name="name">Product Insert Tree View</field>
+			<field name="model">product.product.insert</field>
+			<field name="arch" type="xml">
+				<tree string="Products Inserts" version="7.0">
+					<field name="name" />
+					<field name="code" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_bpso_product_insert_form" model="ir.ui.view">
+			<field name="name">Product Insert Form View</field>
+			<field name="model">product.product.insert</field>
+			<field name="arch" type="xml">
+				<form string="Products Inserts" version="7.0">
+					<sheet>
+						<div class="oe_title">
+							<h1>
+								Product Insert
+							</h1>
+						</div>
+						<group>
+							<group>
+								<field name="code" />
+							</group>
+							<group>
+								<field name="name" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_bpso_product_insert_search" model="ir.ui.view">
+			<field name="name">Product Insert Search View</field>
+			<field name="model">product.product.insert</field>
+			<field name="arch" type="xml">
+				<search string="Products Inserts" version="7.0">
+					<field name="name"
+						filter_domain="['|', ('name','ilike',self), ('name','ilike',self)]"
+						string="Name" />
+					<field name="code" />
+					<separator />
+					<filter string="Insert Type" domain="[('code', '=', 'IT')]" />
+					<group expand="0" string="Group By...">
+						<filter string="Code" domain="[]" context="{'group_by':'code'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<record id="action_bpso_product_insert" model="ir.actions.act_window">
+			<field name="name">Products Inserts</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">product.product.insert</field>
+			<field name="view_type">form</field>
+		</record>
+
+		<menuitem action="action_bpso_product_insert" id="menu_bpso_product_referential_insert"
+			parent="menu_bpso_product_referential" name="Inserts" />
+
+
+
+		<!-- Product Winders -->
+
+		<record id="view_bpso_product_winder_tree" model="ir.ui.view">
+			<field name="name">Product Winder Tree View</field>
+			<field name="model">product.product.winder</field>
+			<field name="arch" type="xml">
+				<tree string="Products Winders" version="7.0">
+					<field name="name" />
+					<field name="code" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_bpso_product_winder_form" model="ir.ui.view">
+			<field name="name">Product Winder Form View</field>
+			<field name="model">product.product.winder</field>
+			<field name="arch" type="xml">
+				<form string="Products Winders" version="7.0">
+					<sheet>
+						<div class="oe_title">
+							<h1>
+								Product Winder
+							</h1>
+						</div>
+						<group>
+							<group>
+								<field name="code" />
+							</group>
+							<group>
+								<field name="name" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_bpso_product_winder_search" model="ir.ui.view">
+			<field name="name">Product Winder Search View</field>
+			<field name="model">product.product.winder</field>
+			<field name="arch" type="xml">
+				<search string="Products Winders" version="7.0">
+					<field name="name"
+						filter_domain="['|', ('name','ilike',self), ('name','ilike',self)]"
+						string="Name" />
+					<field name="code" />
+					<separator />
+					<filter string="Winder Plug" domain="[('code', '=', 'WP')]" />
+					<group expand="0" string="Group By...">
+						<filter string="Code" domain="[]" context="{'group_by':'code'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<record id="action_bpso_product_winder" model="ir.actions.act_window">
+			<field name="name">Products Winders</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">product.product.winder</field>
+			<field name="view_type">form</field>
+		</record>
+
+		<menuitem action="action_bpso_product_winder" id="menu_bpso_product_referential_winder"
+			parent="menu_bpso_product_referential" name="Winders" />
+
+
+
+		<!-- Product Company -->
+
+		<record id="view_bpso_product_company_tree" model="ir.ui.view">
+			<field name="name">Product Company Tree View</field>
+			<field name="model">product.product.company</field>
+			<field name="arch" type="xml">
+				<tree string="Companies" version="7.0">
+					<field name="name" />
+					<field name="code" />
+					<field name="luggage_h" />
+					<field name="luggage_l" />
+					<field name="luggage_p" />
+					<field name="luggage_total" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_bpso_product_company_form" model="ir.ui.view">
+			<field name="name">Product Company Form View</field>
+			<field name="model">product.product.company</field>
+			<field name="arch" type="xml">
+				<form string="Company" version="7.0">
+					<sheet>
+						<div class="oe_title">
+							<h1>
+								Company
+							</h1>
+						</div>
+						<group>
+							<group>
+								<field name="name" />
+								<field name="code" />
+							</group>
+							<group>
+								<field name="luggage_h" />
+								<field name="luggage_l" />
+								<field name="luggage_p" />
+								<field name="luggage_total" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_bpso_product_company_search" model="ir.ui.view">
+			<field name="name">Product Company Search View</field>
+			<field name="model">product.product.company</field>
+			<field name="arch" type="xml">
+				<search string="Companies" version="7.0">
+					<field name="name"
+						filter_domain="['|', ('name','ilike',self), ('name','ilike',self)]"
+						string="Name" />
+					<field name="code" />
+					<field name="luggage_h" />
+					<field name="luggage_l" />
+					<field name="luggage_p" />
+				</search>
+			</field>
+		</record>
+
+		<record id="action_bpso_product_company" model="ir.actions.act_window">
+			<field name="name">Products Companies</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">product.product.company</field>
+			<field name="view_type">form</field>
+		</record>
+
+		<menuitem action="action_bpso_product_company" id="menu_bpso_product_referential_company"
+			parent="base.menu_base_config" name="Companies" />
+
+
+	</data>
+</openerp>

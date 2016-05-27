@@ -1,0 +1,1830 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- account.account.type -->
+        <record id="user_type_view" model="account.account.type">
+            <field name="name">Vue</field>
+            <field name="code">view</field>
+            <field name="close_method">none</field>
+        </record>
+        <record id="user_type_stock" model="account.account.type">
+            <field name="name">Stock et Encours</field>
+            <field name="code">stock</field>
+            <field name="report_type">asset</field>
+            <field name="close_method">balance</field>
+        </record>
+
+        <!-- Chart template of l10n_be -->
+            <!-- Account template definition -->
+        <record id="a_root" model="account.account.template">
+            <field name="name">PLAN COMPTABLE MINIMUM NORMALISE</field>
+            <field name="code">0</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="user_type_view"/>
+        </record>
+        <record id="a1" model="account.account.template">
+            <field name="name">FONDS PROPRES, PROVISIONS ET DETTES</field>
+            <field name="code">1</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="account.data_account_type_liability"/>
+            <field ref="a_root" name="parent_id"/>
+        </record>
+        <record id="a10" model="account.account.template">
+            <field name="name">TOTAL CLASSE 1</field>
+            <field name="code">10</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="account.data_account_type_liability"/>
+            <field ref="a1" name="parent_id"/>
+        </record>
+        <record id="a100" model="account.account.template">
+            <field name="name">CAPITAL</field>
+            <field name="code">100</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="account.data_account_type_liability"/>
+            <field ref="a10" name="parent_id"/>
+        </record>
+        <record id="a12" model="account.account.template">
+            <field name="name">SS TOT CL 12</field>
+            <field name="code">12</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="account.data_account_type_liability"/>
+            <field ref="a1" name="parent_id"/>
+        </record>
+        <record id="a121100" model="account.account.template">
+            <field name="name">CPV REALISAT.ACTIFS 2001 EMPLOYEE</field>
+            <field name="code">121100</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_liability"/>
+            <field ref="a12" name="parent_id"/>
+        </record>
+        <record id="a121101" model="account.account.template">
+            <field name="name">PV REALISAT.ACTIFS 2003 REMPLOYEE</field>
+            <field name="code">121101</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_liability"/>
+            <field ref="a12" name="parent_id"/>
+        </record>
+        <record id="a121102" model="account.account.template">
+            <field name="name">PV REALISAT.ACTIFS 2010 REMP</field>
+            <field name="code">121102</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_liability"/>
+            <field ref="a12" name="parent_id"/>
+        </record>
+        <record id="a13" model="account.account.template">
+            <field name="name">SS TOT CL 13</field>
+            <field name="code">13</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="account.data_account_type_liability"/>
+            <field ref="a1" name="parent_id"/>
+        </record>
+        <record id="a130000" model="account.account.template">
+            <field name="name">RESERVE LEGALE</field>
+            <field name="code">130000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_liability"/>
+            <field ref="a13" name="parent_id"/>
+        </record>
+        <record id="a132000" model="account.account.template">
+            <field name="name">RESERVE D'INVESTISS IMMUNISEE</field>
+            <field name="code">132000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_liability"/>
+            <field ref="a13" name="parent_id"/>
+        </record>
+        <record id="a133000" model="account.account.template">
+            <field name="name">RESERVE DISPONIBLE</field>
+            <field name="code">133000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_liability"/>
+            <field ref="a13" name="parent_id"/>
+        </record>
+        <record id="a15" model="account.account.template">
+            <field name="name">SS TOT CL 15</field>
+            <field name="code">15</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="account.data_account_type_liability"/>
+            <field ref="a1" name="parent_id"/>
+        </record>
+        <record id="a150000" model="account.account.template">
+            <field name="name">SUBSIDES EN CAPITAL</field>
+            <field name="code">150000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_liability"/>
+            <field ref="a15" name="parent_id"/>
+        </record>
+        <record id="a151000" model="account.account.template">
+            <field name="name">SUBS.CAPIT.REGION WALL.EXONERES</field>
+            <field name="code">151000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_liability"/>
+            <field ref="a15" name="parent_id"/>
+        </record>
+        <record id="a152000" model="account.account.template">
+            <field name="name">SUBS.APE REGION WALL.</field>
+            <field name="code">152000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_liability"/>
+            <field ref="a15" name="parent_id"/>
+        </record>
+        <record id="a16" model="account.account.template">
+            <field name="name">SS TOT CL 16</field>
+            <field name="code">16</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="account.data_account_type_liability"/>
+            <field ref="a1" name="parent_id"/>
+        </record>
+        <record id="a168000" model="account.account.template">
+            <field name="name">IMPOTS DIFFERES S/SUBSIDES</field>
+            <field name="code">168000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_liability"/>
+            <field ref="a16" name="parent_id"/>
+        </record>
+        <record id="a168100" model="account.account.template">
+            <field name="name">IMPOTS DIFFERES.S/PV 2001</field>
+            <field name="code">168100</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_liability"/>
+            <field ref="a16" name="parent_id"/>
+        </record>
+        <record id="a168101" model="account.account.template">
+            <field name="name">IMPOTS DIFFERES SUR PV 2003</field>
+            <field name="code">168101</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_liability"/>
+            <field ref="a16" name="parent_id"/>
+        </record>
+        <record id="a168102" model="account.account.template">
+            <field name="name">IMPOTS DIFFERES SUR PV 2010</field>
+            <field name="code">168102</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_liability"/>
+            <field ref="a16" name="parent_id"/>
+        </record>
+        <record id="a17" model="account.account.template">
+            <field name="name">SS TOT CL 17</field>
+            <field name="code">17</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="account.data_account_type_liability"/>
+            <field ref="a1" name="parent_id"/>
+        </record>
+        <record id="a173102" model="account.account.template">
+            <field name="name">SOWALFIN</field>
+            <field name="code">173102</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_liability"/>
+            <field ref="a17" name="parent_id"/>
+        </record>
+        <record id="a173103" model="account.account.template">
+            <field name="name">CI INV CAHOTTES BIS ING</field>
+            <field name="code">173103</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_liability"/>
+            <field ref="a17" name="parent_id"/>
+        </record>
+        <record id="a173104" model="account.account.template">
+            <field name="name">CI INV CAHOTTES BIS CBC</field>
+            <field name="code">173104</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_liability"/>
+            <field ref="a17" name="parent_id"/>
+        </record>
+        <record id="a173108" model="account.account.template">
+            <field name="name">COPIEUR CANON 5030</field>
+            <field name="code">173108</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_liability"/>
+            <field ref="a17" name="parent_id"/>
+        </record>
+        <record id="a173109" model="account.account.template">
+            <field name="name">COPIEUR CANON AV 9000</field>
+            <field name="code">173109</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_liability"/>
+            <field ref="a17" name="parent_id"/>
+        </record>
+        <record id="a173110" model="account.account.template">
+            <field name="name">PRET ING 5 ANS FOND DE ROULEMENT</field>
+            <field name="code">173110</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_liability"/>
+            <field ref="a17" name="parent_id"/>
+        </record>
+        <record id="a173111" model="account.account.template">
+            <field name="name">PRET CBC 5 ANS FOND DE ROULEMENT</field>
+            <field name="code">173111</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_liability"/>
+            <field ref="a17" name="parent_id"/>
+        </record>
+        <record id="a2" model="account.account.template">
+            <field name="name">FRAIS D'ETABLISSEMENT, ACTIFS IMMOB</field>
+            <field name="code">2</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="account.data_account_type_asset"/>
+            <field ref="a_root" name="parent_id"/>
+        </record>
+        <record id="a22" model="account.account.template">
+            <field name="name">SS TOT CL 22</field>
+            <field name="code">22</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="account.data_account_type_asset"/>
+            <field ref="a2" name="parent_id"/>
+        </record>
+        <record id="a220000" model="account.account.template">
+            <field name="name">TERRAINS ACQUISITIONS ANTERIEURES</field>
+            <field name="code">220000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_asset"/>
+            <field ref="a22" name="parent_id"/>
+        </record>
+        <record id="a221150" model="account.account.template">
+            <field name="name">CONSTRUCT.CAHOTTES BIS</field>
+            <field name="code">221150</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_asset"/>
+            <field ref="a22" name="parent_id"/>
+        </record>
+        <record id="a221200" model="account.account.template">
+            <field name="name">HONORAIRES S/CONSTR.</field>
+            <field name="code">221200</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_asset"/>
+            <field ref="a22" name="parent_id"/>
+        </record>
+        <record id="a221920" model="account.account.template">
+            <field name="name">ATS.S/HONOR.CONSTRUCT.</field>
+            <field name="code">221920</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_asset"/>
+            <field ref="a22" name="parent_id"/>
+        </record>
+        <record id="a221950" model="account.account.template">
+            <field name="name">AMORT S/CONSTR.CAHOTTES BIS</field>
+            <field name="code">221950</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_asset"/>
+            <field ref="a22" name="parent_id"/>
+        </record>
+        <record id="a23" model="account.account.template">
+            <field name="name">SS TOT CL 23</field>
+            <field name="code">23</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="account.data_account_type_asset"/>
+            <field ref="a2" name="parent_id"/>
+        </record>
+        <record id="a230000" model="account.account.template">
+            <field name="name">INSTALLATIONS</field>
+            <field name="code">230000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_asset"/>
+            <field ref="a23" name="parent_id"/>
+        </record>
+        <record id="a230900" model="account.account.template">
+            <field name="name">ATS S/INSTALLATIONS</field>
+            <field name="code">239000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_asset"/>
+            <field ref="a23" name="parent_id"/>
+        </record>
+        <record id="a237000" model="account.account.template">
+            <field name="name">OUTILLAGE</field>
+            <field name="code">237000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_asset"/>
+            <field ref="a23" name="parent_id"/>
+        </record>
+        <record id="a237900" model="account.account.template">
+            <field name="name">ATS S/OUTILLAGE</field>
+            <field name="code">237900</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_asset"/>
+            <field ref="a23" name="parent_id"/>
+        </record>
+        <record id="a24" model="account.account.template">
+            <field name="name">SS TOT CL 24</field>
+            <field name="code">24</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="account.data_account_type_asset"/>
+            <field ref="a2" name="parent_id"/>
+        </record>
+        <record id="a240000" model="account.account.template">
+            <field name="name">MOBILIER ET MAT.DE BUREAU</field>
+            <field name="code">240000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_asset"/>
+            <field ref="a24" name="parent_id"/>
+        </record>
+        <record id="a240900" model="account.account.template">
+            <field name="name">ATS /SMOBILIER ET MAT.BUREAU</field>
+            <field name="code">240900</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_asset"/>
+            <field ref="a24" name="parent_id"/>
+        </record>
+        <record id="a28" model="account.account.template">
+            <field name="name">SS TOT CL 28</field>
+            <field name="code">28</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="account.data_account_type_asset"/>
+            <field ref="a2" name="parent_id"/>
+        </record>
+        <record id="a280000" model="account.account.template">
+            <field name="name">PARTICIP.FINANCIERES</field>
+            <field name="code">280000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_asset"/>
+            <field ref="a28" name="parent_id"/>
+        </record>
+        <record id="a288000" model="account.account.template">
+            <field name="name">CAUTIONS VERSEES</field>
+            <field name="code">288000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_asset"/>
+            <field ref="a28" name="parent_id"/>
+        </record>
+        <record id="a288001" model="account.account.template">
+            <field name="name">GARANTIE LOCATIVE TRADE</field>
+            <field name="code">288001</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_asset"/>
+            <field ref="a28" name="parent_id"/>
+        </record>
+        <record id="a288002" model="account.account.template">
+            <field name="name">PROVISION ONSS PARTENA</field>
+            <field name="code">288002</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_asset"/>
+            <field ref="a28" name="parent_id"/>
+        </record>
+
+        <record id="a3" model="account.account.template">
+            <field name="name">STOCKS ET COMMANDES EN COURS</field>
+            <field name="code">3</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="user_type_stock"/>
+            <field ref="a_root" name="parent_id"/>
+        </record>
+        <record id="a34" model="account.account.template">
+            <field name="name">SS TOT CL 34</field>
+            <field name="code">34</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="account.data_account_type_asset"/>
+            <field ref="a3" name="parent_id"/>
+        </record>
+        <record id="a340000" model="account.account.template">
+            <field name="name">MARCHANDISES</field>
+            <field name="code">340000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_asset"/>
+            <field ref="a34" name="parent_id"/>
+        </record>
+
+        <record id="a4" model="account.account.template">
+            <field name="name">CREANCES ET DETTES A UN AN AU PLUS</field>
+            <field name="code">4</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="user_type_view"/>
+            <field ref="a_root" name="parent_id"/>
+        </record>
+        <record id="a40" model="account.account.template">
+            <field name="name">SS TOT CL 40</field>
+            <field name="code">40</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="user_type_view"/>
+            <field ref="a4" name="parent_id"/>
+        </record>
+        <record id="a400000" model="account.account.template">
+            <field name="name">CLIENTS</field>
+            <field name="code">400000</field>
+            <field name="type">receivable</field>
+            <field name="user_type" ref="account.data_account_type_receivable"/>
+            <field ref="a40" name="parent_id"/>
+        </record>
+
+        <record id="a41" model="account.account.template">
+            <field name="name">SS TOT CL 41</field>
+            <field name="code">41</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="user_type_view"/>
+            <field ref="a4" name="parent_id"/>
+        </record>
+        <record id="a411590" model="account.account.template">
+            <field name="name">TVA A RECUPERER</field>
+            <field name="code">411590</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_receivable"/>
+            <field ref="a41" name="parent_id"/>
+        </record>
+        <record id="a411591" model="account.account.template">
+            <field name="name">TVA A RECUPERER FRANCE</field>
+            <field name="code">411591</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_receivable"/>
+            <field ref="a41" name="parent_id"/>
+        </record>
+        <record id="a411592" model="account.account.template">
+            <field name="name">TVA ALLEMANDE A RECUPERER</field>
+            <field name="code">411592</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_receivable"/>
+            <field ref="a41" name="parent_id"/>
+        </record>
+        <record id="a411593" model="account.account.template">
+            <field name="name">TVA GB A RECUPERER</field>
+            <field name="code">411593</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_receivable"/>
+            <field ref="a41" name="parent_id"/>
+        </record>
+        <record id="a411595" model="account.account.template">
+            <field name="name">TVA ITALIE A RECUPERER</field>
+            <field name="code">411595</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_receivable"/>
+            <field ref="a41" name="parent_id"/>
+        </record>
+        <record id="a416910" model="account.account.template">
+            <field name="name">AVANCES A SA FAJA</field>
+            <field name="code">416910</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_receivable"/>
+            <field ref="a41" name="parent_id"/>
+        </record>
+
+        <record id="a42" model="account.account.template">
+            <field name="name">SS TOT CL 42</field>
+            <field name="code">42</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="user_type_view"/>
+            <field ref="a4" name="parent_id"/>
+        </record>
+        <record id="a423101" model="account.account.template">
+            <field name="name">CI COPIEUR 5151 + COP.POSTER</field>
+            <field name="code">423101</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_payable"/>
+            <field ref="a42" name="parent_id"/>
+        </record>
+        <record id="a423105" model="account.account.template">
+            <field name="name">CI SOWALFIN</field>
+            <field name="code">423105</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_payable"/>
+            <field ref="a42" name="parent_id"/>
+        </record>
+        <record id="a423106" model="account.account.template">
+            <field name="name">CI ING CAHOTTES BIS</field>
+            <field name="code">423106</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_payable"/>
+            <field ref="a42" name="parent_id"/>
+        </record>
+        <record id="a423107" model="account.account.template">
+            <field name="name">CI CBC CAHOTTES BIS</field>
+            <field name="code">423107</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_payable"/>
+            <field ref="a42" name="parent_id"/>
+        </record>
+        <record id="a423108" model="account.account.template">
+            <field name="name">COPIEUR CANON 5030</field>
+            <field name="code">423108</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_payable"/>
+            <field ref="a42" name="parent_id"/>
+        </record>
+        <record id="a423109" model="account.account.template">
+            <field name="name">COPIEUR CANON ADV 9000</field>
+            <field name="code">423109</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_payable"/>
+            <field ref="a42" name="parent_id"/>
+        </record>
+        <record id="a423110" model="account.account.template">
+            <field name="name">PRET A 5 ANS ING FOND DE ROULEMENT</field>
+            <field name="code">423110</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_payable"/>
+            <field ref="a42" name="parent_id"/>
+        </record>
+        <record id="a423111" model="account.account.template">
+            <field name="name">PRET A 5 ANS CBC FOND DE ROULEMENT</field>
+            <field name="code">423111</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_payable"/>
+            <field ref="a42" name="parent_id"/>
+        </record>
+
+        <record id="a44" model="account.account.template">
+            <field name="name">SS TOT CL 44</field>
+            <field name="code">44</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="user_type_view"/>
+            <field ref="a4" name="parent_id"/>
+        </record>
+        <record id="a440000" model="account.account.template">
+            <field name="name">FOURNISSEURS</field>
+            <field name="code">440000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_payable"/>
+            <field ref="a44" name="parent_id"/>
+        </record>
+
+        <record id="a45" model="account.account.template">
+            <field name="name">SS TOT CL 45</field>
+            <field name="code">45</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="user_type_view"/>
+            <field ref="a4" name="parent_id"/>
+        </record>
+        <record id="a451111" model="account.account.template">
+            <field name="name">TVA A RECUPERER BANQUES</field>
+            <field name="code">451111</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_payable"/>
+            <field ref="a45" name="parent_id"/>
+        </record>
+        <record id="a451200" model="account.account.template">
+            <field name="name">COMPTE COURANT TVA</field>
+            <field name="code">451200</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_payable"/>
+            <field ref="a45" name="parent_id"/>
+        </record>
+        <record id="a451540" model="account.account.template">
+            <field name="name">TVA A PAYER SUR VENTES</field>
+            <field name="code">451540</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_payable"/>
+            <field ref="a45" name="parent_id"/>
+        </record>
+        <record id="a451550" model="account.account.template">
+            <field name="name">TVA A PAYER SUR INTRACOMM</field>
+            <field name="code">451550</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_payable"/>
+            <field ref="a45" name="parent_id"/>
+        </record>
+        <record id="a451560" model="account.account.template">
+            <field name="name">TVA A PAYER S/COCONTRACTANT</field>
+            <field name="code">451560</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_payable"/>
+            <field ref="a45" name="parent_id"/>
+        </record>
+        <record id="a451570" model="account.account.template">
+            <field name="name">TVA A PAYER HCEE</field>
+            <field name="code">451570</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_payable"/>
+            <field ref="a45" name="parent_id"/>
+        </record>
+        <record id="a453200" model="account.account.template">
+            <field name="name">PREC.MOBILIER / DIVID.</field>
+            <field name="code">453200</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_payable"/>
+            <field ref="a45" name="parent_id"/>
+        </record>
+        <record id="a455000" model="account.account.template">
+            <field name="name">REMUNERATIONS DUES</field>
+            <field name="code">455000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_payable"/>
+            <field ref="a45" name="parent_id"/>
+        </record>
+        <record id="a455071" model="account.account.template">
+            <field name="name">SALAIRE MARTIN D.(EMPLOYE)</field>
+            <field name="code">455071</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_payable"/>
+            <field ref="a45" name="parent_id"/>
+        </record>
+        <record id="a455072" model="account.account.template">
+            <field name="name">SALAIRE BUCCI F</field>
+            <field name="code">455072</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_payable"/>
+            <field ref="a45" name="parent_id"/>
+        </record>
+        <record id="a455079" model="account.account.template">
+            <field name="name">SALAIRE TIHON CHARLINE</field>
+            <field name="code">455079</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_payable"/>
+            <field ref="a45" name="parent_id"/>
+        </record>
+        <record id="a455080" model="account.account.template">
+            <field name="name">SALAIRE BALHAN</field>
+            <field name="code">455080</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_payable"/>
+            <field ref="a45" name="parent_id"/>
+        </record>
+        <record id="a455081" model="account.account.template">
+            <field name="name">SALAIRE S.RENSONNET</field>
+            <field name="code">455081</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_payable"/>
+            <field ref="a45" name="parent_id"/>
+        </record>
+        <record id="a455082" model="account.account.template">
+            <field name="name">SALAIRE NILAJ F</field>
+            <field name="code">455082</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_payable"/>
+            <field ref="a45" name="parent_id"/>
+        </record>
+        <record id="a455083" model="account.account.template">
+            <field name="name">SALAIRE MOSSIAT J-F</field>
+            <field name="code">455083</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_payable"/>
+            <field ref="a45" name="parent_id"/>
+        </record>
+        <record id="a455084" model="account.account.template">
+            <field name="name">SALAIRE LALMAN FABIEN</field>
+            <field name="code">455084</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_payable"/>
+            <field ref="a45" name="parent_id"/>
+        </record>
+        <record id="a455085" model="account.account.template">
+            <field name="name">SALAIRE BELKASSAM</field>
+            <field name="code">455085</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_payable"/>
+            <field ref="a45" name="parent_id"/>
+        </record>
+        <record id="a455086" model="account.account.template">
+            <field name="name">SALAIRE DEHOSSAY J.</field>
+            <field name="code">455086</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_payable"/>
+            <field ref="a45" name="parent_id"/>
+        </record>
+        <record id="a455088" model="account.account.template">
+            <field name="name">SALAIRE MANICA S.</field>
+            <field name="code">455088</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_payable"/>
+            <field ref="a45" name="parent_id"/>
+        </record>
+        <record id="a455092" model="account.account.template">
+            <field name="name">SALAIRE GROULARD M.</field>
+            <field name="code">455092</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_payable"/>
+            <field ref="a45" name="parent_id"/>
+        </record>
+        <record id="a455097" model="account.account.template">
+            <field name="name">SALAIRE LEGRAND ADRIEN</field>
+            <field name="code">455097</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_payable"/>
+            <field ref="a45" name="parent_id"/>
+        </record>
+        <record id="a456000" model="account.account.template">
+            <field name="name">PECULE DE VACANCE A PAYER</field>
+            <field name="code">456000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_payable"/>
+            <field ref="a45" name="parent_id"/>
+        </record>
+
+        <record id="a49" model="account.account.template">
+            <field name="name">SS TOT CL 49</field>
+            <field name="code">49</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="user_type_view"/>
+            <field ref="a4" name="parent_id"/>
+        </record>
+        <record id="a491100" model="account.account.template">
+            <field name="name">INTERETS COURUS NON ECHUS</field>
+            <field name="code">491100</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_payable"/>
+            <field ref="a49" name="parent_id"/>
+        </record>
+        <record id="a492000" model="account.account.template">
+            <field name="name">CHARGES A IMPUTER</field>
+            <field name="code">492000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_payable"/>
+            <field ref="a49" name="parent_id"/>
+        </record>
+        <record id="a499000" model="account.account.template">
+            <field name="name">COMPTE D'ATTENTE</field>
+            <field name="code">499000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_payable"/>
+            <field ref="a49" name="parent_id"/>
+        </record>
+
+        <record id="a5" model="account.account.template">
+            <field name="name">PLACEMENTS DE TRESORERIES</field>
+            <field name="code">5</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="user_type_view"/>
+            <field ref="a_root" name="parent_id"/>
+        </record>
+
+        <record id="a53" model="account.account.template">
+            <field name="name">SS TOT CL 53</field>
+            <field name="code">53</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="user_type_view"/>
+            <field ref="a5" name="parent_id"/>
+        </record>
+
+        <record id="a530010" model="account.account.template">
+            <field name="name">STRAIGHT BBL</field>
+            <field name="code">530010</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_cash"/>
+            <field ref="a53" name="parent_id"/>
+        </record>
+
+        <record id="a530020" model="account.account.template">
+            <field name="name">STRAIGHT CBC</field>
+            <field name="code">530020</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_cash"/>
+            <field ref="a53" name="parent_id"/>
+        </record>
+        <record id="a530050" model="account.account.template">
+            <field name="name">SWAP ING</field>
+            <field name="code">530050</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_cash"/>
+            <field ref="a53" name="parent_id"/>
+        </record>
+
+
+        <record id="a55" model="account.account.template">
+            <field name="name">SS TOT CL 55</field>
+            <field name="code">55</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="user_type_view"/>
+            <field ref="a5" name="parent_id"/>
+        </record>
+        <record id="a550000" model="account.account.template">
+            <field name="name">BBL EURO</field>
+            <field name="code">550000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_bank"/>
+            <field ref="a55" name="parent_id"/>
+        </record>
+        <record id="a550030" model="account.account.template">
+            <field name="name">BBL USD</field>
+            <field name="code">550030</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_bank"/>
+            <field ref="a55" name="parent_id"/>
+        </record>
+        <record id="a550060" model="account.account.template">
+            <field name="name">BBL BREDA</field>
+            <field name="code">550060</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_bank"/>
+            <field ref="a55" name="parent_id"/>
+        </record>
+        <record id="a550071" model="account.account.template">
+            <field name="name">BBL FRANKFURT</field>
+            <field name="code">550071</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_bank"/>
+            <field ref="a55" name="parent_id"/>
+        </record>
+        <record id="a550090" model="account.account.template">
+            <field name="name">BBL LONDON</field>
+            <field name="code">550090</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_bank"/>
+            <field ref="a55" name="parent_id"/>
+        </record>
+        <record id="a558000" model="account.account.template">
+            <field name="name">BBL FRANCE</field>
+            <field name="code">558000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_bank"/>
+            <field ref="a55" name="parent_id"/>
+        </record>
+        <record id="a559000" model="account.account.template">
+            <field name="name">CBC EURO</field>
+            <field name="code">559000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_bank"/>
+            <field ref="a55" name="parent_id"/>
+        </record>
+        <record id="a559010" model="account.account.template">
+            <field name="name">CBC USD</field>
+            <field name="code">559010</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_bank"/>
+            <field ref="a55" name="parent_id"/>
+        </record>
+
+        <record id="a57" model="account.account.template">
+            <field name="name">SS TOT CL 57</field>
+            <field name="code">57</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="user_type_view"/>
+            <field ref="a5" name="parent_id"/>
+        </record>
+        <record id="a570000" model="account.account.template">
+            <field name="name">CAISSE</field>
+            <field name="code">570000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_cash"/>
+            <field ref="a57" name="parent_id"/>
+        </record>
+
+        <record id="a58" model="account.account.template">
+            <field name="name">SS TOT CL 58</field>
+            <field name="code">58</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="user_type_view"/>
+            <field ref="a5" name="parent_id"/>
+        </record>
+        <record id="a580000" model="account.account.template">
+            <field name="name">TRANSFERTS INTERNES</field>
+            <field name="code">580000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_cash"/>
+            <field ref="a58" name="parent_id"/>
+        </record>
+
+        <record id="a6" model="account.account.template">
+            <field name="name">CHARGES</field>
+            <field name="code">6</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="user_type_view"/>
+            <field ref="a_root" name="parent_id"/>
+        </record>
+        <record id="a60" model="account.account.template">
+            <field name="name">APPROVISIONNEMENTS ET MARCHANDISES</field>
+            <field name="code">60</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="user_type_view"/>
+            <field ref="a6" name="parent_id"/>
+        </record>        
+        <record id="a604000" model="account.account.template">
+            <field name="name">ACHATS BELGIQUE</field>
+            <field name="code">604000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a60" name="parent_id"/>
+        </record>
+        <record id="a604001" model="account.account.template">
+            <field name="name">ACHATS INTRACOMMUNAUTAIRES</field>
+            <field name="code">604001</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a60" name="parent_id"/>
+        </record>
+        <record id="a604002" model="account.account.template">
+            <field name="name">ACHATS EXTRACOMMUNAUTAIRES</field>
+            <field name="code">604002</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a60" name="parent_id"/>
+        </record>
+        <record id="a609000" model="account.account.template">
+            <field name="name">VARIATION DE STOCK</field>
+            <field name="code">609000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a60" name="parent_id"/>
+        </record>
+        <record id="a61" model="account.account.template">
+            <field name="name">SERVICES ET BIENS DIVERS</field>
+            <field name="code">61</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="user_type_view"/>
+            <field ref="a6" name="parent_id"/>
+        </record>
+        <record id="a610001" model="account.account.template">
+            <field name="name">LOYER TRADE MART</field>
+            <field name="code">610001</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a610100" model="account.account.template">
+            <field name="name">LOCATION DE VOITURES + CAMION</field>
+            <field name="code">610100</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a610200" model="account.account.template">
+            <field name="name">LOCATION DE MATERIEL</field>
+            <field name="code">610200</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a610210" model="account.account.template">
+            <field name="name">LOY. GARAGE+INTERNET RENSONNET</field>
+            <field name="code">610210</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a610306" model="account.account.template">
+            <field name="name">AUDI A6 ALLROAD H.DAV</field>
+            <field name="code">610306</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a610308" model="account.account.template">
+            <field name="name">LOCAT PASSAT 1-BXE-306</field>
+            <field name="code">610308</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a610312" model="account.account.template">
+            <field name="name">LOCATION FOURGON 313 CDI</field>
+            <field name="code">610312</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a610313" model="account.account.template">
+            <field name="name">LOCATION S 350 CDI</field>
+            <field name="code">610313</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a610314" model="account.account.template">
+            <field name="name">LOCAT AUDI A7 - 1 CUG 300</field>
+            <field name="code">610314</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a610315" model="account.account.template">
+            <field name="name">LOCATION_FOURGON_2012</field>
+            <field name="code">610315</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a611000" model="account.account.template">
+            <field name="name">ENTR. ET REPARAT.IMMEUBLES</field>
+            <field name="code">611000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a611020" model="account.account.template">
+            <field name="name">ENTRET. ET REPAR. MATERIEL</field>
+            <field name="code">611020</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+
+        <record id="a611030" model="account.account.template">
+            <field name="name">ENTR.ET REPAR.MATER.BUREAU</field>
+            <field name="code">611030</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a611040" model="account.account.template">
+            <field name="name">ENTRET ET REPARAT VOITURES</field>
+            <field name="code">611040</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a611050" model="account.account.template">
+            <field name="name">ENTRET ET REPARAT VOITURES</field>
+            <field name="code">611050</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a611071" model="account.account.template">
+            <field name="name">ACHATS PNEUS VOITURE</field>
+            <field name="code">611071</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a611080" model="account.account.template">
+            <field name="name">ACHATS CARBURANT VOITURE</field>
+            <field name="code">611080</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a611090" model="account.account.template">
+            <field name="name">ACHATS CARBURANT CAMION</field>
+            <field name="code">611090</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a611300" model="account.account.template">
+            <field name="name">ENTRETIENS ET REPARATIONS LOCAUX</field>
+            <field name="code">611300</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a611310" model="account.account.template">
+            <field name="name">NETTOY.CAHOTTES (NETTOSERVICE)</field>
+            <field name="code">611310</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a611342" model="account.account.template">
+            <field name="name">ENTRET. ET REPAR. MATERIEL INFORMAT.</field>
+            <field name="code">611342</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a612007" model="account.account.template">
+            <field name="name">EAU FLEMALLE 27 CAH.BIS</field>
+            <field name="code">612007</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a612029" model="account.account.template">
+            <field name="name">ELECTRICITE LAMPIRIS</field>
+            <field name="code">612029</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a612050" model="account.account.template">
+            <field name="name">PETIT MATERIEL</field>
+            <field name="code">612050</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a612102" model="account.account.template">
+            <field name="name">TELEPHONE RNIS</field>
+            <field name="code">612102</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a612106" model="account.account.template">
+            <field name="name">TOLEDO</field>
+            <field name="code">612106</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a612130" model="account.account.template">
+            <field name="name">FRAIS POSTAUX</field>
+            <field name="code">612130</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a612156" model="account.account.template">
+            <field name="name">GAZ FLEMALLE 27 - ESSENT</field>
+            <field name="code">612156</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a612157" model="account.account.template">
+            <field name="name">GAZ FLEMALLE LAMPIRIS</field>
+            <field name="code">612157</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a612162" model="account.account.template">
+            <field name="name">GSM PROXIMUS</field>
+            <field name="code">612162</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a612181" model="account.account.template">
+            <field name="name">ABONNEMENT TELEDISNET/NRB</field>
+            <field name="code">612181</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a612191" model="account.account.template">
+            <field name="name">ABONNEMENT ISABEL</field>
+            <field name="code">612191</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a612195" model="account.account.template">
+            <field name="name">ABONN.VIASAT S320 CDI</field>
+            <field name="code">612195</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a612197" model="account.account.template">
+            <field name="name">ABONNEMENT OKTOPUS</field>
+            <field name="code">612197</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a612198" model="account.account.template">
+            <field name="name">ABONN.TELEFLEET</field>
+            <field name="code">612198</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="612300" model="account.account.template">
+            <field name="name">IMPRIMES ET FOURNITURES DE BUREAU</field>
+            <field name="code">612300</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a612301" model="account.account.template">
+            <field name="name">FOURNITURES ORDINATEURS</field>
+            <field name="code">612301</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a612302" model="account.account.template">
+            <field name="name">FOURNITURES DESIGNER</field>
+            <field name="code">612302</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a612303" model="account.account.template">
+            <field name="name">FOURNITURES DESIGNER IC</field>
+            <field name="code">612303</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a612340" model="account.account.template">
+            <field name="name">COPIES COULEURS + N/B</field>
+            <field name="code">612340</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a612400" model="account.account.template">
+            <field name="name">EMBALLAGE</field>
+            <field name="code">612400</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a612410" model="account.account.template">
+            <field name="name">FOURNITURES INFORMATIQUES</field>
+            <field name="code">612410</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a612411" model="account.account.template">
+            <field name="name">MATERIEL INFORMATIQUE IC</field>
+            <field name="code">612411</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a612520" model="account.account.template">
+            <field name="name">EMBALLAGES PERDUS</field>
+            <field name="code">612520</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a612900" model="account.account.template">
+            <field name="name">VIVRES ET BOISSONS</field>
+            <field name="code">612900</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a613100" model="account.account.template">
+            <field name="name">ASSURANCE INCENDIE</field>
+            <field name="code">613100</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a613120" model="account.account.template">
+            <field name="name">ASSURANCE AUTOS/CAMION</field>
+            <field name="code">613120</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a613131" model="account.account.template">
+            <field name="name">ASS.CREDIT EULER HERMES</field>
+            <field name="code">613131</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a613140" model="account.account.template">
+            <field name="name">ASSURANCE RC</field>
+            <field name="code">613140</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a613170" model="account.account.template">
+            <field name="name">ASSURANCE MARCHANDISES</field>
+            <field name="code">613170</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a613191" model="account.account.template">
+            <field name="name">ASSURANCE DE GROUPE SWISS LIFE</field>
+            <field name="code">613191</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a613196" model="account.account.template">
+            <field name="name">ASSURANCES RISQUES INF_D.</field>
+            <field name="code">613196</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a613197" model="account.account.template">
+            <field name="name">ASSURANCE PROTECTION JURIDIQUE</field>
+            <field name="code">613197</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a613200" model="account.account.template">
+            <field name="name">COMMISSIONS</field>
+            <field name="code">613200</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a613202" model="account.account.template">
+            <field name="name">COMMISSIONS IC</field>
+            <field name="code">613202</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a613210" model="account.account.template">
+            <field name="name">HONORAIRES</field>
+            <field name="code">613210</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a613212" model="account.account.template">
+            <field name="name">HONORAIRES EX</field>
+            <field name="code">613212</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a613213" model="account.account.template">
+            <field name="name">HONORAIRES IC</field>
+            <field name="code">613213</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a613215" model="account.account.template">
+            <field name="name">ADECCO + RANDSTADT INTERIM</field>
+            <field name="code">613215</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a613217" model="account.account.template">
+            <field name="name">CHEQUES-FORMATION</field>
+            <field name="code">613217</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a613220" model="account.account.template">
+            <field name="name">COTISAT.GROUP.PROF</field>
+            <field name="code">613220</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a613221" model="account.account.template">
+            <field name="name">COTISATIONS FOST PLUS</field>
+            <field name="code">613221</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a613222" model="account.account.template">
+            <field name="name">COTISATIONS VALIPAC</field>
+            <field name="code">613222</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a613223" model="account.account.template">
+            <field name="name">ECO PASS CHEQUE SODEXHO</field>
+            <field name="code">613223</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a613300" model="account.account.template">
+            <field name="name">DEPLACTS. EN BELG. TRAIN,TAXI,ETC.</field>
+            <field name="code">613300</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a613310" model="account.account.template">
+            <field name="name">DEPLACTS.ETRANG.AVION,TRAIN,TAXI,E</field>
+            <field name="code">613310</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a613311" model="account.account.template">
+            <field name="name">VOYAGES ET PROSPECTIONS</field>
+            <field name="code">613311</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a613320" model="account.account.template">
+            <field name="name">FRAIS DE TRANSPORT IMPORT</field>
+            <field name="code">613320</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a613321" model="account.account.template">
+            <field name="name">FRAIS DE TRANSPORT BENELUX</field>
+            <field name="code">613321</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a613330" model="account.account.template">
+            <field name="name">FRAIS DE DOUANE</field>
+            <field name="code">613330</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a613340" model="account.account.template">
+            <field name="name">FRAIS DE TRANSPORT EXPORT</field>
+            <field name="code">613340</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a613344" model="account.account.template">
+            <field name="name">FRAIS TRANSP. DPD</field>
+            <field name="code">613344</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a613350" model="account.account.template">
+            <field name="name">REMBOURSEMENT FRAIS REPRES.</field>
+            <field name="code">613350</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a614000" model="account.account.template">
+            <field name="name">FRAIS CLIENTS ET PUB</field>
+            <field name="code">614000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a614120" model="account.account.template">
+            <field name="name">CATALOGUES CLIENTS</field>
+            <field name="code">614120</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a614200" model="account.account.template">
+            <field name="name">FOIRES ET EXPOSITIONS</field>
+            <field name="code">614200</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a614201" model="account.account.template">
+            <field name="name">FOIRES ET EXPOSITIONS IC</field>
+            <field name="code">614201</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+        <record id="a614300" model="account.account.template">
+            <field name="name">CADEAUX A LA CLIENTELE</field>
+            <field name="code">614300</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a61" name="parent_id"/>
+        </record>
+
+        <record id="a62" model="account.account.template">
+            <field name="name">SS TOT CL 62</field>
+            <field name="code">62</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="user_type_view"/>
+            <field ref="a6" name="parent_id"/>
+        </record>
+        <record id="a620000" model="account.account.template">
+            <field name="name">REMUNERATIONS ADMINISTRATEURS</field>
+            <field name="code">620000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a62" name="parent_id"/>
+        </record>
+        <record id="a620200" model="account.account.template">
+            <field name="name">SALARIES</field>
+            <field name="code">620200</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a62" name="parent_id"/>
+        </record>
+        <record id="a620400" model="account.account.template">
+            <field name="name">AUTRES MENBRES DU PERSONNEL</field>
+            <field name="code">620400</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a62" name="parent_id"/>
+        </record>
+        <record id="a621000" model="account.account.template">
+            <field name="name">ONSS S/SALAIRES</field>
+            <field name="code">621000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a62" name="parent_id"/>
+        </record>
+        <record id="a623000" model="account.account.template">
+            <field name="name">ASS.LOI CHEMIN DUTRAVAIL</field>
+            <field name="code">623000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a62" name="parent_id"/>
+        </record>
+        <record id="a623600" model="account.account.template">
+            <field name="name">VETEMENTS DE TRAVAIL EMPLOYES</field>
+            <field name="code">623600</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a62" name="parent_id"/>
+        </record>
+        <record id="a625000" model="account.account.template">
+            <field name="name">DOT.PROV.PEC.VACANCES</field>
+            <field name="code">625000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a62" name="parent_id"/>
+        </record>
+        <record id="a625100" model="account.account.template">
+            <field name="name">UTILISATION PROV PEC VAC</field>
+            <field name="code">625100</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a62" name="parent_id"/>
+        </record>
+
+        <record id="a63" model="account.account.template">
+            <field name="name">SS TOT CL 63</field>
+            <field name="code">63</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="user_type_view"/>
+            <field ref="a6" name="parent_id"/>
+        </record>
+        <record id="a630200" model="account.account.template">
+            <field name="name">DOT.ATS/IMMO CORPORELLES</field>
+            <field name="code">630200</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a63" name="parent_id"/>
+        </record>
+        <record id="a634000" model="account.account.template">
+            <field name="name">DOT.RED.VAL./CR.COM1</field>
+            <field name="code">634000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a63" name="parent_id"/>
+        </record>
+
+        <record id="a64" model="account.account.template">
+            <field name="name">SS TOT CL 64</field>
+            <field name="code">64</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="user_type_view"/>
+            <field ref="a6" name="parent_id"/>
+        </record>
+        <record id="a640000" model="account.account.template">
+            <field name="name">TAXES DE CIRCULATION AUTOS/CAMIONS</field>
+            <field name="code">640000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a64" name="parent_id"/>
+        </record>
+        <record id="a640120" model="account.account.template">
+            <field name="name">TVA NON DEDUCTIBLE</field>
+            <field name="code">640120</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a64" name="parent_id"/>
+        </record>
+        <record id="a640140" model="account.account.template">
+            <field name="name">DROIT D ENTREE</field>
+            <field name="code">640140</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a64" name="parent_id"/>
+        </record>
+        <record id="a640400" model="account.account.template">
+            <field name="name">TAXES DIVERSES</field>
+            <field name="code">640400</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a64" name="parent_id"/>
+        </record>
+
+        <record id="a65" model="account.account.template">
+            <field name="name">SS TOT CL 65</field>
+            <field name="code">65</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="user_type_view"/>
+            <field ref="a6" name="parent_id"/>
+        </record>
+        <record id="a650000" model="account.account.template">
+            <field name="name">INTERETS CREDIT D'INVEST</field>
+            <field name="code">650000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a65" name="parent_id"/>
+        </record>
+        <record id="a653000" model="account.account.template">
+            <field name="name">ESCOMPTE ACCORDE</field>
+            <field name="code">653000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a65" name="parent_id"/>
+        </record>
+        <record id="a654000" model="account.account.template">
+            <field name="name">DIFFERENCES DE CHANGE</field>
+            <field name="code">654000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a65" name="parent_id"/>
+        </record>
+        <record id="a655000" model="account.account.template">
+            <field name="name">DIFFERENCES DE PAIEMENT</field>
+            <field name="code">655000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a65" name="parent_id"/>
+        </record>
+        <record id="a655100" model="account.account.template">
+            <field name="name">FRAIS DE BANQUE</field>
+            <field name="code">655100</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a65" name="parent_id"/>
+        </record>
+        <record id="a657000" model="account.account.template">
+            <field name="name">INTERETS S/ TRAITES ET EFFETS</field>
+            <field name="code">657000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a65" name="parent_id"/>
+        </record>
+        <record id="a658000" model="account.account.template">
+            <field name="name">INTERETS DEBITEURS</field>
+            <field name="code">658000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a65" name="parent_id"/>
+        </record>
+
+        <record id="a66" model="account.account.template">
+            <field name="name">SS TOT CL 66</field>
+            <field name="code">66</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="user_type_view"/>
+            <field ref="a6" name="parent_id"/>
+        </record>
+
+        <record id="a660000" model="account.account.template">
+            <field name="name">COMPTE CHARGES EXPLOITATION</field>
+            <field name="code">660000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a66" name="parent_id"/>
+        </record>
+        <record id="a665300" model="account.account.template">
+            <field name="name">PERTES ET CHARGES DIVERSES</field>
+            <field name="code">665300</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_expense"/>
+            <field ref="a66" name="parent_id"/>
+        </record>
+
+        <record id="a7" model="account.account.template">
+            <field name="name">PRODUITS</field>
+            <field name="code">7</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="user_type_view"/>
+            <field ref="a_root" name="parent_id"/>
+        </record>
+
+        <record id="a70" model="account.account.template">
+            <field name="name">SS TOT CL 70</field>
+            <field name="code">70</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="user_type_view"/>
+            <field ref="a7" name="parent_id"/>
+        </record>
+
+        <record id="a700000" model="account.account.template">
+            <field name="name">VENTE</field>
+            <field name="code">7000000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_income"/>
+            <field ref="a70" name="parent_id"/>
+        </record>
+        <record id="a700001" model="account.account.template">
+            <field name="name">VENTE IC</field>
+            <field name="code">7000001</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_income"/>
+            <field ref="a70" name="parent_id"/>
+        </record>
+        <record id="a700002" model="account.account.template">
+            <field name="name">VENTE EXTRACOMMUNAUTAIRE</field>
+            <field name="code">7000002</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_income"/>
+            <field ref="a70" name="parent_id"/>
+        </record>
+        <record id="a74" model="account.account.template">
+            <field name="name">SS TOT CL 74</field>
+            <field name="code">74</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="user_type_view"/>
+            <field ref="a7" name="parent_id"/>
+        </record>
+        <record id="a743000" model="account.account.template">
+            <field name="name">REMBOURSEMENT ASSURANCE</field>
+            <field name="code">743000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_income"/>
+            <field ref="a74" name="parent_id"/>
+        </record>
+        <record id="a743120" model="account.account.template">
+            <field name="name">REMBOURS..EULER HERMES</field>
+            <field name="code">743120</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_income"/>
+            <field ref="a70" name="parent_id"/>
+        </record>
+        <record id="a749000" model="account.account.template">
+            <field name="name">AUTRES PRODUITS D EXPLOITATION</field>
+            <field name="code">749000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_income"/>
+            <field ref="a74" name="parent_id"/>
+        </record>
+
+
+        <record id="a75" model="account.account.template">
+            <field name="name">SS TOT CL 75</field>
+            <field name="code">75</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="user_type_view"/>
+            <field ref="a7" name="parent_id"/>
+        </record>
+        <record id="a750000" model="account.account.template">
+            <field name="name">INTERETS CREDITEURS</field>
+            <field name="code">750000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_income"/>
+            <field ref="a75" name="parent_id"/>
+        </record>
+        <record id="a753310" model="account.account.template">
+            <field name="name">SUBSIDES REGION WALLONNE</field>
+            <field name="code">753310</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_income"/>
+            <field ref="a75" name="parent_id"/>
+        </record>
+        <record id="a753325" model="account.account.template">
+            <field name="name">SUBSIDES RENSONNET</field>
+            <field name="code">753325</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_income"/>
+            <field ref="a75" name="parent_id"/>
+        </record>
+        <record id="a754000" model="account.account.template">
+            <field name="name">DIFFERENCES DE CHANGE</field>
+            <field name="code">754000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_income"/>
+            <field ref="a75" name="parent_id"/>
+        </record>
+        <record id="a756000" model="account.account.template">
+            <field name="name">PRODUITS FINANCIERS DIVERS</field>
+            <field name="code">756000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_income"/>
+            <field ref="a75" name="parent_id"/>
+        </record>
+        <record id="a758000" model="account.account.template">
+            <field name="name">ESCOMPTES OBTENUS</field>
+            <field name="code">758000</field>
+            <field name="type">other</field>
+            <field name="user_type" ref="account.data_account_type_income"/>
+            <field ref="a75" name="parent_id"/>
+        </record>
+
+       <record id="a78" model="account.account.template">
+            <field name="name">SS TOT CL 78</field>
+            <field name="code">78</field>
+            <field name="type">view</field>
+            <field name="user_type" ref="user_type_view"/>
+            <field ref="a7" name="parent_id"/>
+        </record>
+
+       <record id="a780000" model="account.account.template">
+           <field name="name">ETALEMENT ID +VALUE2001 REMPLOI 200</field>
+           <field name="code">780000</field>
+           <field name="type">other</field>
+           <field name="user_type" ref="account.data_account_type_income"/>
+           <field ref="a78" name="parent_id"/>
+       </record>
+       <record id="a780001" model="account.account.template">
+           <field name="name">ETAL. ID +VALUE 2003 REMPLOI 2003</field>
+           <field name="code">780001</field>
+           <field name="type">other</field>
+           <field name="user_type" ref="account.data_account_type_income"/>
+           <field ref="a78" name="parent_id"/>
+       </record>
+       <record id="a780002" model="account.account.template">
+           <field name="name">ETAL ID +VALUE 2010</field>
+           <field name="code">780002</field>
+           <field name="type">other</field>
+           <field name="user_type" ref="account.data_account_type_income"/>
+           <field ref="a78" name="parent_id"/>
+       </record>
+
+       <record id="a789000" model="account.account.template">
+           <field name="name">ETAL.+VALUE 2001 REMPLOI 2001</field>
+           <field name="code">789000</field>
+           <field name="type">other</field>
+           <field name="user_type" ref="account.data_account_type_income"/>
+           <field ref="a78" name="parent_id"/>
+       </record>
+       <record id="a789001" model="account.account.template">
+           <field name="name">ETAL.+VALUE 2003 REMPLOI 2003</field>
+           <field name="code">789001</field>
+           <field name="type">other</field>
+           <field name="user_type" ref="account.data_account_type_income"/>
+           <field ref="a78" name="parent_id"/>
+       </record>
+       <record id="a789002" model="account.account.template">
+           <field name="name">ETAL + VALUE 2010</field>
+           <field name="code">789002</field>
+           <field name="type">other</field>
+           <field name="user_type" ref="account.data_account_type_income"/>
+           <field ref="a78" name="parent_id"/>
+       </record>
+    </data>
+</openerp>
+    

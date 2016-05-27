@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+
+		<record model="ir.ui.view" id="evenement_tree_view">
+			<field name="name">evenement.tree</field>
+			<field name="model">evenement.evenement</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="The events">
+					<field name="name" />
+					<field name="type_evenement_id" />
+					<field name="date_begin" />
+					<field name="date_end" />
+					<field name="date_expedition" />
+				</tree>
+			</field>
+		</record>
+
+
+
+		<record model="ir.ui.view" id="evenement_form_view">
+			<field name="name">evenement.form</field>
+			<field name="model">evenement.evenement</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Events" version="7.0">
+					<sheet>
+						<group>
+
+							<field name="name" />
+							<field name="type_evenement_id" />
+							<field name="date_begin" />
+							<field name="date_end" />
+							<field name="date_expedition" />
+							
+
+
+						</group>
+
+					</sheet>
+
+				</form>
+			</field>
+		</record>
+
+
+
+
+		<record model="ir.actions.act_window" id="act_evenement">
+			<field name="name">Events</field>
+			<field name="res_model">evenement.evenement</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="context">{'search_default_Responsable':uid} </field>
+		</record>
+
+<menuitem action="act_evenement" id="menu_evenement" name="Events" parent="menu_purchase_Evenement" />
+
+	</data>
+</openerp>

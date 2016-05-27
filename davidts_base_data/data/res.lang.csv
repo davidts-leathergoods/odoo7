@@ -1,0 +1,5 @@
+id,code,direction,date_format,time_format,grouping,name,thousands_sep,decimal_point,translatable
+base.lang_nl,nl_NL,Left-to-Right,%d/%m/%Y,%H:%M:%S,[],Dutch / Nederlands,,",",TRUE
+base.lang_de,de_DE,Left-to-Right,%d/%m/%Y,%H:%M:%S,[],German / Deutsch,,",",TRUE
+base.lang_it,it_IT,Left-to-Right,%d/%m/%Y,%H:%M:%S,[],Italian / Italiano,,",",TRUE
+base.lang_es,es_ES,Left-to-Right,%d/%m/%Y,%H:%M:%S,[],Spanish / Español,,",",TRUE

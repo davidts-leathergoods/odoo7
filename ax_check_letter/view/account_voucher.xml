@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="ax_view_account_voucher_search" model="ir.ui.view">
+            <field name="name">ax.account.voucher.search</field>
+            <field name="model">account.voucher</field>
+            <field name="priority" eval="16"/>
+            <field name="inherit_id" ref="account_voucher.view_voucher_filter_customer_pay"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@string='Group By...']/filter[last()]" position="after">
+                    <filter icon="terp-personal" domain="[]" context="{'group_by':'ax_check_letter_batch_number'}" string="Check-letter batch"/>
+                </xpath>
+                <xpath expr="//filter[@string='Posted']" position="after">
+                    <filter domain="[('ax_check_letter_printed', '=', True), ('ax_check_letter_batch_number', '!=', None)]" help="Check-letter printed" icon="terp-personal"/>
+                    <filter domain="[('ax_check_letter_printed', '=', False), ('ax_check_letter_batch_number', '!=', None)]" help="Check-letter not printed" icon="terp-personal"/>
+                </xpath>
+                <xpath expr="//field[@name='period_id']" position="after">
+                    <field name="ax_check_letter_printed"/>
+                    <field name="ax_check_letter_batch_number"/>
+                    <field name="ax_check_letter_recipient"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="ax_view_account_voucher_tree" model="ir.ui.view">
+            <field name="name">ax.account.voucher.tree</field>
+            <field name="model">account.voucher</field>
+            <field name="priority" eval="16"/>
+            <field name="inherit_id" ref="account_voucher.view_voucher_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="ax_check_letter_batch_number"/>
+                    <field name="ax_check_letter_recipient" string="Check recipient"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="view_account_voucher_form" model="ir.ui.view">
+            <field name="name">ax.account.voucher.form</field>
+            <field name="model">account.voucher</field>
+            <field name="priority" eval="17"/>
+            <field name="inherit_id" ref="account_voucher.view_vendor_receipt_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header/button[last()]" position="after">
+                    <button string="Pay by check-letter"
+                            type="action" name="%(ax_check_letter.act_pay_check_letter_unit)d"
+                            attrs="{'invisible': ['|', ('state', '!=', 'draft'), ('ax_check_letter_batch_number', '!=', False)]}"
+                            class="oe_highlight"
+                            group="account.group_account_invoice"/>
+                </xpath>
+
+
+                <xpath expr="/form/sheet/notebook/page[last()]" position="after">
+                    <page string="Check letter"
+                          attrs="{'invisible':[('ax_check_letter_batch_number','=',False)]}">
+                        <group>
+                            <field name="ax_check_letter_batch_number" readonly="1"/>
+                            <field name="ax_check_letter_printed" readonly="1"/>
+                            <field name="ax_check_letter_template" group="account.group_account_invoice" />
+                            <field name="ax_check_letter_recipient" readonly="1"/>
+                            <button string="Print check-letter duplicate"
+                                    type="action"
+                                    name="%(ax_check_letter.check_letter)d"
+                                    group="account.group_account_manager"
+                                    attrs="{'invisible': [('ax_check_letter_printed', '!=', True)]}"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

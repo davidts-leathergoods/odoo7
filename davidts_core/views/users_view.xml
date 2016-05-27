@@ -1,0 +1,21 @@
+<openerp>
+	<data>
+
+       <!--  <record id="view_users_form" model="ir.ui.view">
+            <field name="name">res.users.form</field>
+            <field name="model">res.users</field>
+			<field name="inherit_id" ref="base.view_users_form" />
+			<field name="arch" type="xml">
+                <xpath expr="//form/sheet/notebook/page[@string='Access Rights']" position="after">
+                    <page string="Commissions">
+                        <group name="Dates">
+                            <field name="start_date_period"/>
+                            <field name="end_date_period"/>
+                        </group>
+                    </page>
+                </xpath>
+			</field>
+		</record> -->
+
+	</data>
+</openerp>

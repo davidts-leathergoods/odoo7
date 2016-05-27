@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- Davidts Groups -->
+
+		<record id="group_davidts_manager" model="res.groups">
+			<field name="name">Davidts Manager</field>
+		</record>
+
+		<record id="group_davidts_user" model="res.groups" context="{'noadmin':True}">
+			<field name="name">Davidts User</field>
+		</record>
+
+	</data>
+</openerp>

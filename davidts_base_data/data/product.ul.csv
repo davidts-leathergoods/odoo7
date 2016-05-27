@@ -1,0 +1,4 @@
+id,name,type
+Product.product_ul_colis,Colis,Pack
+Product.product_ul_palette,Palette,Pallet
+Product.product_ul_unite,Unite,Unit

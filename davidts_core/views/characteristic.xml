@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<record id="davidts_metier_form" model="ir.ui.view">
+			<field name="name">davidts.metier.form</field>
+			<field name="model">davidts.metier</field>
+			<field name="arch" type="xml">
+				<form string="Metier" version="7.0">
+					<sheet>
+						<group colspan="4">
+							<field name="name" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		
+		<!--begin Evolution #46809  -->
+		<record id="davidts_inner_material_form" model="ir.ui.view">
+			<field name="name">davidts.inner.material.form</field>
+			<field name="model">davidts.inner_material</field>
+			<field name="arch" type="xml">
+				<form string="Inner Material" version="7.0">
+					<sheet>
+						<group colspan="4">
+							<field name="name" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<!--end Evolution #46809  -->
+		<!--begin Evolution #47456  -->
+		<record id="davidts_outer_material_form" model="ir.ui.view">
+			<field name="name">davidts.outer.material.form</field>
+			<field name="model">davidts.outer_material</field>
+			<field name="arch" type="xml">
+				<form string="Outer Material" version="7.0">
+					<sheet>
+						<group colspan="4">
+							<field name="name" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<!--end Evolution #47456  -->
+		
+		
+		
+		<!--begin Evolution #46809  -->
+		<record id="action_davidts_inner_material" model="ir.actions.act_window">
+			<field name="name">Inner.Material</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">davidts.inner_material</field>
+			<field name="view_type">form</field>
+		</record>
+		<!--end Evolution #46809  -->
+		<!--begin Evolution #47456  -->
+		<record id="action_davidts_outer_material" model="ir.actions.act_window">
+			<field name="name">Outer.Material</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">davidts.outer_material</field>
+			<field name="view_type">form</field>
+		</record>
+		<!--end Evolution #47456  -->
+
+
+		<record id="action_davidts_metier" model="ir.actions.act_window">
+			<field name="name">Metier</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">davidts.metier</field>
+			<field name="view_type">form</field>
+		</record>
+
+		
+			
+		<menuitem action="action_davidts_metier" id="menu_davidts_metier"
+			parent="base.menu_base_config" name="Metiers" groups="base.group_system" />
+		<!--begin Evolution #46809  -->
+		<menuitem action="action_davidts_inner_material" id="menu_davidts_inner_material"
+			parent="base.menu_base_config" name="Inner Material" groups="base.group_system" />
+		<!--end Evolution #46809  -->
+		<!--begin Evolution #47456  -->
+		<menuitem action="action_davidts_outer_material" id="menu_davidts_outer_material"
+			parent="base.menu_base_config" name="Outer Material" groups="base.group_system" />
+		<!--end Evolution #47456  -->
+		
+
+	</data>
+</openerp>

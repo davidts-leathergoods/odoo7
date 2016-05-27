@@ -1,0 +1,193 @@
+<openerp>
+	<data>
+	
+	   <record id="view_order_tree" model="ir.ui.view">
+            <field name="name">sale.order.tree</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree" />
+            <field name="arch" type="xml">
+                <field name="user_id" position="after">
+                    <field name="client_order_ref"/>
+                </field>
+            </field>
+        </record>
+        
+		<record id="view_davidts_sale_order_form" model="ir.ui.view">
+			<field name="name">davidts_sale_order_form</field>
+			<field name="model">sale.order</field>
+			<field name="inherit_id" ref="sale.view_order_form" />
+			<field name="arch" type="xml">
+                <button name="action_quotation_send" string="Send by Email" type="object" states="draft" class="oe_highlight" position="after">
+                    <button name="action_quotation_to_confirm" string="To confirm" type="object" states="draft" class="oe_highlight"/>
+                    <button name="action_quotation_draft" string="Draft" type="object" states="to_confirm" class="oe_highlight"/>
+                    <button name="action_quotation_send" string="Send by Email" type="object" states="to_confirm" class="oe_highlight" groups="base.group_user"/>
+                    <button name="action_button_confirm" states="to_confirm" string="Confirm Sale" type="object" groups="base.group_user"/>
+                </button>
+                <button name="cancel" states="draft,sent" string="Cancel Quotation" groups="base.group_user" position="replace">
+                    <button name="cancel" states="draft,sent,to_confirm" string="Cancel Quotation" groups="base.group_user"/>
+                </button>
+				<xpath expr="//form/sheet/group/group/field[@name='partner_id']" position="after">
+					<field name="warning" attrs="{'invisible': ['|',('partner_id','=', False),('warning','=', False)]}" />
+				</xpath>
+				<field name="partner_shipping_id" position="after">
+					<field name="credit_limit" attrs="{'invisible': [('partner_id','=', False)]}" />
+					<field name="credit" attrs="{'invisible': [('partner_id','=', False)]}" />
+					<field name="to_invoice" attrs="{'invisible': [('partner_id','=', False)]}" />
+				</field>
+
+				<label string="Quotation " position="before">
+					<field name="warning_sale_order_limit_credit" invisible="1" />
+					<separator string="Attention : customer credit is over the credit limit."
+						attrs="{'invisible':['|',('state', '=', ('done')),('warning_sale_order_limit_credit','!=','True')]}" />
+					<separator />
+				</label>
+				<xpath expr="//form/sheet/group/group/field[@name='pricelist_id']"
+					position="after">
+					<field name="requested_date" />
+					<field name="delay_appro" string="Procurement lead time" />
+					<field name="ex_work" />
+				</xpath>
+				<xpath
+					expr="//page[@string='Order Lines']/field[@name='order_line']/tree[@string='Sales Order Lines']/field[@name='tax_id']"
+					position="after">
+					<field name="list_price2" />
+				</xpath>
+				<field name="amount_total" position="after">
+					<div>
+						<button name="button_update_price_product" states="draft,sent"
+							string="(Calculate discounts)" type="object" class="oe_edit_only oe_link" />
+					</div>
+				</field>
+				<xpath
+					expr="//page[@string='Order Lines']/field[@name='order_line']/tree[@string='Sales Order Lines']/field[@name='tax_id']"
+					position="replace">
+					<field name="tax_id" invisible="1" />
+				</xpath>
+				<xpath
+					expr="//page[@string='Order Lines']/field[@name='order_line']/tree[@string='Sales Order Lines']/field[@name='price_subtotal']"
+					position="after">
+					<field name="name"/>
+                    <field name="price_unit_for_list_price" invisible="1"/>
+				</xpath>
+				<xpath
+					expr="//page[@string='Order Lines']/field[@name='order_line']/tree[@string='Sales Order Lines']/field[@name='name']"
+					position="replace">
+				</xpath>
+			</field>
+		</record>
+
+
+		<!--Begin update Evolution #45659 -->
+		<record id="sale_order_dates.view_sale_orderfor" model="ir.ui.view">
+			<field name="name">sale.order.form.inherit5</field>
+			<field name="model">sale.order</field>
+			<field name="inherit_id" ref="sale.view_order_form" />
+			<field name="arch" type="xml">
+				<group name="sale_pay" position="after">
+					<group colspan="2" col="2" groups="base.group_no_one">
+						<separator string="Dates" colspan="2" />
+						<field name="commitment_date" />
+						<field name="effective_date" />
+					</group>
+				</group>
+
+			</field>
+		</record>
+
+		<record id="view_davidts_sale_picking" model="ir.ui.view">
+			<field name="name">davidts_sale_picking</field>
+			<field name="model">sale.order</field>
+			<field name="inherit_id" ref="sale_stock.view_order_form_inherit" />
+			<field name="arch" type="xml">
+				<data>
+					<field name="picking_policy" position="replace">
+						<field name="picking_policy" required="True" readonly="True" />
+					</field>
+				</data>
+			</field>
+		</record>
+
+		<record id="sale_order_filter" model="ir.ui.view">
+			<field name="name">sale.order.search.list</field>
+			<field name="model">sale.order</field>
+			<field name="inherit_id" ref="sale.view_sales_order_filter" />
+			<field name="arch" type="xml">
+				<field name="partner_id" position="replace">
+					<field name="partner_id" />
+				</field>
+			</field>
+		</record>
+
+<!--   ====================================== workflow =============================================-->
+
+
+        <record id="act_to_confirm" model="workflow.activity">
+            <field name="wkf_id" ref="sale.wkf_sale"/>
+            <field name="name">to_confirm</field>
+            <field name="kind">function</field>
+            <field name="action">write({'state':'to_confirm'})</field>
+        </record>
+
+         <record id="trans_to_confirm_cancel" model="workflow.transition">
+            <field name="act_from" ref="act_to_confirm"/>
+            <field name="act_to" ref="sale.act_cancel"/>
+            <field name="signal">cancel</field>
+        </record>
+
+        <record id="trans_draft_to_confirm" model="workflow.transition">
+            <field name="act_from" ref="sale.act_draft"/>
+            <field name="act_to" ref="act_to_confirm"/>
+            <field name="signal">quotation_to_confirm</field>
+        </record>
+
+<!--   ================================================================================================-->
+
+
+
+        <record id="sale.action_quotations" model="ir.actions.act_window">
+            <field name="name">Quotations</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="sale.view_quotation_tree"/>
+            <field name="view_mode">tree,form,calendar,graph</field>
+            <field name="context">{}</field>
+            <field name="domain">[('state','in',('draft','sent','cancel','to_confirm'))]</field>
+            <field name="search_view_id" ref="sale.view_sales_order_filter"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a quotation, the first step of a new sale.
+              </p><p>
+                OpenERP will help you handle efficiently the complete sale flow:
+                from the quotation to the sales order, the
+                delivery, the invoicing and the payment collection.
+              </p><p>
+                The social feature helps you organize discussions on each sales
+                order, and allow your customers to keep track of the evolution
+                of the sales order.
+              </p>
+            </field>
+        </record>
+
+        <record id="sale.action_orders" model="ir.actions.act_window">
+            <field name="name">Sales Orders</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar,graph</field>
+            <field name="search_view_id" ref="sale.view_sales_order_filter"/>
+            <field name="context">{}</field>
+            <field name="domain">[('state','not in',('draft','sent','cancel','to_confirm'))]</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a quotation that can be converted into a sales
+                order.
+              </p><p>
+                OpenERP will help you efficiently handle the complete sales flow:
+                quotation, sales order, delivery, invoicing and payment.
+              </p>
+            </field>
+        </record>
+
+	</data>
+</openerp> 

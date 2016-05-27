@@ -1,0 +1,1763 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* davidts_product_referential
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20140321-001341\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-25 09:47+0000\n"
+"PO-Revision-Date: 2016-05-25 09:47+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: davidts_product_referential
+#: view:product.product.wheel:0
+msgid "Fixed Wheels"
+msgstr "Fixed Wheels"
+
+#. module: davidts_product_referential
+#: view:product.product:0
+#: view:product.template:0
+msgid "Boxes & Cases"
+msgstr "Boxes & Cases"
+
+#. module: davidts_product_referential
+#: help:davidts.metier,enable_strap:0
+#: help:product.template,enable_strap:0
+#: help:product.template,strap:0
+msgid "Strap?"
+msgstr "Strap?"
+
+#. module: davidts_product_referential
+#: field:davidts.metier,enable_tablet:0
+#: model:ir.model.fields,field_description:davidts_product_referential.field_davidts_metier_enable_tablet
+msgid "EnableCompartment for tablet?"
+msgstr "EnableCompartment for tablet?"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_enable_luggage_business
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_enable_luggage_travel
+#: field:product.template,enable_luggage_business:0
+#: field:product.template,enable_luggage_travel:0
+msgid "Business luggage"
+msgstr "Business luggage"
+
+#. module: davidts_product_referential
+#: help:product.template,wheel_easyrepair:0
+msgid "Repairable wheels (easyrepair)"
+msgstr "Repairable wheels (easyrepair)"
+
+#. module: davidts_product_referential
+#: help:product.template,box_lid:0
+msgid "What kind of lid?(vitre, plein, ..)"
+msgstr "What kind of lid?(vitre, plein, ..)"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_box_lid
+#: field:product.template,box_lid:0
+msgid "What kind of lid?"
+msgstr "What kind of lid?"
+
+#. module: davidts_product_referential
+#: view:product.product.box:0
+#: view:product.product.insert:0
+#: view:product.product.lock:0
+#: view:product.product.luggage:0
+#: view:product.product.wheel:0
+#: view:product.product.winder:0
+msgid "Group By..."
+msgstr "Group By..."
+
+#. module: davidts_product_referential
+#: help:product.template,watchwinder_plug:0
+msgid "Plug or power supply (pile | secteur | pile et secteur..)"
+msgstr "Plug or power supply (pile | secteur | pile et secteur..)"
+
+#. module: davidts_product_referential
+#: help:product.template,computer_height:0
+msgid "Computer height :Exp. 35"
+msgstr "Computer height :Exp. 35"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_compartment_expandable
+#: field:product.template,compartment_expandable:0
+msgid "Expandable compartment"
+msgstr "Expandable compartment"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_computer_width
+#: field:product.template,computer_width:0
+msgid "Computer width"
+msgstr "Computer width"
+
+#. module: davidts_product_referential
+#: help:davidts.metier,enable_platform:0
+#: help:product.template,enable_platform:0
+#: help:product.template,platform:0
+msgid "Foldable platform?"
+msgstr "Foldable platform?"
+
+#. module: davidts_product_referential
+#: help:product.template,box_tray:0
+msgid "How many trays?: Exp. 3"
+msgstr "How many trays?: Exp. 3"
+
+#. module: davidts_product_referential
+#: help:davidts.metier,enable_clothing_hanger_webbing:0
+#: help:product.template,clothing_hanger:0
+#: help:product.template,enable_clothing_hanger_webbing:0
+msgid "Hangers Compartment ?"
+msgstr "Hangers Compartment ?"
+
+#. module: davidts_product_referential
+#: help:product.template,lock_type:0
+msgid "Padlock or lock? (fixe | cadenas)"
+msgstr "Padlock or lock? (fixe | cadenas)"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_watchwinder_programs
+#: field:product.template,watchwinder_programs:0
+msgid "How many programs?"
+msgstr "How many programs?"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_enable_handle_adjustable
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_enable_puller_adjustable
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_handle_adjustable
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_puller_adjustable
+#: field:product.template,enable_handle_adjustable:0
+#: field:product.template,enable_puller_adjustable:0
+#: field:product.template,handle_adjustable:0
+#: field:product.template,puller_adjustable:0
+msgid "Adjustable handle"
+msgstr "Adjustable handle"
+
+#. module: davidts_product_referential
+#: view:product.product:0
+#: view:product.template:0
+msgid "Referential "
+msgstr "Referential "
+
+#. module: davidts_product_referential
+#: model:ir.actions.act_window,name:davidts_product_referential.action_bpso_product_insert
+#: view:product.product.insert:0
+msgid "Products Inserts"
+msgstr "Products Inserts"
+
+#. module: davidts_product_referential
+#: field:davidts.metier,enable_dimension:0
+#: model:ir.model.fields,field_description:davidts_product_referential.field_davidts_metier_enable_dimension
+msgid "Enable dimension"
+msgstr "Enable dimension"
+
+#. module: davidts_product_referential
+#: view:product.product.company:0
+msgid "Company"
+msgstr "Company"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_luggage_cabin
+#: field:product.template,luggage_cabin:0
+msgid "Cabin baggage ?"
+msgstr "Cabin baggage ?"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_watchwinder_plug
+#: field:product.template,watchwinder_plug:0
+msgid "Plug or power supply?"
+msgstr "Plug or power supply?"
+
+#. module: davidts_product_referential
+#: field:davidts.metier,enable_measure_payload:0
+#: model:ir.model.fields,field_description:davidts_product_referential.field_davidts_metier_enable_measure_payload
+msgid "Enable Payload"
+msgstr "Enable Payload"
+
+#. module: davidts_product_referential
+#: help:davidts.metier,enable_accessory_trolley:0
+#: help:product.template,accessory_trolley:0
+#: help:product.template,enable_accessory_trolley:0
+msgid "Fits on a trolley?"
+msgstr "Fits on a trolley?"
+
+#. module: davidts_product_referential
+#: help:product.template,case_closing:0
+msgid "What kind of closing? (fermoir,pression,tirette ..)"
+msgstr "What kind of closing? (fermoir,pression,tirette ..)"
+
+#. module: davidts_product_referential
+#: field:davidts.metier,enable_lock:0
+#: model:ir.model.fields,field_description:davidts_product_referential.field_davidts_metier_enable_lock
+msgid "Enable Lock"
+msgstr "Enable Lock"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_lock_tsa
+#: field:product.template,lock_tsa:0
+msgid "TSA lock"
+msgstr "TSA lock"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_watchwinder_compartment
+#: field:product.template,watchwinder_compartment:0
+msgid "Additional compartment?"
+msgstr "Additional compartment?"
+
+#. module: davidts_product_referential
+#: view:product.product:0
+#: view:product.template:0
+msgid "Cases"
+msgstr "Cases"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_computer_height
+#: field:product.template,computer_height:0
+msgid "Computer height"
+msgstr "Computer height"
+
+#. module: davidts_product_referential
+#: help:product.template,measure_payload:0
+msgid "Payload (maximum weight allowed): Exp. 25"
+msgstr "Payload (maximum weight allowed): Exp. 25"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_enable_puller_telescopic
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_puller_telescopic
+#: field:product.template,enable_puller_telescopic:0
+#: field:product.template,puller_telescopic:0
+msgid "Telescopic handle"
+msgstr "Telescopic handle"
+
+#. module: davidts_product_referential
+#: help:product.template,compartment:0
+msgid "Number of compartments  (1,2, etc.)"
+msgstr "Number of compartments  (1,2, etc.)"
+
+#. module: davidts_product_referential
+#: view:product.product.luggage:0
+msgid "Products Luggages"
+msgstr "Products Luggages"
+
+#. module: davidts_product_referential
+#: field:davidts.metier,enable_puller_folding:0
+#: model:ir.model.fields,field_description:davidts_product_referential.field_davidts_metier_enable_puller_folding
+msgid "Enable Handle foldable"
+msgstr "Enable Handle foldable"
+
+#. module: davidts_product_referential
+#: field:davidts.metier,enable_luggage_business:0
+#: model:ir.model.fields,field_description:davidts_product_referential.field_davidts_metier_enable_luggage_business
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_enable_dimension
+#: field:product.template,enable_dimension:0
+msgid "Enable business luggage"
+msgstr "Enable business luggage"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_wheel_fixed
+#: field:product.template,wheel_fixed:0
+msgid "Single or star wheels?"
+msgstr "Single or star wheels?"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_wheel_removable
+#: field:product.template,wheel_removable:0
+msgid "Removable wheels"
+msgstr "Removable wheels"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_length
+#: field:product.template,length:0
+#: help:product.template,length:0
+msgid "Length"
+msgstr "Length"
+
+#. module: davidts_product_referential
+#: help:product.template,watchwinder_timer:0
+msgid "Timer?"
+msgstr "Timer?"
+
+#. module: davidts_product_referential
+#: help:product.template,box_drawer_type:0
+msgid "What kind of drawer? (automatique | non auto | ..)"
+msgstr "What kind of drawer? (automatique | non auto | ..)"
+
+#. module: davidts_product_referential
+#: model:ir.actions.act_window,name:davidts_product_referential.action_bpso_product_luggage
+msgid "Products luggages"
+msgstr "Products luggages"
+
+#. module: davidts_product_referential
+#: help:product.template,luggage_cabin:0
+msgid "Cabin baggage"
+msgstr "Cabin baggage"
+
+#. module: davidts_product_referential
+#: model:ir.ui.menu,name:davidts_product_referential.menu_bpso_product_referential_wheels
+#: view:product.product:0
+#: view:product.template:0
+msgid "Wheels"
+msgstr "Wheels"
+
+#. module: davidts_product_referential
+#: help:product.template,watchwinder_programs:0
+msgid "How many programs?: Exp. 3"
+msgstr "How many programs?: Exp. 3"
+
+#. module: davidts_product_referential
+#: view:product.product.box:0
+msgid "Product Box"
+msgstr "Product Box"
+
+#. module: davidts_product_referential
+#: view:product.product.box:0
+msgid "Case Closing"
+msgstr "Case Closing"
+
+#. module: davidts_product_referential
+#: help:davidts.metier,enable_puller_telescopic:0
+#: help:product.template,enable_puller_telescopic:0
+#: help:product.template,puller_telescopic:0
+msgid "Telescopic handle?"
+msgstr "Telescopic handle?"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_product_company_luggage_h
+#: field:product.product.company,luggage_h:0
+msgid "Luggage H"
+msgstr "Luggage H"
+
+#. module: davidts_product_referential
+#: help:product.template,wheel_back:0
+msgid "Fixed or multidirectional rear wheels (level 1)"
+msgstr "Fixed or multidirectional rear wheels (level 1)"
+
+#. module: davidts_product_referential
+#: help:product.template,wheel_relativeweight:0
+msgid "Relative weight ( weight / capacity) (grams per liter ): Exp. 5 g/l"
+msgstr "Relative weight ( weight / capacity) (grams per liter ): Exp. 5 g/l"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_product_company_luggage_l
+#: field:product.product.company,luggage_l:0
+msgid "Luggage L"
+msgstr "Luggage L"
+
+#. module: davidts_product_referential
+#: help:davidts.metier,enable_tablet:0
+#: help:product.template,enable_tablet:0
+#: help:product.template,tablet:0
+msgid "Presence of tablet compartment ?"
+msgstr "Presence of tablet compartment ?"
+
+#. module: davidts_product_referential
+#: view:product.product.luggage:0
+msgid "Cabin Luggages Airlines"
+msgstr "Cabin Luggages Airlines"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_luggage_accepting_airlines
+#: field:product.template,luggage_accepting_airlines:0
+msgid "Accepted by"
+msgstr "Accepted by"
+
+#. module: davidts_product_referential
+#: view:product.product:0
+#: view:product.template:0
+msgid "Accessories"
+msgstr "Accessories"
+
+#. module: davidts_product_referential
+#: help:product.template,pocket_ousidezipper:0
+msgid "Outside pocket with zip (1, 2, 3)"
+msgstr "Outside pocket with zip (1, 2, 3)"
+
+#. module: davidts_product_referential
+#: view:product.product.box:0
+msgid "Box Type"
+msgstr "Box Type"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_product_company_luggage_p
+#: field:product.product.company,luggage_p:0
+msgid "Luggage P"
+msgstr "Luggage P"
+
+#. module: davidts_product_referential
+#: help:davidts.metier,enable_handle_number:0
+#: help:product.template,enable_handle_number:0
+#: help:product.template,handle_number:0
+msgid "Number of handles: Exp. 2"
+msgstr "Number of handles: Exp. 2"
+
+#. module: davidts_product_referential
+#: view:product.product:0
+#: view:product.template:0
+msgid "Guarantee"
+msgstr "Guarantee"
+
+#. module: davidts_product_referential
+#: help:davidts.metier,enable_computer:0
+#: help:product.template,computer:0
+#: help:product.template,enable_computer:0
+msgid "Presence of computer compartment ?"
+msgstr "Presence of computer compartment ?"
+
+#. module: davidts_product_referential
+#: view:product.product:0
+#: view:product.template:0
+msgid "Suspenders"
+msgstr "Suspenders"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_enable_platform
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_platform
+#: field:product.template,enable_platform:0
+#: field:product.template,platform:0
+msgid "Foldable platform"
+msgstr "Foldable platform"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_box_type
+#: field:product.template,box_type:0
+msgid "What kind of boxes?"
+msgstr "What kind of boxes?"
+
+#. module: davidts_product_referential
+#: help:davidts.metier,enable_puller_sections:0
+#: help:product.template,enable_puller_sections:0
+#: help:product.template,puller_sections:0
+msgid "How many sections?: Exp. 3"
+msgstr "How many sections?: Exp. 3"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_insert
+#: view:product.product:0
+#: view:product.template:0
+#: field:product.template,insert:0
+msgid "Insert"
+msgstr "Insert"
+
+#. module: davidts_product_referential
+#: model:ir.model,name:davidts_product_referential.model_product_product_company
+msgid "product.product.company"
+msgstr "product.product.company"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_box_tray_type
+#: field:product.template,box_tray_type:0
+msgid "What kind of tray?"
+msgstr "What kind of tray?"
+
+#. module: davidts_product_referential
+#: field:davidts.metier,enable_accessory_rings:0
+#: model:ir.model.fields,field_description:davidts_product_referential.field_davidts_metier_enable_accessory_rings
+msgid "Enable Rings"
+msgstr "Enable Rings"
+
+#. module: davidts_product_referential
+#: view:product.product:0
+#: view:product.template:0
+msgid "Arms"
+msgstr "Arms"
+
+#. module: davidts_product_referential
+#: help:davidts.metier,enable_accessory_tag:0
+#: help:product.template,accessory_tag:0
+#: help:product.template,enable_accessory_tag:0
+msgid "Address holder?"
+msgstr "Address holder?"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_wheel_staircase
+#: field:product.template,wheel_staircase:0
+msgid "Easily climb stairs?"
+msgstr "Easily climb stairs?"
+
+#. module: davidts_product_referential
+#: view:product.product.wheel:0
+msgid "Multidirectional Wheels"
+msgstr "Multidirectional Wheels"
+
+#. module: davidts_product_referential
+#: help:davidts.metier,enable_clothing_webbing:0
+#: help:product.template,clothing_webbing:0
+#: help:product.template,enable_clothing_webbing:0
+msgid "Fastening straps 'webbing' (1 or 2)"
+msgstr "Fastening straps 'webbing' (1 or 2)"
+
+#. module: davidts_product_referential
+#: help:davidts.metier,enable_accessory_calculator:0
+#: help:product.template,accessory_calculator:0
+#: help:product.template,enable_accessory_calculator:0
+msgid "Calculator?"
+msgstr "Calculator?"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_wheel_ballbearing
+#: field:product.template,wheel_ballbearing:0
+msgid "Ball bearing"
+msgstr "Ball bearing"
+
+#. module: davidts_product_referential
+#: help:product.template,insert_type:0
+msgid "What kind of insert? (rigide | etuis ..)"
+msgstr "What kind of insert? (rigide | etuis ..)"
+
+#. module: davidts_product_referential
+#: view:product.product.lock:0
+msgid "Lock Type"
+msgstr "Lock Type"
+
+#. module: davidts_product_referential
+#: help:product.template,watchwinder_watchs:0
+msgid "Number of watches: Exp. 4"
+msgstr "Number of watches: Exp. 4"
+
+#. module: davidts_product_referential
+#: help:davidts.metier,enable_compartment_sorter:0
+#: help:product.template,compartment_sorter:0
+#: help:product.template,enable_compartment_sorter:0
+msgid "Insulated compartment (7.1, 7.2, 7.3, ...)"
+msgstr "Insulated compartment (7.1, 7.2, 7.3, ...)"
+
+#. module: davidts_product_referential
+#: help:davidts.metier,enable_box:0
+#: help:product.template,box_stackable:0
+#: help:product.template,enable_box:0
+msgid "Stackable cases?"
+msgstr "Stackable cases?"
+
+#. module: davidts_product_referential
+#: help:product.template,case_type:0
+msgid "What kind of cases?(manucure | cirage | couture | cravatte | chassures ..)"
+msgstr "What kind of cases?(manucure | cirage | couture | cravatte | chassures ..)"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_enable_puller_fixed
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_puller_fixed
+#: field:product.template,enable_puller_fixed:0
+#: field:product.template,puller_fixed:0
+msgid "Fixed handle"
+msgstr "Fixed handle"
+
+#. module: davidts_product_referential
+#: field:davidts.metier,enable_clothing_hanger_webbing:0
+#: model:ir.model.fields,field_description:davidts_product_referential.field_davidts_metier_enable_clothing_hanger_webbing
+msgid "Enable Enable Hangers - Webbings"
+msgstr "Enable Enable Hangers - Webbings"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_luggage_hand
+#: field:product.template,luggage_hand:0
+msgid "Handbag ?"
+msgstr "Handbag ?"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_compartment_insulated
+#: field:product.template,compartment_insulated:0
+msgid "Insulated compartment"
+msgstr "Insulated compartment"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_computer_size
+#: field:product.template,computer_size:0
+msgid "Computer size"
+msgstr "Computer size"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_enable_pocket
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_pocket_insidezipper
+#: field:product.template,enable_pocket:0
+#: field:product.template,pocket_insidezipper:0
+msgid "Inside pocket with zip"
+msgstr "Inside pocket with zip"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_enable_pocket_floating
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_pocket_floating
+#: field:product.template,enable_pocket_floating:0
+#: field:product.template,pocket_floating:0
+msgid "Floating pocket"
+msgstr "Floating pocket"
+
+#. module: davidts_product_referential
+#: view:product.product:0
+#: view:product.template:0
+msgid "Clothing with Straps"
+msgstr "Clothing with Straps"
+
+#. module: davidts_product_referential
+#: view:product.product.lock:0
+msgid "Lock TSA Type"
+msgstr "Lock TSA Type"
+
+#. module: davidts_product_referential
+#: model:ir.model,name:davidts_product_referential.model_product_product_computer_size
+msgid "product.product.computer_size"
+msgstr "product.product.computer_size"
+
+#. module: davidts_product_referential
+#: help:product.template,lock_tsa:0
+msgid "TSA Lock ?"
+msgstr "TSA Lock ?"
+
+#. module: davidts_product_referential
+#: help:davidts.metier,enable_puller_fixed:0
+#: help:product.template,enable_puller_fixed:0
+#: help:product.template,puller_fixed:0
+msgid "Fixed handle?"
+msgstr "Fixed handle?"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_wheel_easyrepair
+#: field:product.template,wheel_easyrepair:0
+msgid "Easyrepair ?"
+msgstr "Easyrepair ?"
+
+#. module: davidts_product_referential
+#: model:ir.model,name:davidts_product_referential.model_product_product_tablet_size
+msgid "product.product.tablet_size"
+msgstr "product.product.tablet_size"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_insert_number
+#: field:product.template,insert_number:0
+msgid "How many inserts?"
+msgstr "How many inserts?"
+
+#. module: davidts_product_referential
+#: view:product.product.insert:0
+msgid "Insert Type"
+msgstr "Insert Type"
+
+#. module: davidts_product_referential
+#: view:product.product.wheel:0
+msgid "Ballbearing Wheels"
+msgstr "Ballbearing Wheels"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_wheel_multidirectional
+#: field:product.template,wheel_multidirectional:0
+msgid "Single or double?"
+msgstr "Single or double?"
+
+#. module: davidts_product_referential
+#: view:product.product:0
+#: view:product.template:0
+msgid "Box with one function"
+msgstr "Box with one function"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_tablet_height
+#: field:product.template,tablet_height:0
+msgid "Tablet height"
+msgstr "Tablet height"
+
+#. module: davidts_product_referential
+#: field:davidts.metier,enable_accessory_tag:0
+#: model:ir.model.fields,field_description:davidts_product_referential.field_davidts_metier_enable_accessory_tag
+msgid "Enable Address holder"
+msgstr "Enable Address holder"
+
+#. module: davidts_product_referential
+#: model:ir.actions.act_window,name:davidts_product_referential.action_bpso_product_lock
+#: view:product.product.lock:0
+msgid "Products Locks"
+msgstr "Products Locks"
+
+#. module: davidts_product_referential
+#: field:davidts.metier,enable_handle_adjustable:0
+#: field:davidts.metier,enable_puller_adjustable:0
+#: model:ir.model.fields,field_description:davidts_product_referential.field_davidts_metier_enable_handle_adjustable
+#: model:ir.model.fields,field_description:davidts_product_referential.field_davidts_metier_enable_puller_adjustable
+msgid "Enable Adjustable handle"
+msgstr "Enable Adjustable handle"
+
+#. module: davidts_product_referential
+#: view:product.product.tablet_size:0
+msgid "Products Tablet Size"
+msgstr "Products Tablet Size"
+
+#. module: davidts_product_referential
+#: view:product.product.box:0
+msgid "Box Tray Type"
+msgstr "Box Tray Type"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_watchwinder_timer
+#: field:product.template,watchwinder_timer:0
+msgid "Timer"
+msgstr "Timer"
+
+#. module: davidts_product_referential
+#: help:product.template,wheel_diameter_front:0
+#: help:product.template,wheel_diameter_rear:0
+msgid "Diameters of the wheels (different diameter to the front and rear wheels possible!): Exp. 7"
+msgstr "Diameters of the wheels (different diameter to the front and rear wheels possible!): Exp. 7"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_enable_lock_tsa
+#: field:product.template,enable_lock_tsa:0
+msgid "Lock TSA"
+msgstr "Lock TSA"
+
+#. module: davidts_product_referential
+#: help:product.template,tablet_width:0
+msgid "Tablet width: Exp. 15"
+msgstr "Tablet width: Exp. 15"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_enable_organizer
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_organizer
+#: view:product.product:0
+#: view:product.template:0
+#: field:product.template,enable_organizer:0
+#: field:product.template,organizer:0
+msgid "Organizer"
+msgstr "Organizer"
+
+#. module: davidts_product_referential
+#: model:ir.actions.act_window,name:davidts_product_referential.action_bpso_product_wheel
+#: view:product.product.wheel:0
+msgid "Products Wheels"
+msgstr "Products Wheels"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_box_stackable
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_enable_box
+#: field:product.template,box_stackable:0
+#: field:product.template,enable_box:0
+msgid "Stackable cases"
+msgstr "Stackable cases"
+
+#. module: davidts_product_referential
+#: view:product.product.wheel:0
+msgid "Product Wheel"
+msgstr "Product Wheel"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_accessory_trolley
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_enable_accessory_trolley
+#: field:product.template,accessory_trolley:0
+#: field:product.template,enable_accessory_trolley:0
+msgid "Fits on a trolley"
+msgstr "Fits on a trolley"
+
+#. module: davidts_product_referential
+#: model:ir.actions.act_window,name:davidts_product_referential.action_bpso_product_winder
+#: view:product.product.winder:0
+msgid "Products Winders"
+msgstr "Products Winders"
+
+#. module: davidts_product_referential
+#: model:ir.model,name:davidts_product_referential.model_product_product_winder
+msgid "product.product.winder"
+msgstr "product.product.winder"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_accessory_calculator
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_enable_accessory_calculator
+#: field:product.template,accessory_calculator:0
+#: field:product.template,enable_accessory_calculator:0
+msgid "Calculator"
+msgstr "Calculator"
+
+#. module: davidts_product_referential
+#: view:product.product:0
+#: view:product.template:0
+msgid "months"
+msgstr "months"
+
+#. module: davidts_product_referential
+#: view:product.product.box:0
+msgid "Box Drawer Type"
+msgstr "Box Drawer Type"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_width
+#: field:product.template,width:0
+#: help:product.template,width:0
+msgid "Width"
+msgstr "Width"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_lock_type
+#: field:product.template,lock_type:0
+msgid "Padlock or lock?"
+msgstr "Padlock or lock?"
+
+#. module: davidts_product_referential
+#: view:product.product.winder:0
+msgid "Product Winder"
+msgstr "Product Winder"
+
+#. module: davidts_product_referential
+#: help:product.template,box_tray_type:0
+msgid "What kind of tray? (fixe, amovible, automatique, ..)"
+msgstr "What kind of tray? (fixe, amovible, automatique, ..)"
+
+#. module: davidts_product_referential
+#: model:ir.ui.menu,name:davidts_product_referential.menu_bpso_product_referential_box
+msgid "Boxs"
+msgstr "Boxs"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_enable_puller_sections
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_puller_sections
+#: field:product.template,enable_puller_sections:0
+#: field:product.template,puller_sections:0
+msgid "How many sections?"
+msgstr "How many sections?"
+
+#. module: davidts_product_referential
+#: help:product.template,compartment_expandable:0
+msgid "Expandable compartment (7.1, 7.2, 7.3, ...)"
+msgstr "Expandable compartment (7.1, 7.2, 7.3, ...)"
+
+#. module: davidts_product_referential
+#: field:davidts.metier,enable_platform:0
+#: model:ir.model.fields,field_description:davidts_product_referential.field_davidts_metier_enable_platform
+msgid "Enable Foldable platform"
+msgstr "Enable Foldable platform"
+
+#. module: davidts_product_referential
+#: help:product.template,wheel_front:0
+msgid "Front wheel multidirectional (single / double)"
+msgstr "Front wheel multidirectional (single / double)"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_wheel_number
+#: field:product.template,wheel_number:0
+msgid "Numbers of wheels"
+msgstr "Numbers of wheels"
+
+#. module: davidts_product_referential
+#: help:davidts.metier,enable_accessory_mirror:0
+#: help:product.template,accessory_mirror:0
+#: help:product.template,enable_accessory_mirror:0
+msgid "Mirror?"
+msgstr "Mirror?"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_enable_measure_capacity
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_measure_capacity
+#: field:product.template,enable_measure_capacity:0
+#: field:product.template,measure_capacity:0
+msgid "Capacity"
+msgstr "Capacity"
+
+#. module: davidts_product_referential
+#: view:product.product:0
+#: view:product.template:0
+msgid "Dimensions"
+msgstr "Dimensions"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_accessory_elastic
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_enable_accessory_elastic
+#: field:product.template,accessory_elastic:0
+#: field:product.template,enable_accessory_elastic:0
+msgid "Elastic"
+msgstr "Elastic"
+
+#. module: davidts_product_referential
+#: help:product.template,tablet_size:0
+msgid "Tablet size: Exp. 8 pouces"
+msgstr "Tablet size: Exp. 8 pouces"
+
+#. module: davidts_product_referential
+#: help:product.template,box_implement:0
+msgid "How many elements can we store?: Exp. 10"
+msgstr "How many elements can we store?: Exp. 10"
+
+#. module: davidts_product_referential
+#: model:ir.actions.act_window,name:davidts_product_referential.action_bpso_product_box
+#: view:product.product.box:0
+msgid "Products Boxs"
+msgstr "Products Boxs"
+
+#. module: davidts_product_referential
+#: view:product.product:0
+#: view:product.template:0
+msgid "Caddy Frame"
+msgstr "Caddy Frame"
+
+#. module: davidts_product_referential
+#: help:davidts.metier,enable_accessory_scratchpad:0
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_accessory_scratchpad
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_enable_accessory_scratchpad
+#: field:product.template,accessory_scratchpad:0
+#: help:product.template,accessory_scratchpad:0
+#: field:product.template,enable_accessory_scratchpad:0
+#: help:product.template,enable_accessory_scratchpad:0
+msgid "Scratch pad"
+msgstr "Scratch pad"
+
+#. module: davidts_product_referential
+#: model:ir.actions.act_window,name:davidts_product_referential.action_bpso_product_computer_size
+#: model:ir.actions.act_window,name:davidts_product_referential.action_bpso_product_tablet_size
+#: view:product.product.computer_size:0
+msgid "Products Computer Size"
+msgstr "Products Computer Size"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_strap_hip
+#: field:product.template,strap_hip:0
+msgid "Hip strap"
+msgstr "Hip strap"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_box_drawer
+#: field:product.template,box_drawer:0
+msgid "How many drawer?"
+msgstr "How many drawer?"
+
+#. module: davidts_product_referential
+#: view:product.product:0
+#: view:product.template:0
+msgid "Handles"
+msgstr "Handles"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_clothing_webbing
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_enable_clothing_webbing
+#: field:product.template,clothing_webbing:0
+#: field:product.template,enable_clothing_webbing:0
+msgid "Webbing"
+msgstr "Webbing"
+
+#. module: davidts_product_referential
+#: help:davidts.metier,enable_accessory_rings:0
+#: help:product.template,accessory_rings:0
+#: help:product.template,enable_accessory_rings:0
+msgid "Rings: Exp. 2"
+msgstr "Rings: Exp. 2"
+
+#. module: davidts_product_referential
+#: view:product.product.insert:0
+msgid "Product Insert"
+msgstr "Product Insert"
+
+#. module: davidts_product_referential
+#: field:davidts.metier,enable_handle_number:0
+#: model:ir.model.fields,field_description:davidts_product_referential.field_davidts_metier_enable_handle_number
+msgid "Enable Number of handles"
+msgstr "Enable Number of handles"
+
+#. module: davidts_product_referential
+#: field:davidts.metier,enable_box:0
+#: model:ir.model.fields,field_description:davidts_product_referential.field_davidts_metier_enable_box
+msgid "Enable Stackable cases"
+msgstr "Enable Stackable cases"
+
+#. module: davidts_product_referential
+#: help:product.template,measure_capacity:0
+msgid "Liter capacity (content): Exp. 25"
+msgstr "Liter capacity (content): Exp. 25"
+
+#. module: davidts_product_referential
+#: field:davidts.metier,enable_wheel:0
+#: model:ir.model.fields,field_description:davidts_product_referential.field_davidts_metier_enable_wheel
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_enable_wheel
+#: field:product.template,enable_wheel:0
+msgid "Enable wheels"
+msgstr "Enable wheels"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_accessory_shoulderstrap
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_enable_accessory_shoulderstrap
+#: field:product.template,accessory_shoulderstrap:0
+#: field:product.template,enable_accessory_shoulderstrap:0
+msgid "Shoulder strap"
+msgstr "Shoulder strap"
+
+#. module: davidts_product_referential
+#: view:product.product.computer_size:0
+msgid "Product Tablet Size"
+msgstr "Product Tablet Size"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_pocket_insidesliding
+#: field:product.template,pocket_insidesliding:0
+#: help:product.template,pocket_insidesliding:0
+msgid "Inside pocket without zip"
+msgstr "Inside pocket without zip"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_enable_tablet
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_tablet
+#: field:product.template,enable_tablet:0
+#: field:product.template,tablet:0
+msgid "Compartment for tablet?"
+msgstr "Compartment for tablet?"
+
+#. module: davidts_product_referential
+#: field:davidts.metier,enable_accessory_mirror:0
+#: model:ir.model.fields,field_description:davidts_product_referential.field_davidts_metier_enable_accessory_mirror
+msgid "Enable Mirror"
+msgstr "Enable Mirror"
+
+#. module: davidts_product_referential
+#: model:ir.model,name:davidts_product_referential.model_product_product_insert
+msgid "product.product.insert"
+msgstr "product.product.insert"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_lock_tsa_type
+#: field:product.template,lock_tsa_type:0
+#: help:product.template,lock_tsa_type:0
+msgid "Combination or key?"
+msgstr "Combination or key?"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_garantee
+#: field:product.template,garantee:0
+msgid "Garantee"
+msgstr "Garantee"
+
+#. module: davidts_product_referential
+#: help:product.template,insert:0
+msgid "Insert?"
+msgstr "Insert?"
+
+#. module: davidts_product_referential
+#: field:davidts.metier,enable_luggage_travel:0
+#: model:ir.model.fields,field_description:davidts_product_referential.field_davidts_metier_enable_luggage_travel
+msgid "Enable travel luggage"
+msgstr "Enable travel luggage"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_wheel_diameter_front
+#: field:product.template,wheel_diameter_front:0
+msgid "Front wheel size"
+msgstr "Front wheel size"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_tablet_size
+#: field:product.template,tablet_size:0
+msgid "Tablet size"
+msgstr "Tablet size"
+
+#. module: davidts_product_referential
+#: help:davidts.metier,enable_organizer:0
+#: help:product.template,enable_organizer:0
+#: help:product.template,organizer:0
+msgid "Presence of an organizer ?"
+msgstr "Presence of an organizer ?"
+
+#. module: davidts_product_referential
+#: view:product.product.lock:0
+msgid "Product Lock"
+msgstr "Product Lock"
+
+#. module: davidts_product_referential
+#: view:product.product:0
+#: view:product.template:0
+msgid "Luggage Type"
+msgstr "Luggage Type"
+
+#. module: davidts_product_referential
+#: help:product.template,computer_width:0
+msgid "Computer width: Exp. 24"
+msgstr "Computer width: Exp. 24"
+
+#. module: davidts_product_referential
+#: help:davidts.metier,enable_pocket:0
+#: help:product.template,enable_pocket:0
+#: help:product.template,pocket_insidezipper:0
+msgid "Inside pocket with zip (1, 2, 3)"
+msgstr "Inside pocket with zip (1, 2, 3)"
+
+#. module: davidts_product_referential
+#: model:ir.model,name:davidts_product_referential.model_report_compute_availability
+msgid "report_compute_availability"
+msgstr "report_compute_availability"
+
+#. module: davidts_product_referential
+#: model:ir.ui.menu,name:davidts_product_referential.menu_bpso_product_referential_luggage
+msgid "Luggages"
+msgstr "Luggages"
+
+#. module: davidts_product_referential
+#: help:davidts.metier,enable_lock:0
+#: help:davidts.metier,enable_lock_tsa:0
+#: help:product.template,enable_lock:0
+#: help:product.template,enable_lock_tsa:0
+#: help:product.template,lock:0
+msgid "Lock?"
+msgstr "Lock?"
+
+#. module: davidts_product_referential
+#: help:product.template,luggage_hold:0
+msgid "Hold baggage"
+msgstr "Hold baggage"
+
+#. module: davidts_product_referential
+#: help:product.template,compartment_insulated:0
+msgid "Insulated compartment' (7.1, 7.2, 7.3, ...)"
+msgstr "Insulated compartment' (7.1, 7.2, 7.3, ...)"
+
+#. module: davidts_product_referential
+#: field:davidts.metier,enable_strap:0
+#: model:ir.model.fields,field_description:davidts_product_referential.field_davidts_metier_enable_strap
+msgid "Enable Strap"
+msgstr "Enable Strap"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_box_implement
+#: field:product.template,box_implement:0
+msgid "How many elements can we store?"
+msgstr "How many elements can we store?"
+
+#. module: davidts_product_referential
+#: model:res.groups,name:davidts_product_referential.group_davidts_manager
+msgid "Davidts Manager"
+msgstr "Davidts Manager"
+
+#. module: davidts_product_referential
+#: model:ir.ui.menu,name:davidts_product_referential.menu_bpso_product_referential_company
+#: view:product.product.company:0
+msgid "Companies"
+msgstr "Companies"
+
+#. module: davidts_product_referential
+#: field:davidts.metier,enable_accessory_elastic:0
+#: model:ir.model.fields,field_description:davidts_product_referential.field_davidts_metier_enable_accessory_elastic
+msgid "Enable Elastic"
+msgstr "Enable Elastic"
+
+#. module: davidts_product_referential
+#: help:product.template,box_drawer:0
+msgid "How many drawer?: Exp. 3"
+msgstr "How many drawer?: Exp. 3"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_wheel_front
+#: view:product.product.wheel:0
+#: field:product.template,wheel_front:0
+msgid "Front Wheels"
+msgstr "Front Wheels"
+
+#. module: davidts_product_referential
+#: help:product.template,wheel_multidirectional:0
+msgid "If multidirectional wheels -> single or double"
+msgstr "If multidirectional wheels -> single or double"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_luggage_hold_comment
+#: field:product.template,luggage_hold_comment:0
+msgid "Luggage hold comments"
+msgstr "Luggage hold comments"
+
+#. module: davidts_product_referential
+#: model:ir.ui.menu,name:davidts_product_referential.menu_bpso_product_referential
+msgid "Products Referential"
+msgstr "Products Referential"
+
+#. module: davidts_product_referential
+#: help:davidts.metier,enable_pocket_floating:0
+#: help:product.template,enable_pocket_floating:0
+#: help:product.template,pocket_floating:0
+msgid "Floating pocket (7.1, 7.2, 7.3, ...)"
+msgstr "Floating pocket (7.1, 7.2, 7.3, ...)"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_enable_puller_folding
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_puller_folding
+#: field:product.template,enable_puller_folding:0
+#: field:product.template,puller_folding:0
+msgid "Handle foldable"
+msgstr "Handle foldable"
+
+#. module: davidts_product_referential
+#: field:davidts.metier,enable_garantee:0
+#: model:ir.model.fields,field_description:davidts_product_referential.field_davidts_metier_enable_garantee
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_enable_garantee
+#: field:product.template,enable_garantee:0
+msgid "Enable Garantee"
+msgstr "Enable Garantee"
+
+#. module: davidts_product_referential
+#: model:ir.model,name:davidts_product_referential.model_product_product_luggage
+msgid "product.product.luggage"
+msgstr "product.product.luggage"
+
+#. module: davidts_product_referential
+#: help:product.template,strap_compression:0
+msgid "Compression strap?"
+msgstr "Compression strap?"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_accessory_rings
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_enable_accessory_rings
+#: field:product.template,accessory_rings:0
+#: field:product.template,enable_accessory_rings:0
+msgid "Rings"
+msgstr "Rings"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_case_type
+#: field:product.template,case_type:0
+msgid "What kind of cases?"
+msgstr "What kind of cases?"
+
+#. module: davidts_product_referential
+#: model:ir.ui.menu,name:davidts_product_referential.menu_bpso_product_referential_insert
+msgid "Inserts"
+msgstr "Inserts"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_product_box_code
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_product_company_code
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_product_insert_code
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_product_lock_code
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_product_luggage_code
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_product_wheel_code
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_product_winder_code
+#: view:product.product.box:0
+#: field:product.product.box,code:0
+#: field:product.product.company,code:0
+#: view:product.product.insert:0
+#: field:product.product.insert,code:0
+#: view:product.product.lock:0
+#: field:product.product.lock,code:0
+#: view:product.product.luggage:0
+#: field:product.product.luggage,code:0
+#: view:product.product.wheel:0
+#: field:product.product.wheel,code:0
+#: view:product.product.winder:0
+#: field:product.product.winder,code:0
+msgid "Code"
+msgstr "Code"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_accessory_tag
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_enable_accessory_tag
+#: field:product.template,accessory_tag:0
+#: field:product.template,enable_accessory_tag:0
+msgid "Address holder"
+msgstr "Address holder"
+
+#. module: davidts_product_referential
+#: field:davidts.metier,enable_organizer:0
+#: model:ir.model.fields,field_description:davidts_product_referential.field_davidts_metier_enable_organizer
+msgid "Enable Organizer"
+msgstr "Enable Organizer"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_case_closing
+#: field:product.template,case_closing:0
+msgid "What kind of closing?"
+msgstr "What kind of closing?"
+
+#. module: davidts_product_referential
+#: field:davidts.metier,enable_pocket:0
+#: model:ir.model.fields,field_description:davidts_product_referential.field_davidts_metier_enable_pocket
+msgid "Enable Inside pocket with zip"
+msgstr "Enable Inside pocket with zip"
+
+#. module: davidts_product_referential
+#: help:product.template,wheel_removable:0
+msgid "Detachable wheels"
+msgstr "Detachable wheels"
+
+#. module: davidts_product_referential
+#: field:davidts.metier,enable_clothing_webbing:0
+#: model:ir.model.fields,field_description:davidts_product_referential.field_davidts_metier_enable_clothing_webbing
+msgid "Enable Webbing"
+msgstr "Enable Webbing"
+
+#. module: davidts_product_referential
+#: help:product.template,wheel_number:0
+msgid "Numbers of wheels: Exp. 1"
+msgstr "Numbers of wheels: Exp. 1"
+
+#. module: davidts_product_referential
+#: view:product.product.box:0
+msgid "Case Type"
+msgstr "Case Type"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_height
+#: field:product.template,height:0
+#: help:product.template,height:0
+msgid "Height"
+msgstr "Height"
+
+#. module: davidts_product_referential
+#: model:ir.ui.menu,name:davidts_product_referential.menu_bpso_product_referential_lock
+#: view:product.product:0
+#: view:product.template:0
+msgid "Locks"
+msgstr "Locks"
+
+#. module: davidts_product_referential
+#: help:davidts.metier,enable_accessory_elastic:0
+#: help:product.template,accessory_elastic:0
+#: help:product.template,enable_accessory_elastic:0
+msgid "Elastic?"
+msgstr "Elastic?"
+
+#. module: davidts_product_referential
+#: model:ir.model,name:davidts_product_referential.model_davidts_metier
+msgid "davidts.metier"
+msgstr "davidts.metier"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_enable_handle_number
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_handle_number
+#: field:product.template,enable_handle_number:0
+#: field:product.template,handle_number:0
+msgid "Number of handles"
+msgstr "Number of handles"
+
+#. module: davidts_product_referential
+#: help:product.template,wheel_ballbearing:0
+msgid "Roulements"
+msgstr "Roulements"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_enable_strap
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_strap
+#: field:product.template,enable_strap:0
+#: field:product.template,strap:0
+msgid "Strap"
+msgstr "Strap"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_strap_chest
+#: field:product.template,strap_chest:0
+msgid "Chest strap"
+msgstr "Chest strap"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_pocket_outsidesliding
+#: field:product.template,pocket_outsidesliding:0
+#: help:product.template,pocket_outsidesliding:0
+msgid "Outside pocket without zip"
+msgstr "Outside pocket without zip"
+
+#. module: davidts_product_referential
+#: help:product.template,tablet_height:0
+msgid "Tablet height: Exp. 25"
+msgstr "Tablet height: Exp. 25"
+
+#. module: davidts_product_referential
+#: help:davidts.metier,enable_accessory_shoulderstrap:0
+#: help:product.template,accessory_shoulderstrap:0
+#: help:product.template,enable_accessory_shoulderstrap:0
+msgid "Shoulder strap?"
+msgstr "Shoulder strap?"
+
+#. module: davidts_product_referential
+#: help:product.template,watchwinder_compartment:0
+msgid "Additional compartment?: Exp. 1"
+msgstr "Additional compartment?: Exp. 1"
+
+#. module: davidts_product_referential
+#: field:davidts.metier,enable_accessory_scratchpad:0
+#: model:ir.model.fields,field_description:davidts_product_referential.field_davidts_metier_enable_accessory_scratchpad
+msgid "Enable Scratch pad"
+msgstr "Enable Scratch pad"
+
+#. module: davidts_product_referential
+#: help:davidts.metier,enable_garantee:0
+#: help:product.template,enable_garantee:0
+#: help:product.template,garantee:0
+msgid "Garantee: Exp. 3"
+msgstr "Garantee: Exp. 3"
+
+#. module: davidts_product_referential
+#: view:product.product.luggage:0
+msgid "Product Luggage"
+msgstr "Product Luggage"
+
+#. module: davidts_product_referential
+#: view:product.product.computer_size:0
+msgid "Product Computer Size"
+msgstr "Product Computer Size"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_compartment_sorter
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_enable_compartment_sorter
+#: field:product.template,compartment_sorter:0
+#: field:product.template,enable_compartment_sorter:0
+msgid "Sorter"
+msgstr "Sorter"
+
+#. module: davidts_product_referential
+#: field:davidts.metier,enable_pocket_floating:0
+#: model:ir.model.fields,field_description:davidts_product_referential.field_davidts_metier_enable_pocket_floating
+msgid "Enable Floating pocket"
+msgstr "Enable Floating pocket"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_clothing_hanger
+#: field:product.template,clothing_hanger:0
+msgid "Hangers"
+msgstr "Hangers"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_wheel_relativeweight
+#: field:product.template,wheel_relativeweight:0
+msgid "Relative weight (g/l)"
+msgstr "Relative weight (g/l)"
+
+#. module: davidts_product_referential
+#: field:davidts.metier,enable_puller_telescopic:0
+#: model:ir.model.fields,field_description:davidts_product_referential.field_davidts_metier_enable_puller_telescopic
+msgid "Enable Telescopic handle"
+msgstr "Enable Telescopic handle"
+
+#. module: davidts_product_referential
+#: help:product.template,wheel_fixed:0
+msgid "If fixed wheels -> Simple or star"
+msgstr "If fixed wheels -> Simple or star"
+
+#. module: davidts_product_referential
+#: help:product.template,wheel_staircase:0
+msgid "Smooth crossing of stairs"
+msgstr "Smooth crossing of stairs"
+
+#. module: davidts_product_referential
+#: view:product.product:0
+#: view:product.template:0
+msgid "Compartments & Pockets"
+msgstr "Compartments & Pockets"
+
+#. module: davidts_product_referential
+#: view:product.product:0
+#: view:product.template:0
+msgid "Tablet Pocket"
+msgstr "Tablet Pocket"
+
+#. module: davidts_product_referential
+#: field:davidts.metier,enable_puller_fixed:0
+#: model:ir.model.fields,field_description:davidts_product_referential.field_davidts_metier_enable_puller_fixed
+msgid "Enable Fixed handle"
+msgstr "Enable Fixed handle"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_wheel_diameter_rear
+#: field:product.template,wheel_diameter_rear:0
+msgid "Rear wheel size"
+msgstr "Rear wheel size"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_insert_type
+#: field:product.template,insert_type:0
+msgid "What kind of insert?"
+msgstr "What kind of insert?"
+
+#. module: davidts_product_referential
+#: field:davidts.metier,enable_compartment_sorter:0
+#: model:ir.model.fields,field_description:davidts_product_referential.field_davidts_metier_enable_compartment_sorter
+msgid "EnableSorter"
+msgstr "EnableSorter"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_luggage_hold
+#: field:product.template,luggage_hold:0
+msgid "Checked baggage ?"
+msgstr "Checked baggage ?"
+
+#. module: davidts_product_referential
+#: help:product.template,strap_chest:0
+msgid "Chest strap?"
+msgstr "Chest strap?"
+
+#. module: davidts_product_referential
+#: help:product.template,box_type:0
+msgid "What kind of boxes? (bijoux | montres | maquillage, ..)"
+msgstr "What kind of boxes? (bijoux | montres | maquillage, ..)"
+
+#. module: davidts_product_referential
+#: help:davidts.metier,enable_puller_folding:0
+#: help:product.template,enable_puller_folding:0
+#: help:product.template,puller_folding:0
+msgid "Handle foldable?"
+msgstr "Handle foldable?"
+
+#. module: davidts_product_referential
+#: model:ir.model,name:davidts_product_referential.model_product_product_wheel
+msgid "product.product.wheel"
+msgstr "product.product.wheel"
+
+#. module: davidts_product_referential
+#: view:product.product:0
+#: view:product.template:0
+msgid "Box multi-fonctions"
+msgstr "Box multi-fonctions"
+
+#. module: davidts_product_referential
+#: help:product.template,luggage_hand:0
+msgid "Handbag"
+msgstr "Handbag"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_box_drawer_type
+#: field:product.template,box_drawer_type:0
+msgid "What kind of drawer?"
+msgstr "What kind of drawer?"
+
+#. module: davidts_product_referential
+#: view:product.product.winder:0
+msgid "Winder Plug"
+msgstr "Winder Plug"
+
+#. module: davidts_product_referential
+#: help:product.template,strap_hip:0
+msgid "Hip strap?"
+msgstr "Hip strap?"
+
+#. module: davidts_product_referential
+#: field:davidts.metier,enable_accessory_shoulderstrap:0
+#: model:ir.model.fields,field_description:davidts_product_referential.field_davidts_metier_enable_accessory_shoulderstrap
+msgid "Enable Shoulder strap"
+msgstr "Enable Shoulder strap"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_strap_compression
+#: field:product.template,strap_compression:0
+msgid "Compression strap"
+msgstr "Compression strap"
+
+#. module: davidts_product_referential
+#: model:ir.actions.act_window,name:davidts_product_referential.action_bpso_product_company
+msgid "Products Companies"
+msgstr "Products Companies"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_product_box_name
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_product_company_name
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_product_computer_size_name
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_product_insert_name
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_product_lock_name
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_product_luggage_name
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_product_tablet_size_name
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_product_wheel_name
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_product_winder_name
+#: view:product.product.box:0
+#: field:product.product.box,name:0
+#: view:product.product.company:0
+#: field:product.product.company,name:0
+#: view:product.product.computer_size:0
+#: field:product.product.computer_size,name:0
+#: view:product.product.insert:0
+#: field:product.product.insert,name:0
+#: view:product.product.lock:0
+#: field:product.product.lock,name:0
+#: view:product.product.luggage:0
+#: field:product.product.luggage,name:0
+#: view:product.product.tablet_size:0
+#: field:product.product.tablet_size,name:0
+#: view:product.product.wheel:0
+#: field:product.product.wheel,name:0
+#: view:product.product.winder:0
+#: field:product.product.winder,name:0
+msgid "Name"
+msgstr "Name"
+
+#. module: davidts_product_referential
+#: field:davidts.metier,enable_accessory_calculator:0
+#: model:ir.model.fields,field_description:davidts_product_referential.field_davidts_metier_enable_accessory_calculator
+msgid "Enable Calculator"
+msgstr "Enable Calculator"
+
+#. module: davidts_product_referential
+#: model:ir.ui.menu,name:davidts_product_referential.menu_bpso_product_referential_computer_size
+msgid "Computers Size"
+msgstr "Computers Size"
+
+#. module: davidts_product_referential
+#: model:res.groups,name:davidts_product_referential.group_davidts_user
+msgid "Davidts User"
+msgstr "Davidts User"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_accessory_mirror
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_enable_accessory_mirror
+#: field:product.template,accessory_mirror:0
+#: field:product.template,enable_accessory_mirror:0
+msgid "Mirror"
+msgstr "Mirror"
+
+#. module: davidts_product_referential
+#: field:davidts.metier,enable_accessory_trolley:0
+#: model:ir.model.fields,field_description:davidts_product_referential.field_davidts_metier_enable_accessory_trolley
+msgid "Enable Fits on a trolley"
+msgstr "Enable Fits on a trolley"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_lock_easychange
+#: field:product.template,lock_easychange:0
+#: help:product.template,lock_easychange:0
+msgid "Easychange lock?"
+msgstr "Easychange lock?"
+
+#. module: davidts_product_referential
+#: help:product.template,computer_length:0
+msgid "Computer length: Exp. 27"
+msgstr "Computer length: Exp. 27"
+
+#. module: davidts_product_referential
+#: model:ir.ui.menu,name:davidts_product_referential.menu_bpso_product_referential_tablet_size
+msgid "Tablet Size"
+msgstr "Tablet Size"
+
+#. module: davidts_product_referential
+#: model:ir.model,name:davidts_product_referential.model_product_template
+msgid "Product Template"
+msgstr "Product Template"
+
+#. module: davidts_product_referential
+#: field:davidts.metier,enable_puller_sections:0
+#: model:ir.model.fields,field_description:davidts_product_referential.field_davidts_metier_enable_puller_sections
+msgid "Enable How many sections?"
+msgstr "Enable How many sections?"
+
+#. module: davidts_product_referential
+#: model:ir.model,name:davidts_product_referential.model_product_product_lock
+msgid "product.product.lock"
+msgstr "product.product.lock"
+
+#. module: davidts_product_referential
+#: view:product.product:0
+#: view:product.template:0
+msgid "Laptop Compartment"
+msgstr "Laptop Compartment"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_compartment
+#: field:product.template,compartment:0
+msgid "Number of compartments?"
+msgstr "Number of compartments?"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_wheel_back
+#: view:product.product.wheel:0
+#: field:product.template,wheel_back:0
+msgid "Back Wheels"
+msgstr "Back Wheels"
+
+#. module: davidts_product_referential
+#: field:davidts.metier,enable_lock_tsa:0
+#: model:ir.model.fields,field_description:davidts_product_referential.field_davidts_metier_enable_lock_tsa
+msgid "Enable Lock TSA"
+msgstr "Enable Lock TSA"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_enable_clothing_hanger_webbing
+#: field:product.template,enable_clothing_hanger_webbing:0
+msgid "Enable Hangers - Webbings"
+msgstr "Enable Hangers - Webbings"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_computer
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_enable_computer
+#: field:product.template,computer:0
+#: field:product.template,enable_computer:0
+msgid "Compartment for laptop?"
+msgstr "Compartment for laptop?"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_pocket_ousidezipper
+#: field:product.template,pocket_ousidezipper:0
+msgid "Outside pocket with zip"
+msgstr "Outside pocket with zip"
+
+#. module: davidts_product_referential
+#: field:davidts.metier,enable_computer:0
+#: model:ir.model.fields,field_description:davidts_product_referential.field_davidts_metier_enable_computer
+msgid "Enable Compartment for laptop?"
+msgstr "Enable Compartment for laptop?"
+
+#. module: davidts_product_referential
+#: model:ir.model,name:davidts_product_referential.model_product_product_box
+msgid "product.product.box"
+msgstr "product.product.box"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_tablet_width
+#: field:product.template,tablet_width:0
+msgid "Tablet width"
+msgstr "Tablet width"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_computer_length
+#: field:product.template,computer_length:0
+msgid "Computer length"
+msgstr "Computer length"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_enable_lock
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_lock
+#: field:product.template,enable_lock:0
+#: field:product.template,lock:0
+msgid "Lock"
+msgstr "Lock"
+
+#. module: davidts_product_referential
+#: model:ir.ui.menu,name:davidts_product_referential.menu_bpso_product_referential_winder
+#: view:product.product:0
+#: view:product.template:0
+msgid "Winders"
+msgstr "Winders"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_enable_measure_payload
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_measure_payload
+#: field:product.template,enable_measure_payload:0
+#: field:product.template,measure_payload:0
+msgid "Payload"
+msgstr "Payload"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_box_tray
+#: field:product.template,box_tray:0
+msgid "How many trays?"
+msgstr "How many trays?"
+
+#. module: davidts_product_referential
+#: help:davidts.metier,enable_handle_adjustable:0
+#: help:davidts.metier,enable_puller_adjustable:0
+#: help:product.template,enable_handle_adjustable:0
+#: help:product.template,enable_puller_adjustable:0
+#: help:product.template,handle_adjustable:0
+#: help:product.template,puller_adjustable:0
+msgid "Adjustable handle?"
+msgstr "Adjustable handle?"
+
+#. module: davidts_product_referential
+#: help:product.template,insert_number:0
+msgid "How many inserts?: Exp. 1"
+msgstr "How many inserts?: Exp. 1"
+
+#. module: davidts_product_referential
+#: field:davidts.metier,enable_measure_capacity:0
+#: model:ir.model.fields,field_description:davidts_product_referential.field_davidts_metier_enable_measure_capacity
+msgid "Enable Capacity"
+msgstr "Enable Capacity"
+
+#. module: davidts_product_referential
+#: help:product.template,computer_size:0
+msgid "Computer size: Exp. 15 pouces"
+msgstr "Computer size: Exp. 15 pouces"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_template_watchwinder_watchs
+#: field:product.template,watchwinder_watchs:0
+msgid "Number of watches"
+msgstr "Number of watches"
+
+#. module: davidts_product_referential
+#: model:ir.model.fields,field_description:davidts_product_referential.field_product_product_company_luggage_total
+#: field:product.product.company,luggage_total:0
+msgid "Total"
+msgstr "Total"
+

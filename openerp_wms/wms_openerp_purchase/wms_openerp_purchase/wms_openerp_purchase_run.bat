@@ -1,0 +1,3 @@
+%~d0
+ cd %~dp0
+ java -Xms256M -Xmx1024M -cp ../lib/jboss-serialization.jar;../lib/talend_file_enhanced_20070724.jar;../lib/filecopy.jar;../lib/postgresql-8.3-603.jdbc3.jar;../lib/advancedPersistentLookupLib-1.0.jar;../lib/ganymed-ssh2.jar;../lib/dom4j-1.6.1.jar;../lib/talendcsv.jar;../lib/commons-collections-3.2.jar;../lib/log4j-1.2.15.jar;../lib/jakarta-oro-2.0.8.jar;../lib/trove.jar;../lib/systemRoutines.jar;../lib/userRoutines.jar;.;wms_openerp_purchase_0_1.jar; talendopenerp_213.wms_openerp_purchase_0_1.wms_openerp_purchase --context=Default %* 

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="ax_memory_analyzer_wizard_form" model="ir.ui.view">
+            <field name="name">ax_memory_analyzer_form_wizard</field>
+            <field name="model">ax.memory_analyzer_wizard</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Analyse Memory">
+                    <group colspan="4" col="2">
+                        <button name="stats_osv_memory" icon="gtk-ok" string="Analyze odoo &quot;Osv Memory&quot; objects" type="object"/>
+                        <button name="stats_python_garbage_objects" icon="gtk-ok" string="Analyze Python Memory" type="object"/>
+                        <button name="stats_python_objects" icon="gtk-ok" string="Dump all python object" type="object"/>
+                        <separator colspan="2"/>
+                        <button icon="gtk-cancel" string="Cancel" special="cancel"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_ax_memory_analyzer_wizard_form">
+            <field name="name">Analyze Memory</field>
+            <field name="res_model">ax.memory_analyzer_wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="view_id" ref="ax_memory_analyzer_wizard_form"/>
+        </record>
+
+        <menuitem
+            parent="base.menu_custom"
+            name="Audaxis Memory Analyzer"
+            id="menu_ax_memory_analyzer_parent"
+            groups="base.group_system"/>
+
+        <menuitem
+            parent="menu_ax_memory_analyzer_parent"
+            name="Analyze Memory"
+            action="action_ax_memory_analyzer_wizard_form"
+            id="menu_wizard_ax_memory_analyzer_wizard"/>
+    </data>
+</openerp>            

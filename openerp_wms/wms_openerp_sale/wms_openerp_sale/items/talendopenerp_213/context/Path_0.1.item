@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ContextType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" confirmationNeeded="false" name="Default">
+  <contextParameter comment="" name="Path_wms_files_sale" prompt="Path_wms_files_sale?" promptNeeded="false" type="id_String" value="&quot;/home/ibtissem/files/out&quot;"/>
+  <contextParameter comment="" name="path_wms_archive" prompt="path_wms_archive?" promptNeeded="false" type="id_String" value="&quot;/home/ibtissem/files/archive&quot;"/>
+  <contextParameter comment="" name="Path_wms_files_purchase" prompt="Path_wms_files_purchase?" promptNeeded="false" type="id_String" value="&quot;/home/ibtissem/files/in&quot;"/>
+</talendfile:ContextType>

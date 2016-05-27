@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate="1">
+
+        <!-- Default template -->
+        <record id="ax_check_letter_default_template" model="email.template">
+            <field name="name">Default Check letter</field>
+            <field name="subject">Remboursement</field>
+            <field name="lang">${object.lang}</field>
+            <field name="model_id" ref="account_voucher.model_account_voucher"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="body_html"><![CDATA[
+Madame,
+%(n)s
+Veuillez trouver ci-joint un chèque de remboursement correspondant au trop perçu sur votre compte.
+%(n)s
+Nous vous remercions de votre confiance et nous vous assurons de notre total engagement pour vous satisfaire.
+%(n)s
+Restant à votre entière disposition,
+Veuillez agréer, Mme %(partner_name)s, nos sincères salutation
+%(n)s
+Service comptabilité
+Ligne directe 08 00 99 99 ]]>
+%(n)s
+            </field>
+        </record>
+    </data>
+</openerp>
