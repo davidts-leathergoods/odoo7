@@ -1,3 +1,0 @@
-import product_template
-import davidts_metier
-import wizard

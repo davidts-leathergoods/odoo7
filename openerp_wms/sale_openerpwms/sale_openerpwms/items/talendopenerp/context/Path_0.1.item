@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<talendfile:ContextType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" confirmationNeeded="false" name="Default">
-  <contextParameter comment="" name="Path_files" prompt="Path_files?" promptNeeded="false" type="id_String" value="&quot;/home/ibtissem/files&quot;"/>
-  <contextParameter comment="" name="picking_id" prompt="picking_id?" promptNeeded="false" type="id_Integer" value="16"/>
-  <contextParameter comment="" name="Path_Header" prompt="Path_Header?" promptNeeded="false" type="id_String" value="&quot;/home/ibtissem/workspace_appserver_dts_audaxis/appserver-dts_audaxis/project_addons/openerp_wms/purchase_openerpwms/purchase_openerpwms&quot;"/>
-  <contextParameter comment="" name="Path_Header_sale" prompt="Path_Header_sale?" promptNeeded="false" type="id_String" value="&quot;/home/ibtissem/workspace_appserver_dts_audaxis/appserver-dts_audaxis/project_addons/openerp_wms/sale_openerpwms/sale_openerpwms&quot;"/>
-</talendfile:ContextType>
