@@ -1,0 +1,17 @@
+id,name,line_ids/value,line_ids/days2,line_ids/value_amount,line_ids/days
+account_payment_term.30joursfindemois,30 JOURS FIN DE MOIS,Balance,-1,,30
+account_payment_term.30joursnet,30 JOURS NET,Balance,0,,30
+account_payment_term.60joursnet,60 JOURS NET,Balance,0,,60
+account_payment_term.60joursfindemois,60 JOURS FIN DE MOIS,Balance,-1,,60
+account_payment_term.90joursnet,90 JOURS NET,Balance,0,,90
+account_payment_term.90joursfindemois,90 JOURS FIN DE MOIS,Balance,-1,,90
+account_payment_term.comptant,COMPTANT,Balance,0,,0
+account_payment_term.comptantvirement,COMPTANT VIREMENT,Balance,0,,0
+account_payment_term.comptantespeces,COMPTANT ESPECES,Balance,0,,0
+account_payment_term.traite60joursfindemois,TRAITE 60 J/ FIN DE MOIS,Balance,-1,,60
+account_payment_term.10joursnet,10 JOURS NET,Balance,0,,10
+account_payment_term.120findemois,120 JOURS FIN DE MOIS,Balance,-1,,120
+account_payment_term.contreremboursement,CONTRE REMBOURSEMENT,Balance,0,,0
+account_payment_term.avantlivraison,AVANT LIVRAISON,Balance,0,,0
+account_payment_term.dzbbank,DZB BANK GMBH,Balance,0,,0
+account_payment_term.ttbeforeshipment,TT BEFORE SHIPMENT,Balance,0,,0

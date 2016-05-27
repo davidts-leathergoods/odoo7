@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data noupdate="1">
+
+		<record id="bpso_product_companies_1" model="product.product.company">
+			<field name="name">AIR France</field>
+			<field name="code"></field>
+		</record>
+		<record id="bpso_product_companies_2" model="product.product.company">
+			<field name="name">Jet Air</field>
+			<field name="code"></field>
+		</record>
+		<record id="bpso_product_companies_3" model="product.product.company">
+			<field name="name">Jetairfly</field>
+			<field name="code"></field>
+		</record>
+		<record id="bpso_product_companies_4" model="product.product.company">
+			<field name="name">Easyjet</field>
+			<field name="code"></field>
+		</record>
+		<record id="bpso_product_companies_5" model="product.product.company">
+			<field name="name">Ryan Air </field>
+			<field name="code"></field>
+		</record>
+		<record id="bpso_product_companies_6" model="product.product.company">
+			<field name="name">BrusselAirlines</field>
+			<field name="code"></field>
+		</record>
+		<record id="bpso_product_companies_7" model="product.product.company">
+			<field name="name">Lufthansa</field>
+			<field name="code"></field>
+		</record>
+		<record id="bpso_product_companies_8" model="product.product.company">
+			<field name="name">Freebird</field>
+			<field name="code"></field>
+		</record>
+		<record id="bpso_product_companies_9" model="product.product.company">
+			<field name="name">wizz </field>
+			<field name="code"></field>
+		</record>
+		<record id="bpso_product_companies_10" model="product.product.company">
+			<field name="name">Corsair</field>
+			<field name="code"></field>
+		</record>
+		<record id="bpso_product_companies_11" model="product.product.company">
+			<field name="name">Qatar airways</field>
+			<field name="code"></field>
+		</record>
+		<record id="bpso_product_companies_12" model="product.product.company">
+			<field name="name">Air Corsica</field>
+			<field name="code"></field>
+		</record>
+		<record id="bpso_product_companies_13" model="product.product.company">
+			<field name="name">Royal Air Maroc</field>
+			<field name="code"></field>
+		</record>
+		<record id="bpso_product_companies_13" model="product.product.company">
+			<field name="name">IATA</field>
+			<field name="code"></field>
+		</record>
+
+	</data>
+</openerp>

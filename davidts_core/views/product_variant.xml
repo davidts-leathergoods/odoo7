@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<record id="davidts_product_template_form_inherit" model="ir.ui.view">
+			<field name="name">davidts_product_template_form_inherit</field>
+			<field name="model">product.template</field>
+			<field name="inherit_id"
+				ref="product_variant_multi.product_variant_multi_product_template_form_view" />
+			<field name="arch" type="xml">
+				<field name="is_multi_variants" position="after">
+					<field name="reference" colspan="2" />
+					<field name="old_reference" colspan="2" />
+					<!--<field name="image_template" widget='image' class="oe_left oe_avatar" -->
+					options='{"preview_image": "image_medium", "size": [90, 90]}' />
+				</field>
+				<xpath expr="//form/notebook" position="inside">
+					<page string="Sales">
+						<group colspan="1" col="4">
+							<!-- <field name="warranty" colspan="4" /> LBN -->
+							<field name="sale_delay" colspan="4" />
+						</group>
+						<group colspan="1" col="4">
+							<separator colspan="4" string="Packaging" />
+							<field name="packaging_template" groups="product.group_stock_packaging">
+								<form string="Packaging" version="7.0">
+									<!-- Begin Evolution #46885 -->
+									<group col="4">
+										<field name="sequence" invisible="1" />
+										<newline />
+										<field name="qty" string="Quantity by logistics unit" />
+										<field name="ul" string="Logistic unit type" />
+										<separator colspan="4" string="Palletization" />
+										<field name="ul_qty" />
+										<field name="rows" />
+										<field name="weight" string="Total logistic unit Weight" />
+										<separator colspan="4" string="Pallet Dimension (cm)" />
+										<field name="length" on_change="onchange_volume( height, width, length)" />
+										<field name="height" on_change="onchange_volume( height, width, length)" />
+										<field name="width" on_change="onchange_volume( height, width, length)" />
+										<field name="volume" on_change="onchange_volume( height, width, length)" />
+										<!-- end Evolution #46885 -->
+									</group>
+								</form>
+								<tree string="Packaging">
+									<field name="sequence" widget="handle" />
+									<field name="qty" />
+									<field name="ul" />
+								</tree>
+							</field>
+						</group>
+						<!-- Begin Evolution #47143 -->
+
+						<!-- end Evolution #47143 -->
+					</page>
+				</xpath>
+				<!--Begin Evolution #46600 -->
+				<field name="sale_ok" position="after">
+					<field name="attribute_set_id" />
+				</field>
+				<!--End Evolution #46600 -->
+			</field>
+		</record>
+		<!--Begin Evolution #46810 -->
+
+		<record id="product_normal_variant_form_view_davidts" model="ir.ui.view">
+			<field name="name">product.normal.variant.davidts.form</field>
+			<field name="model">product.product</field>
+			<field name="inherit_id"
+				ref="product_variant_multi.product_normal_variant_form_view" />
+			<field name="arch" type="xml">
+				<group name="Weights" position="replace">
+					<group colspan="4" col="6" name="Weights"
+						groups="product.group_stock_packaging">
+						<group name="template_weights" string="Template Weights">
+							<field name="weight_net" attrs="{'readonly':[('type','=','service')]}" />
+						</group>
+					</group>
+				</group>
+			</field>
+		</record>
+
+		<!--End Evolution #46810 -->
+
+
+	</data>
+</openerp>

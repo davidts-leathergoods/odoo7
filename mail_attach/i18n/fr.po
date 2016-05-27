@@ -1,0 +1,318 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* mail_attach
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20140313-003151\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-06-02 07:59+0000\n"
+"PO-Revision-Date: 2014-06-02 07:59+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mail_attach
+#: selection:mail.compose.message,object:0
+#: field:mail.compose.message,refund_customer_id:0
+#: selection:mail.message.wizard,object:0
+#: field:mail.message.wizard,refund_customer_id:0
+msgid "Customer Refund"
+msgstr "Avoir Client"
+
+#. module: mail_attach
+#: selection:mail.compose.message,object:0
+#: field:mail.compose.message,purchase_order_id:0
+#: selection:mail.message.wizard,object:0
+#: field:mail.message.wizard,purchase_order_id:0
+msgid "Purchase Order"
+msgstr "Bons de commande achat"
+
+#. module: mail_attach
+#: model:ir.model,name:mail_attach.model_mail_message_wizard
+msgid "Attache incoming mail to an object from the selection"
+msgstr "Attache incoming mail to an object from the selection"
+
+#. module: mail_attach
+#: help:mail.message.wizard,starred:0
+msgid "Current user has a starred notification linked to this message"
+msgstr "Current user has a starred notification linked to this message"
+
+#. module: mail_attach
+#: field:mail.message.wizard,author_id:0
+msgid "Author"
+msgstr "Auteur"
+
+#. module: mail_attach
+#: field:mail.compose.message,invoice_supplier_id:0
+#: selection:mail.compose.message,object:0 
+msgid "Supplier Invoice"
+msgstr "Facture Fournisseur"
+
+#: field:mail.message.wizard,invoice_supplier_id:0
+#: selection:mail.message.wizard,object:0
+msgid "Supplier Invoice"
+msgstr "Facture Fournisseur"
+
+#. module: mail_attach
+#: field:mail.compose.message,invoice_customer_id:0
+#: selection:mail.compose.message,object:0
+#: field:mail.message.wizard,invoice_customer_id:0
+#: selection:mail.message.wizard,object:0
+msgid "Customer Invoice"
+msgstr "Facture Client"
+
+#. module: mail_attach
+#: field:mail.message.wizard,vote_user_ids:0
+msgid "Votes"
+msgstr "Votes"
+
+#. module: mail_attach
+#: help:mail.message.wizard,type:0
+msgid "Message type: email for email message, notification for system message, comment for other messages such as user replies"
+msgstr "Message type: email for email message, notification for system message, comment for other messages such as user replies"
+
+#. module: mail_attach
+#: selection:mail.compose.message,object:0
+#: field:mail.compose.message,supplier_id:0
+#: selection:mail.message.wizard,object:0
+#: field:mail.message.wizard,supplier_id:0
+msgid "Supplier"
+msgstr "Fournisseur"
+
+#. module: mail_attach
+#: help:mail.message.wizard,body:0
+msgid "Automatically sanitized HTML contents"
+msgstr "Automatically sanitized HTML contents"
+
+#. module: mail_attach
+#: view:mail.message.wizard:0
+msgid "Compose Email"
+msgstr "Compose Email"
+
+#. module: mail_attach
+#: field:mail.message.wizard,notified_partner_ids:0
+msgid "Notified partners"
+msgstr "Notified partners"
+
+#. module: mail_attach
+#: field:mail.message.wizard,email_from:0
+msgid "From"
+msgstr "From"
+
+#. module: mail_attach
+#: field:mail.message.wizard,type:0
+msgid "Type"
+msgstr "Type"
+
+#. module: mail_attach
+#: selection:mail.message.wizard,type:0
+msgid "Email"
+msgstr "Email"
+
+#. module: mail_attach
+#: field:mail.message.wizard,partner_ids:0
+msgid "Recipients"
+msgstr "Recipients"
+
+#. module: mail_attach
+#: help:mail.message.wizard,email_from:0
+msgid "Email address of the sender. This field is set when no matching partner is found for incoming emails."
+msgstr "Email address of the sender. This field is set when no matching partner is found for incoming emails."
+
+#. module: mail_attach
+#: help:mail.message.wizard,record_name:0
+msgid "Name get of the related document."
+msgstr "Name get of the related document."
+
+#. module: mail_attach
+#: field:mail.message.wizard,notification_ids:0
+msgid "Notifications"
+msgstr "Notifications"
+
+#. module: mail_attach
+#: field:mail.message.wizard,parent_id:0
+msgid "Parent Message"
+msgstr "Parent Message"
+
+#. module: mail_attach
+#: field:mail.message.wizard,res_id:0
+msgid "Related Document ID"
+msgstr "Related Document ID"
+
+#. module: mail_attach
+#: field:mail.message.wizard,date:0
+msgid "Date"
+msgstr "Date"
+
+#. module: mail_attach
+#: field:mail.message.wizard,message_id:0
+msgid "Message-Id"
+msgstr "Message-Id"
+
+#. module: mail_attach
+#: field:mail.compose.message,crm_lead_id:0
+#: selection:mail.compose.message,object:0
+#: field:mail.message.wizard,crm_lead_id:0
+#: selection:mail.message.wizard,object:0
+msgid "Opportunity"
+msgstr "Opportunité"
+
+#. module: mail_attach
+#: field:mail.compose.message,customer_id:0
+#: selection:mail.compose.message,object:0
+#: field:mail.message.wizard,customer_id:0
+#: selection:mail.message.wizard,object:0
+msgid "Customer"
+msgstr "Client"
+
+#. module: mail_attach
+#: field:mail.message.wizard,to_read:0
+msgid "To read"
+msgstr "To read"
+
+#. module: mail_attach
+#: selection:mail.compose.message,object:0
+#: field:mail.compose.message,sale_order_id:0
+#: selection:mail.message.wizard,object:0
+#: field:mail.message.wizard,sale_order_id:0
+msgid "Sale Order"
+msgstr "Bons de commande vente"
+
+#. module: mail_attach
+#: help:mail.message.wizard,message_id:0
+msgid "Message unique identifier"
+msgstr "Message unique identifier"
+
+#. module: mail_attach
+#: view:mail.compose.message:0
+#: field:mail.compose.message,object:0
+#: view:mail.message.wizard:0
+#: field:mail.message.wizard,object:0
+msgid "Attach To Object"
+msgstr "Attacher à objet"
+
+#. module: mail_attach
+#: help:mail.message.wizard,author_id:0
+msgid "Author of the message. If not set, email_from may hold an email address that did not match any partner."
+msgstr "Author of the message. If not set, email_from may hold an email address that did not match any partner."
+
+#. module: mail_attach
+#: help:mail.message.wizard,vote_user_ids:0
+msgid "Users that voted for this message"
+msgstr "Users that voted for this message"
+
+#. module: mail_attach
+#: help:mail.message.wizard,to_read:0
+msgid "Current user has an unread notification linked to this message"
+msgstr "Current user has an unread notification linked to this message"
+
+#. module: mail_attach
+#: view:mail.message.wizard:0
+msgid "Send"
+msgstr "Envoyer"
+
+#. module: mail_attach
+#: help:mail.message.wizard,notification_ids:0
+msgid "Technical field holding the message notifications. Use notified_partner_ids to access notified partners."
+msgstr "Technical field holding the message notifications. Use notified_partner_ids to access notified partners."
+
+#. module: mail_attach
+#: field:mail.message.wizard,starred:0
+msgid "Starred"
+msgstr "Starred"
+
+#. module: mail_attach
+#: model:ir.model,name:mail_attach.model_mail_compose_message
+msgid "Email composition wizard"
+msgstr "Assistant de composition de courriel"
+
+#. module: mail_attach
+#: help:mail.message.wizard,notified_partner_ids:0
+msgid "Partners that have a notification pushing this message in their mailboxes"
+msgstr "Partners that have a notification pushing this message in their mailboxes"
+
+#. module: mail_attach
+#: selection:mail.message.wizard,type:0
+msgid "Comment"
+msgstr "Comment"
+
+#. module: mail_attach
+#: field:mail.message.wizard,model:0
+msgid "Related Document Model"
+msgstr "Related Document Model"
+
+#. module: mail_attach
+#: field:mail.message.wizard,attachment_ids:0
+msgid "Attachments"
+msgstr "Attachments"
+
+#. module: mail_attach
+#: field:mail.message.wizard,record_name:0
+msgid "Message Record Name"
+msgstr "Message Record Name"
+
+#. module: mail_attach
+#: field:mail.message.wizard,subtype_id:0
+msgid "Subtype"
+msgstr "Subtype"
+
+#. module: mail_attach
+#: selection:mail.compose.message,object:0
+#: field:mail.compose.message,product_id:0
+#: selection:mail.message.wizard,object:0
+#: field:mail.message.wizard,product_id:0
+msgid "Product"
+msgstr "Article"
+
+#. module: mail_attach
+#: help:mail.message.wizard,parent_id:0
+msgid "Initial thread message."
+msgstr "Initial thread message."
+
+#. module: mail_attach
+#: field:mail.message.wizard,child_ids:0
+msgid "Child Messages"
+msgstr "Child Messages"
+
+#. module: mail_attach
+#: selection:mail.message.wizard,type:0
+msgid "System notification"
+msgstr "System notification"
+
+#. module: mail_attach
+#: view:mail.message.wizard:0
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: mail_attach
+#: selection:mail.compose.message,object:0
+#: field:mail.compose.message,refund_supplier_id:0
+#: selection:mail.message.wizard,object:0
+#: field:mail.message.wizard,refund_supplier_id:0
+msgid "Supplier Refund"
+msgstr "Avoir Fournisseur"
+
+#. module: mail_attach
+#: model:ir.model,name:mail_attach.model_mail_message
+msgid "Message"
+msgstr "Message"
+
+#. module: mail_attach
+#: view:mail.message.wizard:0
+msgid "or"
+msgstr "ou"
+
+#. module: mail_attach
+#: field:mail.message.wizard,body:0
+msgid "Contents"
+msgstr "Contenu"
+
+#. module: mail_attach
+#: field:mail.message.wizard,subject:0
+msgid "Subject"
+msgstr "Sujet"
+

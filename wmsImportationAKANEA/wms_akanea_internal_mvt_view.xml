@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+	<!-- Vue et liste des modules -->
+
+	<record id="view_wms_akanea_history_mvtint_tree" model="ir.ui.view">
+	    <field name="name">wms.akanea.history.mvtint.tree</field>
+	    <field name="model">wms.akanea.history.mvtint</field>
+	    <field name="arch" type="xml">
+		<tree string="Historique des mouvements interne de AKANEA" colors="blue:state == 'new';red:state == 'dropped'">
+		    <field name="code_stockeur" string="Code stockeur"/>
+		    <field name="date_reception" string="Date de reception"/>
+		    <field name="type_mouvement_stock" string="Type du Mvt Stock"/>
+		    <field name="code_mouvement_stock" string="Code du Mvt de stock"/>
+		    <field name="code_depot" string="Code du Depôt "/>
+		    <field name="code_article" string="Code article"/>
+		    <field name="product_id" string="Produit"/>
+		    <field name="stock_move_id" string="Enrg Mvt de Stock" />
+		    <field name="quantite_palettes_mouvementee" string="Quant. Mvt"/>
+		    <field name="state" string="Status"/>
+		</tree>
+	    </field>
+	</record>
+
+	<record id="view_wms_akanea_history_mvtint_form" model="ir.ui.view">
+	    <field name="name">wms.akanea.history.mvtint.form</field>
+	    <field name="model">wms.akanea.history.mvtint</field>
+	    <field name="arch" type="xml">
+		<form string="Importation AKANEA dans mouvements de stocks" version="7.0">
+		<header>
+		    <button name="execute_import_wms" string="Importation" class="oe_highlight" type="object"/>
+		    <field name="state" widget="statusbar" statusbar_visible="new,imported,dropped" statusbar_colors='{"imported":"green","dropped":"red"}'/>
+		</header>
+		<sheet>
+		    <group colspan="4" col="4">
+			<field name="code_stockeur" string="Code stockeur"/>
+			<field name="reference_transfert" string="Reference Transfert"/>
+			<field name="libelle_transfert" string="Libelle Transfert"/>
+			<field name="n_cde_entree" string="N° Cde d entree"/>
+			<field name="date_reception" string="Date de reception"/>
+			<field name="type_mouvement_stock" string="Type du Mouvement de Stock"/>
+			<field name="code_mouvement_stock" string="Code du mouvement de stock"/>
+			<field name="code_depot" string="Code du Depôt"/>
+			<field name="code_article" string="Code article"/>
+			<field name="product_id" string="Product"/>
+			<field name="numero_lot" string="Numero de lot"/>
+			<field name="statut" string="Statut"/>
+			<field name="disponibilite_stock" string="Disponibilite de Stock"/>
+			<field name="date_limite_vente" string="Date limite de vente "/>
+			<field name="douane" string="Douane"/>
+			<field name="numero_palette" string="Numero de palette"/>
+			<field name="quantite_palettes_mouvementee" string="Quantite palettes mouvementee"/>
+			<field name="quantite_colis_mouvementee" string="Quantite colis mouvementee"/>
+			<field name="quantite_uvc_mouvementee" string="Quantite UVC mouvementee"/>
+			<field name="poids_net" string="Poids net"/>
+			<field name="poids_brut" string="Poids brut"/>
+			<field name="spcb" string="SPCB"/>
+			<field name="pcb" string="PCB"/>
+			<field name="nombre_colis_couche" string="Nombre colis couche"/>
+			<field name="nombre_couche_palette" string="Nombre couche palette"/>
+		    </group>
+		    <separator string="Importation"/>
+		    <group>
+			<field name="date_importation" string="Heure importation"/>
+			<field name="stock_move_id" string="Movement de stock"/>
+			<newline/>
+			<field name="commentaire_import" height="400"/>
+		    </group>
+		</sheet>
+		</form>
+	    </field>
+	</record>
+
+	<record id="view_sale_akanea" model="ir.ui.view">
+	    <field name="name">automatic_import_akanea</field>
+	    <field name="model">sale.config.settings</field>
+	    <field name="inherit_id" ref="base_setup.view_sale_config_settings" />
+	    <field name="arch" type="xml">
+		<div name="linkedin" position="after">
+		<separator string="AKANEA" />
+		    <group name="automatic_akanea">
+			<label for="id" string="Importation automatique"/>
+		    </group>
+		</div>
+	    </field>
+	</record>
+
+
+	<!-- Module Action -->
+
+	<record model="ir.actions.act_window" id="action_wms_akanea_history_mvtint">
+	    <field name="name">Mouvements interne AKANEA</field>
+	    <field name="res_model">wms.akanea.history.mvtint</field>
+	    <field name="view_mode">tree,form</field>
+	    <field name="domain">[]</field>
+	    <field name="context">{}</field>
+	</record>
+
+	<!-- definition des menus -->
+	<menuitem id="action_menu_wms_akanea_history_mvtint"
+	    action="action_wms_akanea_history_mvtint"
+	    parent="stock.menu_traceability"/>
+
+    </data>
+</openerp>
+

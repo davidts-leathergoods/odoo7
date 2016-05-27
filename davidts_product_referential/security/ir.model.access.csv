@@ -1,0 +1,22 @@
+id,name,model_id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+bpso_product_wheel_manager,Davidts Product Wheels Manager,product.product.wheel,group_davidts_manager,1,1,1,1
+bpso_product_wheel_user,Davidts Product Wheels Manager Users,product.product.wheel,group_davidts_user,1,1,1,0
+bpso_product_wheel_admin,Davidts Product Wheels Admin,product.product.wheel,base.group_system,1,1,1,1
+bpso_product_luggage_manager,Davidts Product Luggage Manager,product.product.luggage,group_davidts_manager,1,1,1,1
+bpso_product_luggage_user,Davidts Product Luggage Manager Users,product.product.luggage,group_davidts_user,1,1,1,0
+bpso_product_luggage_admin,Davidts Product Luggage Admin,product.product.luggage,base.group_system,1,1,1,1
+bpso_product_computer_size_manager,Davidts Product Computer Size Manager,product.product.computer_size,group_davidts_manager,1,1,1,1
+bpso_product_computer_size_user,Davidts Product Computer Size Manager Users,product.product.computer_size,group_davidts_user,1,1,1,0
+bpso_product_computer_size_admin,Davidts Product Computer Size Admin,product.product.computer_size,base.group_system,1,1,1,1
+bpso_product_lock_manager,Davidts Product Lock Manager,product.product.lock,group_davidts_manager,1,1,1,1
+bpso_product_lock_user,Davidts Product Lock Manager Users,product.product.lock,group_davidts_user,1,1,1,0
+bpso_product_lock_admin,Davidts Product Lock Admin,product.product.lock,base.group_system,1,1,1,1
+bpso_product_box_manager,Davidts Product Box Manager,product.product.box,group_davidts_manager,1,1,1,1
+bpso_product_box_user,Davidts Product Box Manager Users,product.product.box,group_davidts_user,1,1,1,0
+bpso_product_box_admin,Davidts Product Box Admin,product.product.box,base.group_system,1,1,1,1
+bpso_product_insert_manager,Davidts Product Insert Manager,product.product.insert,group_davidts_manager,1,1,1,1
+bpso_product_insert_user,Davidts Product Insert Manager Users,product.product.insert,group_davidts_user,1,1,1,0
+bpso_product_insert_admin,Davidts Product Insert Admin,product.product.insert,base.group_system,1,1,1,1
+bpso_product_winder_manager,Davidts Product Winder Manager,product.product.winder,group_davidts_manager,1,1,1,1
+bpso_product_winder_user,Davidts Product Winder Manager Users,product.product.winder,group_davidts_user,1,1,1,0
+bpso_product_winder_admin,Davidts Product Winder Admin,product.product.winder,base.group_system,1,1,1,1

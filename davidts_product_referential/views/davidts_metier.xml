@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	<record id="davidts_metier_form" model="ir.ui.view">
+			<field name="inherit_id" ref="davidts_core.davidts_metier_form"/>
+			<field name="name">davidts.metier.form</field>
+			<field name="model">davidts.metier</field>
+			<field name="arch" type="xml">
+		<field name="name" position="after">
+							
+		<field name="enable_measure_capacity"/>
+        <field name="enable_measure_payload"/>
+        <field name="enable_wheel"/>
+
+        <field name="enable_luggage_business"/>
+        <field name="enable_luggage_travel"/>
+        
+        <field name="enable_dimension"/>
+        <field name="enable_garantee"/>
+        <field name="enable_pocket"/>
+        <field name="enable_compartment_sorter"/>
+        <field name="enable_pocket_floating"/>
+
+        <field name="enable_computer"/>
+ 
+        <field name="enable_tablet"/>
+        
+        <field name="enable_clothing_hanger_webbing"/>
+        <field name="enable_clothing_webbing"/>
+ 
+        <field name="enable_organizer" />  
+        
+        <field name="enable_lock"/>        
+        <field name="enable_lock_tsa"/>        
+   
+        <field name="enable_accessory_rings"/>
+        <field name="enable_accessory_tag"/>        
+        <field name="enable_accessory_scratchpad"/>        
+        <field name="enable_accessory_calculator"/>        
+        <field name="enable_accessory_elastic"/>        
+        <field name="enable_accessory_mirror"/>        
+        <field name="enable_accessory_shoulderstrap"/>        
+        <field name="enable_accessory_trolley"/>             
+       
+        <field name="enable_handle_number"/>
+        <field name="enable_handle_adjustable"/>             
+        
+        <field name="enable_strap"/>             
+     
+        <field name="enable_puller_sections"/>
+        <field name="enable_puller_telescopic"/>             
+        <field name="enable_puller_folding"/>             
+        <field name="enable_puller_adjustable"/>             
+        <field name="enable_puller_fixed"/>   
+        <field name="enable_platform"/> 
+        
+        <field name="enable_box"/>           
+							
+						
+		</field>
+		</field>
+		
+		</record>
+	</data>
+</openerp>

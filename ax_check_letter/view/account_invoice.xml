@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="action_pay_with_check_letter" model="ir.actions.server">
+            <field name="name">Check letter refund request</field>
+            <field name="model_id" ref="account.model_account_invoice"/>
+            <field name="state">code</field>
+            <field name="code">action = self.set_ax_to_pay_check_letter(cr, uid, context.get('active_ids', []), context=context)</field>
+        </record>
+
+        <record id="ax_view_account_invoice_search" model="ir.ui.view">
+            <field name="name">ax.account.invoice.search</field>
+            <field name="model">account.invoice</field>
+            <field name="priority" eval="8"/>
+            <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[last()]" position="after">
+                    <field name="ax_to_pay_check_letter" readonly="1" string="Have to pay with a check letter"/>
+                </xpath>
+                <xpath expr="//filter[@name='unpaid']" position="after">
+                    <filter domain="[('ax_to_pay_check_letter', '=', True), ('state','=','open')]" help="Refund to pay with check letter" icon="terp-personal"/>
+                    <filter domain="[('ax_to_pay_check_letter', '=', True), ('state','=','paid')]" help="Refund payed with check letter" icon="terp-personal"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="view_account_invoice_form" model="ir.ui.view">
+            <field name="name">ax.account.invoice.form</field>
+            <field name="model">account.invoice</field>
+            <field name="priority" eval="8"/>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//header/button[last()]" position="after">
+            		<button string="Mark to pay with check-letter"
+                            type="action" name="%(ax_check_letter.action_pay_with_check_letter)d"
+            				attrs="{'invisible': ['|', ('type', '!=', 'out_refund'), '|', ('ax_to_pay_check_letter', '=', True), ('state', '!=', 'open')]}"
+            				group="account.group_account_invoice" />
+            	</xpath>
+                <xpath expr="//field[@name='fiscal_position']" position="after">
+                    <field name="ax_to_pay_check_letter" readonly="1" group="account.group_account_invoice" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

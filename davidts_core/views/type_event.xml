@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+
+		<record model="ir.ui.view" id="type_evenement_tree_view">
+			<field name="name">evenement.type.tree</field>
+			<field name="model">evenement.type</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="The kind of events">
+					
+					<field name="name" string="Type of event" />
+					
+
+				</tree>
+			</field>
+		</record>
+
+
+
+		<record model="ir.ui.view" id="type_evenement_form_view">
+			<field name="name">evenement.type.form</field>
+			<field name="model">evenement.type</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="type of event" version="7.0">
+					<sheet>
+						<group>
+
+							<field name="name" />
+							<field name="evenement_ids">
+
+								<tree string="Events">
+								
+									<field name="name" />
+									<field name="date_begin" />
+									<field name="date_end" />
+									<field name="date_expedition" />
+								</tree>
+
+								<form string="Event" version="7.0">
+									<sheet>
+										<group>
+
+											<field name="name" />
+											<field name="date_begin" />
+											<field name="date_end" />
+											<field name="date_expedition" />
+										</group>
+
+									</sheet>
+
+								</form>
+								
+							</field>
+
+						</group>
+
+					</sheet>
+
+				</form>
+			</field>
+		</record>
+
+
+
+
+		<record model="ir.actions.act_window" id="act_type_evenement">
+			<field name="name">Types of events</field>
+			<field name="res_model">evenement.type</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="context">{'search_default_Responsable':uid} </field>
+		</record>
+
+
+
+
+
+
+		<menuitem id="menu_purchase_Evenement" name="Events" parent="purchase.menu_purchase_config_purchase" />
+
+		<menuitem action="act_type_evenement" id="menu_type" name="Types of events" parent="menu_purchase_Evenement" />
+
+	</data>
+</openerp>

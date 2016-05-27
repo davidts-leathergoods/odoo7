@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data noupdate="1">
+		<record id="seq_type_check_letter_batch" model="ir.sequence.type">
+			<field name="name">Check Letter Batch Sequence</field>
+			<field name="code">ax.check_letter.batch</field>
+		</record>
+		<record id="seq_check_letter_batch" model="ir.sequence">
+			<field name="name">Check Letter Batch Sequence</field>
+			<field name="code">ax.check_letter.batch</field>
+            <field name="implementation">standard</field>
+            <field  name="number_increment" eval="1"/>
+            <field  name="active" eval="1"/>
+		</record>
+	</data>
+</openerp>

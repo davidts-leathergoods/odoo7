@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!--begin Evolution #45407 -->
+        <record id="view_davidts_stock_picking_out_form" model="ir.ui.view">
+            <field name="name">davidts_stock_picking_out_form</field>
+            <field name="model">stock.picking.out</field>
+            <field name="inherit_id" ref="stock.view_picking_out_form" />
+            <field name="arch" type="xml">
+                <field name="min_date" position="replace">
+                    <field name="min_date" on_change="onchange_min_date(min_date,move_lines)"
+                           attrs="{'invisible': [('min_date','=',False)]}" modifiers="{'invisible': [['min_date', '=', false]]}" />
+                </field>
+                <xpath expr="//header/button[@name='button_cancel']" position="attributes">
+                    <attribute name="states">assigned,confirmed,draft,updated</attribute>
+                </xpath>
+                <xpath expr="/form/header//button[@name='draft_validate']"
+                       position="after">
+                    <button name="read_wms_stock_picking_out_files" states="assigned,confirmed,updated"
+                            string="Generate WMS file" class="oe_highlight" type="object" />
+                </xpath>
+                <xpath expr="//button[@name='draft_validate']" position="replace">
+                    <button name="draft_validate" states="draft,updated" string="Deliver"
+                            type="object" class="oe_highlight" />
+                </xpath>
+                <xpath expr="/form/header//field[@name='state']" position="replace">
+                    <field name="state" nolabel="1" readonly="1" widget="statusbar"
+                           statusbar_visible="draft,assigned,updated,done" statusbar_colors='{"auto":"blue", "confirmed":"blue"}' />
+                </xpath>
+                <field name="partner_id" position="after">
+                    <field name="warning"
+                           attrs="{'invisible': ['|',('partner_id','=', False),('warning','=', False)]}" />
+                </field>
+                <field name="name" position="before">
+                    <field name="client_limit_cridit_warning" invisible="1" />
+                    <separator string="Attention : customer credit is over the credit limit."
+                               attrs="{'invisible':['|',('invoice_state', '=', ('invoiced')),('client_limit_cridit_warning','!=','True')]}" />
+                    <separator />
+                </field>
+            </field>
+        </record>
+
+        <record id="view_davidts_stock_picking_in_form" model="ir.ui.view">
+            <field name="name">view_davidts_stock_picking_in_form</field>
+            <field name="model">stock.picking.in</field>
+            <field name="inherit_id" ref="stock.view_picking_in_form" />
+            <field name="arch" type="xml">
+                <field name="min_date" position="replace">
+                    <field name="min_date" 	attrs="{'invisible': [('min_date','=',False)]}" modifiers="{'invisible': [['min_date', '=', false]]}" />
+                </field>
+                <xpath expr="/form/header//button[@name='draft_force_assign']"
+                       position="before">
+                    <button name="read_wms_stock_picking_in_files" string="Generate WMS file"
+                            class="oe_highlight" states="assigned,confirmed,updated" type="object"/>
+                    <button name="%(action_picking_split)d" string="Split"
+                            class="oe_highlight" states="assigned" type="action"
+                            context="{'move_ids':move_lines}" />
+                </xpath>
+                <xpath expr="//button[@name='action_process']" position="replace">
+                    <button name="action_process" states="assigned,updated"
+                            string="Receive" type="object" class="oe_highlight" />
+                </xpath>
+                <xpath expr="/form/header//field[@name='state']" position="replace">
+                    <field name="state" nolabel="1" readonly="1" widget="statusbar"
+                           statusbar_visible="draft,assigned,updated,done" statusbar_colors='{"auto":"blue", "confirmed":"blue"}' />
+                </xpath>
+                <xpath expr="/form/sheet/notebook//page[@string='Additional Info']"
+                       position="after">
+                    <page string="Shipping Details">
+                        <group>
+                            <group>
+                                <field name="incoterm_id" />
+                                <field name="delivery_date" />
+                                <field name="delivery_carrier_id" />
+                                <field name="vessel" />
+
+                            </group>
+                            <group></group>
+                            <group>
+                                <field name="trip_name" />
+                                <field name="departure_point" />
+                                <field name="arrival_point" />
+                            </group>
+                            <group>
+                                <field name="conveyance_reference" />
+                                <field name="etd" />
+                                <field name="eta" />
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_davidts_stock_picking_in_tree" model="ir.ui.view">
+            <field name="name">view_davidts_stock_picking_in_tree</field>
+            <field name="model">stock.picking.in</field>
+            <field name="inherit_id" ref="stock.view_picking_in_tree" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='stock_journal_id']" position="replace">
+                    <field name="partner_ref" />
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="view_stock_picking_out_filter" model="ir.ui.view">
+            <field name="name">stock.picking.search.inherit</field>
+            <field name="model">stock.picking.out</field>
+            <field name="inherit_id" ref="stock.view_picking_out_search" />
+            <field name="arch" type="xml">
+                <field name="partner_id" position="replace">
+                    <field name="partner_id" />
+                </field>
+            </field>
+        </record>
+
+        <record id="view_stock_picking_in_filter" model="ir.ui.view">
+            <field name="name">stock.picking.search.inherit</field>
+            <field name="model">stock.picking.in</field>
+            <field name="inherit_id" ref="stock.view_picking_in_search" />
+            <field name="arch" type="xml">
+                <field name="partner_id" position="replace">
+                    <field name="partner_id" />
+                </field>
+            </field>
+        </record>
+
+        <record id="davidts_stock_view_move_picking_tree" model="ir.ui.view">
+            <field name="name">stock.move.tree</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_picking_tree" />
+            <field name="arch" type="xml">
+                <field name="product_qty" position="after">
+                    <field name="wms_qty" />
+                </field>
+            </field>
+        </record>
+
+        <record id="davidts_stock_view_move_picking_form" model="ir.ui.view">
+            <field name="name">stock.move.form</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_form" />
+            <field name="arch" type="xml">
+                <field name="product_id" position="after">
+                    <field name="wms_qty" />
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

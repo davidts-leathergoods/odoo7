@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data noupdate="1">
+		<!-- Sequences for purchase.order -->
+		<record id="ir_sequence_type_colisage" model="ir.sequence.type">
+			<field name="name">Sequence Colisage</field>
+			<field name="code">davidts.expedition</field>
+
+		</record>
+		<record id="seq_colisage" model="ir.sequence">
+			<field name="name">Sequence Colisage</field>
+			<field name="code">davidts.expedition</field>
+			<field name="prefix">LC14</field>
+			<field name="padding">5</field>
+			<field name="number_next"  eval="1"/>
+            <field name="implementation">standard</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field  name="number_increment" eval="1"/>
+            <field  name="active" eval="1"/>
+		</record>
+		
+		<record id="ir_sequence_crm_claim" model="ir.sequence.type">
+			<field name="name">Crm Claim</field>
+			<field name="code">crm.claim</field>
+		</record>
+		<record id="seq_crm_claim" model="ir.sequence">
+			<field name="name">Crm Claim</field>
+			<field name="code">crm.claim</field>
+			<field name="prefix">SAV </field>
+			<field name="padding">4</field>
+			<field name="number_next"  eval="1"/>
+            <field name="implementation">standard</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field  name="number_increment" eval="1"/>
+            <field  name="active" eval="1"/>
+		</record>
+		
+	</data>
+</openerp>
+    

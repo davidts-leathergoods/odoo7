@@ -1,0 +1,23 @@
+id,name,login,company_id/id,street,zip,city,country_id/id,phone,mobile,email
+base.users_dhe,DAVIDTS Henri,dhe,base.main_company,RUE DES SEMAILLES 27,4400,FLEMALLE,base.be,04 3449797,0475 417081,henri@davidts.be
+base.users_djm,DAVIDTS Jean-Marie,djm,base.main_company,RUE DES SEMAILLES 28,4400,FLEMALLE,base.be,04 3449797,0475 791348,jean-marie@davidts.be
+base.users_lad,LEGRAND Adrien,lad,base.main_company,RUE DES SEMAILLES 29,4400,FLEMALLE,base.be,04 3449797,,adrien@davdits.be
+base.users_mdi,MARTIN Didier,mdi,base.main_company,RUE DES SEMAILLES 30,4400,FLEMALLE,base.be,04 3449797,,didier@davidts.be
+base.users_cfr,CAVENTS François,cfr,base.main_company,NEERSTRAAT 90,2360,OUD-TURNHOUT,base.be,014 850376,0476 919589,francois.cavents@davidts.be
+base.users_nda,NICODEME Daniel,nda,base.main_company,ROUTE DE LOUVEIGNE . 38,4920,SOUGNE-REMOUCHAMPS,base.be,04 3580120,0477 280572,jackysac@skynet.be
+base.users_lmi,LEMAUT Michel,lmi,base.main_company,LES EGRESSES,26790,TULETTE,base.fr,0033 475983412,0033 686946594,michellemaut@voila.fr
+base.users_gro,GERST Roger,gro,base.main_company,6  ALLEE DE LA GRAVETTE,33450,ST SULPICE ET CAMEYRAC,base.fr,0033 556917425,0033 687829826,roger@gerst-bag.fr
+base.users_mer,MALLIER Eric,mer,base.main_company,5 . RUE EUSTACHE DESCHAMPS,51100,REIMS,base.fr,0033 614692148,0033 614692148,mallier-eric@live.fr
+base.users_dgi,DAUGER Gilles,dgi,base.main_company,12  RUE JEAN MARIDOR,75015,PARIS,base.fr,0033 145578471,0033 6844661099,27.gd@orange.fr
+base.users_sbe,SCHELLEKENS Berry,sbe,base.main_company,4 BELGIELAAN,5101,ZG DONGEN,base.nl,0031 162312766,0031 654901852,roll@secc.nl
+base.users_rju,ROTH Jürgen,rju,base.main_company,STRASSE DES FRIEDENS 6A,14476,POSTDAM-SATZKORN,base.de,0049 33208230380,0049 1792052226,roth.hv@gmx.de
+base.users_gjo,GRIMM  Jochen,gjo,base.main_company,HAUPTSTRASSE 61,67821,OBERNDORF,base.de,,0049 1712462226,jochen@pare.nl
+base.users_dan,DIPPING Andreas,dan,base.main_company,GARTENSTRASSE 56,70734,FELLBACH,base.de,0049 711580946,0049 7111579428,atd@online.de
+base.users_kko,KEIZER Koos,kko,base.main_company,,,,base.de,,0049 15253775154,keizerkoos@gmail.de
+base.users_wto,WALKER Tony,wto,base.main_company,17 . SKAMACRE CRESCENT,NR32 2QG,LOWESTOFT (SUFFOLK),base.uk,0044 1502518541,0044 7850844658,walkers17@btinternet.com
+base.users_dke,DÖRNER Karl & Eva,dke,base.main_company,ESLARNGASSE 10/3A,1030,WIEN,base.at,0043 13323602,0043 676844168200,legro@aon.at
+base.users_bal,BRUUNS Alex,bal,base.main_company,SKRILLINGEVEJ 26 ,5500,MIDDELFART,base.de,0045 64417220,,bruuns@bruuns.dk  
+base.users_bne,BOTTEON Nello,bne,base.main_company,VIA MAGG. G. PIOVESANA 13/C,31015,CONEGLIANO (TV),base.it,0039 0438418241,0039 3358122854,info@botteonoffice.it
+base.users_bmi,BAJRON Michal,bmi,base.main_company,NOWA WIES 9,05-870,BLONIE,base.pl,0049 604977637,,jbajron@wp.pl
+base.users_ige,INGRASSIA Germano,ige,base.main_company,VIA APPIA NUOVA 519,181,ROME,base.it,0039 3332019282,,info@rmoda.it
+base.users_dso,DAVIDTS Société,dso,base.main_company,Rue des Semailles 27,4400,FLEMALLE,base.be,04 3449797,,info@davidts.be

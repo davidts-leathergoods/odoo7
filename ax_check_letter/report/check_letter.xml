@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+         <report auto="False" id="check_letter" 
+            menu="False" model="account.voucher" 
+            name="check_letter"
+            rml="ax_check_letter/report/check_letter.rml" 
+            string="Check letter"
+            header="False"/>
+    </data>
+</openerp>

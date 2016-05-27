@@ -1,0 +1,2 @@
+id,name,description,allow_custom_value,mandatory_dimension,sequence
+davidts.product_variant_dimension_type_couleur,Couleur,Dimension couleur,TRUE,TRUE,

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<!-- <record model="ir.ui.view" id="sol_mv_form_view">
+			<field name="name">sol.mv</field>
+			<field name="model">sol.mv</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="S" version="7.0">
+					<sheet>
+						<h1>
+							<label
+								string="The state of the stock after confirmation" />
+						</h1>
+						<field name="sol_mv_ids" string="">
+							<tree string="Stock week" domain="[('mumero_semain', '=',1)]">
+                                <field name="mumero_semain" />
+								<field name="date_debut" />
+								<field name="date_fin" />
+								<field name="qty_available_week_fn" />
+								<field name="incoming_qty_week_fn" />
+								<field name="outgoing_qty_week_fn" />
+								<field name="virtual_available_week_fn" />
+							</tree>
+						</field>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="act_sol_mv">
+			<field name="name">sol_mv</field>
+			<field name="res_model">sol.mv</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="context">{'search_default_Responsable':uid} </field>
+		</record> -->
+
+	</data>
+</openerp>

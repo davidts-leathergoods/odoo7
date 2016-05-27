@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="email_message_wizard_form">
+            <field name="name">mail.message.wizard.form</field>
+            <field name="model">mail.message.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Compose Email" version="7.0">
+                    <group>
+                        <field name="author_id" readonly="1"/>
+                        <field name="subject" readonly="1" />
+                        <field name="body" readonly="1"/>
+                        <label for="object" string="Attach To Object"/>
+                        <div class="attach_to_object">
+                            <field name="object" on_change="onchange_model( object, customer_id, supplier_id, product_id, crm_lead_id, invoice_customer_id,invoice_supplier_id,sale_order_id,purchase_order_id, refund_customer_id, refund_supplier_id)" style="width: 45%%"/>
+                            <field name="model" invisible="1"/>
+                            <field name="customer_id" on_change="onchange_model( object, customer_id, supplier_id, product_id, crm_lead_id, invoice_customer_id,invoice_supplier_id,sale_order_id,purchase_order_id, refund_customer_id, refund_supplier_id)" attrs="{'invisible': [('object','!=', 'res.partner_customer')], 'required': [('object','=', 'res.partner_customer')]}" style="width: 45%%"/>
+                            <field name="supplier_id" on_change="onchange_model( object, customer_id, supplier_id, product_id, crm_lead_id, invoice_customer_id,invoice_supplier_id,sale_order_id,purchase_order_id, refund_customer_id, refund_supplier_id)" attrs="{'invisible': [('object','!=', 'res.partner_supplier')], 'required': [('object','=', 'res.partner_supplier')]}" style="width: 45%%"/>
+                            <field name="crm_lead_id" on_change="onchange_model( object, customer_id, supplier_id, product_id, crm_lead_id, invoice_customer_id,invoice_supplier_id,sale_order_id,purchase_order_id, refund_customer_id, refund_supplier_id)" attrs="{'invisible': [('object','!=', 'crm.lead')], 'required': [('object','=', 'crm.lead')]}" style="width: 45%%"/>
+                            <field name="product_id" on_change="onchange_model( object, customer_id, supplier_id, product_id, crm_lead_id, invoice_customer_id,invoice_supplier_id,sale_order_id,purchase_order_id, refund_customer_id, refund_supplier_id)" attrs="{'invisible': [('object','!=', 'product.product')], 'required': [('object','=', 'product.product')]}" style="width: 45%%"/>
+                            <field name="sale_order_id" on_change="onchange_model( object, customer_id, supplier_id, product_id, crm_lead_id, invoice_customer_id,invoice_supplier_id,sale_order_id,purchase_order_id, refund_customer_id, refund_supplier_id)" attrs="{'invisible': [('object','!=', 'sale.order')], 'required': [('object','=', 'sale.order')]}" style="width: 45%%"/>
+                            <field name="purchase_order_id" on_change="onchange_model( object, customer_id, supplier_id, product_id, crm_lead_id, invoice_customer_id,invoice_supplier_id,sale_order_id,purchase_order_id, refund_customer_id, refund_supplier_id)" attrs="{'invisible': [('object','!=', 'purchase.order')], 'required': [('object','=', 'purchase.order')]}" style="width: 45%%"/>
+                            <field name="invoice_customer_id" on_change="onchange_model( object, customer_id, supplier_id, product_id, crm_lead_id, invoice_customer_id,invoice_supplier_id,sale_order_id,purchase_order_id, refund_customer_id, refund_supplier_id)" attrs="{'invisible': [('object','!=', 'account.invoice_customer')], 'required': [('object','=', 'account.invoice_customer')] }" style="width: 45%%"/>
+                            <field name="invoice_supplier_id" on_change="onchange_model( object, customer_id, supplier_id, product_id, crm_lead_id, invoice_customer_id,invoice_supplier_id,sale_order_id,purchase_order_id, refund_customer_id, refund_supplier_id)" attrs="{'invisible': [('object','!=', 'account.invoice_supplier')], 'required': [('object','=', 'account.invoice_supplier')]}" style="width: 45%%"/>
+                            <field name="refund_customer_id" on_change="onchange_model( object, customer_id, supplier_id, product_id, crm_lead_id, invoice_customer_id,invoice_supplier_id,sale_order_id,purchase_order_id, refund_customer_id, refund_supplier_id)" attrs="{'invisible': [('object','!=', 'account.invoice_customer_refund')], 'required': [('object','=', 'account.invoice_customer_refund')]}" style="width: 45%%"/>
+                            <field name="refund_supplier_id" on_change="onchange_model( object, customer_id, supplier_id, product_id, crm_lead_id, invoice_customer_id,invoice_supplier_id,sale_order_id,purchase_order_id, refund_customer_id, refund_supplier_id)" attrs="{'invisible': [('object','!=', 'account.invoice_supplier_refund')], 'required': [('object','=', 'account.invoice_supplier_refund')]}" style="width: 45%%"/>
+                            <field name="res_id"  invisible="1"/>
+                        </div>
+                    </group>
+                    <footer>
+                        <button string="Send" name="send_mail" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</openerp>

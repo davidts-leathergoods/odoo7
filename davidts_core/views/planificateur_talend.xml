@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<openerp>
+	<data noupdate="1">
+		<record id="ir_cron_wms" model="ir.cron">
+			<field eval="&quot;&quot;&quot;Planificateur WMS files&quot;&quot;&quot;"
+				name="name" />
+			<field name="user_id" ref="base.user_root" />
+			<field name="function">action_read_wms_files</field>
+			<field eval="-1" name="numbercall" />
+			<field eval="&quot;&quot;&quot;2013-11-07 11:10:28&quot;&quot;&quot;"
+				name="nextcall" />
+			<field eval="5" name="priority" />
+			<field eval="0" name="doall" />
+			<field eval="1" name="interval_number" />
+			<field eval="&quot;&quot;&quot;hours&quot;&quot;&quot;" name="interval_type" />
+			<field eval="5" name="active" />
+			<field eval="&quot;&quot;&quot;schedulers.wms.files&quot;&quot;&quot;"
+				name="model" />
+		</record>
+	</data>
+</openerp>
