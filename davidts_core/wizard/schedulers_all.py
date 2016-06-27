@@ -3,16 +3,39 @@
 import os
 from openerp.osv import osv
 from openerp.tools.translate import _
+from email.message import tspecials
+from openerp.tools import config 
+
+import logging
+
+_logger = logging.getLogger(__name__)
 
 class schedulers_wms_files(osv.osv_memory):
     _name = 'schedulers.wms.files'
     _description = 'Compute all schedulers'
 
     def execute_schedulers(self, cr, uid):
+        ad_paths = map(lambda m: os.path.abspath(m.strip()),config['addons_path'].split(','))
+
+        # original default values as set by audaxis
         PATH_JOB_SALE = '../../project_addons/openerp_wms/wms_openerp_sale/wms_openerp_sale/wms_openerp_sale_run.sh'
+        PATH_JOB_PURCHASE = '../../project_addons/openerp_wms/wms_openerp_purchase/wms_openerp_purchase/wms_openerp_purchase_run.sh'
+        _logger.debug("Searching wms import script")
+        for p in ad_paths :
+            
+           tsp = p + "/openerp_wms/wms_openerp_sale/wms_openerp_sale/wms_openerp_sale_run.sh"
+           if os.path.isfile(tsp) :
+                PATH_JOB_SALE = tsp
+                _logger.debug("Adjusted PATH_JOB_SALE to %s"%tsp)
+           tpp = p + "/openerp_wms/wms_openerp_purchase/wms_openerp_purchase/wms_openerp_purchase_run.sh"
+           if os.path.isfile(tpp) :
+                PATH_JOB_PURCHASE =tpp
+                _logger.debug("Adjusted PATH_JOB_PURCHASE to %s"%tpp)
+                
+        
+        
         path_files_sale = self.pool.get("ir.config_parameter").get_param(cr, uid, "davits.path_wms_openerp_sale")
         
-        PATH_JOB_PURCHASE = '../../project_addons/openerp_wms/wms_openerp_purchase/wms_openerp_purchase/wms_openerp_purchase_run.sh'
         path_files_purchase = self.pool.get("ir.config_parameter").get_param(cr, uid, "davits.path_wms_openerp_purchase")
         
         path_archive_files = self.pool.get("ir.config_parameter").get_param(cr, uid, "davits.wmsfiles_after_treated")

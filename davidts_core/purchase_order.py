@@ -4,6 +4,8 @@ from openerp.tools.translate import _
 import os
 from openerp.tools import DEFAULT_SERVER_DATE_FORMAT, DEFAULT_SERVER_DATETIME_FORMAT, DATETIME_FORMATS_MAP
 from datetime import date
+import logging
+_logger = logging.getLogger(__name__)
 
 
 class PurchaseOrder(osv.osv):
@@ -30,6 +32,14 @@ class PurchaseOrder(osv.osv):
     def read_wms_purchase_files(self, cr, uid, ids):
         parameter_obj = self.pool.get("ir.config_parameter")
         PATH_JOB = '../../project_addons/openerp_wms/purchase_openerpwms/purchase_openerpwms/purchase_openerpwms_run.sh'
+        ad_paths = map(lambda m: os.path.abspath(m.strip()),config['addons_path'].split(','))
+        _logger.debug("Searching wms import script purchase_openerpwms_run")
+        for p in ad_paths :  
+           jsp = p + "/openerp_wms/purchase_openerpwms/purchase_openerpwms/purchase_openerpwms_run.sh"
+           if os.path.isfile(jsp) :
+                PATH_JOB = jsp
+                _logger.debug("Adjusted PATH_JOB to %s"%jsp)
+        
         if parameter_obj.get_param(cr, uid, "davits.path_openerp_wms"):
             os.system('sh %s %s %d' % (PATH_JOB, ids[0]))
         else:

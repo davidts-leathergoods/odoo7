@@ -2,7 +2,9 @@
 from openerp.osv import fields, osv
 import os
 from openerp.tools.translate import _
-
+import logging
+from openerp.tools import config 
+_logger = logging.getLogger(__name__)
 # Evolution #45407
 
 class StockPicking(osv.osv):
@@ -172,6 +174,15 @@ class DavidtsStockPickingOut(osv.osv):
     def read_wms_stock_picking_out_files(self, cr, uid, ids, context=None):
         parameter_obj = self.pool.get("ir.config_parameter")
         PATH_JOB = '../../project_addons/openerp_wms/sale_openerpwms/sale_openerpwms/sale_openerpwms_run.sh'
+        ad_paths = map(lambda m: os.path.abspath(m.strip()),config['addons_path'].split(','))
+        _logger.debug("Searching wms import script sale_openerpwms_run.sh")
+        for p in ad_paths :
+           tsp = p + "/openerp_wms/sale_openerpwms/sale_openerpwms/sale_openerpwms_run.sh"
+           if os.path.isfile(tsp) :
+                PATH_JOB = tsp
+                _logger.debug("Adjusted PATH sale_openerpwms_run to %s" %tsp)
+ 
+        
         if parameter_obj.get_param(cr, uid, "davits.path_openerp_wms"):
             #JMA Mise en commentaire
             #os.system('sh '+  PATH_JOB+" "+parameter_obj.get_param(cr, uid, "davits.path_openerp_wms")+" "+str(ids[0]))
@@ -239,6 +250,14 @@ class stock_picking_in(osv.osv):
     def read_wms_stock_picking_in_files(self, cr, uid, ids, context=None):
         parameter_obj = self.pool.get("ir.config_parameter")
         PATH_JOB = '../../project_addons/openerp_wms/purchase_openerpwms/purchase_openerpwms/purchase_openerpwms_run.sh'
+        ad_paths = map(lambda m: os.path.abspath(m.strip()),config['addons_path'].split(','))
+        _logger.debug("Searching wms import script sale_openerpwms_run.sh")
+        for p in ad_paths :
+           tsp = p + "/openerp_wms/sale_openerpwms/sale_openerpwms/sale_openerpwms_run.sh"
+           if os.path.isfile(tsp) :
+                PATH_JOB = tsp
+                _logger.debug("Adjusted PATH purchase_openerpwms_run.sh to %s" %tsp)
+        
         if self.pool.get("ir.config_parameter").get_param(cr, uid, "davits.path_openerp_wms"):
             #JMA Mise en commentaire
             #os.system('sh '+PATH_JOB+" "+ parameter_obj.get_param(cr, uid,"davits.path_openerp_wms")+" "+str(ids[0]))

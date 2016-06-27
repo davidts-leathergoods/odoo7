@@ -54,11 +54,6 @@
 						<!-- end Evolution #47143 -->
 					</page>
 				</xpath>
-				<!--Begin Evolution #46600 -->
-				<field name="sale_ok" position="after">
-					<field name="attribute_set_id" />
-				</field>
-				<!--End Evolution #46600 -->
 			</field>
 		</record>
 		<!--Begin Evolution #46810 -->

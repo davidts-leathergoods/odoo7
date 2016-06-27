@@ -7,6 +7,9 @@ import os
 from openerp.tools import float_compare
 from openerp import SUPERUSER_ID
 
+import logging
+
+_logger = logging.getLogger(__name__)
 
 class DavidtsSalesOrder(osv.osv):
 
@@ -158,12 +161,20 @@ class DavidtsSalesOrder(osv.osv):
         result = super(DavidtsSalesOrder, self).action_button_confirm(cr, uid, ids, context=context)
         where = []
         cr.execute("COMMIT;", tuple(where))
+        PATH_JOB = '../../project_addons/openerp_wms/sale_openerpwms/sale_openerpwms/sale_openerpwms_run.sh'
+        ad_paths = map(lambda m: os.path.abspath(m.strip()),config['addons_path'].split(','))
+        _logger.debug("Searching wms import script sale_openerpwms_run.sh")
+        for p in ad_paths :
+           tsp = p + "/openerp_wms/sale_openerpwms/sale_openerpwms/sale_openerpwms_run.sh"
+           if os.path.isfile(tsp) :
+                PATH_JOB = tsp
+                _logger.debug("Adjusted PATH_JOB to %s"%tsp)
+             
         for id in ids:
             cr.execute("select id from stock_picking where sale_id=%d" % id)
             picking_ids = [x[0] for x in cr.fetchall()]
             if picking_ids:
                 for picking_id in picking_ids:
-                    PATH_JOB = '../../project_addons/openerp_wms/sale_openerpwms/sale_openerpwms/sale_openerpwms_run.sh'
                     if self.pool.get("ir.config_parameter").get_param(cr, uid, "davits.path_openerp_wms"):
                         os.system('sh ' + PATH_JOB + " " + str(picking_id))
             else:
