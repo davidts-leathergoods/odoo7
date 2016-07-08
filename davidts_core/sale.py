@@ -6,6 +6,7 @@ from openerp.tools.translate import _
 import os
 from openerp.tools import float_compare
 from openerp import SUPERUSER_ID
+from openerp.tools import config 
 
 import logging
 
