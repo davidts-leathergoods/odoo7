@@ -44,6 +44,89 @@ class StockPicking(osv.osv):
             if o.partner_id and o.partner_id.credit and o.partner_id.credit + amount_total > o.partner_id.credit_limit:                
                 result[o.id] = 'True'
         return result
+    
+    #Define By BPSO
+    def _get_myself_pickings(self, cr, uid, ids, context=None):
+        """return the list of pickings being handled - needed for davidts
+        """
+        return list(ids)
+    
+    #Redefine By BPSO
+    def _set_maximum_date(self, cr, uid, ids, name, value, arg, context=None):
+        """ Calculates planned date if it is greater than 'value'.
+        @param name: Name of field
+        @param value: Value of field
+        @param arg: User defined argument
+        @return: True or False
+        """
+        if not value:
+            return False
+        if isinstance(ids, (int, long)):
+            ids = [ids]
+        for pick in self.browse(cr, uid, ids, context=context):
+            sql_str = """update stock_move set
+                    date_expected='%s'
+                where
+                    picking_id=%d """ % (value, pick.id)
+            if pick.max_date:
+                sql_str += " and (date_expected='" + pick.max_date + "')"
+            cr.execute(sql_str)
+        return True
+    
+    #Redefine By BPSO
+    def _set_minimum_date(self, cr, uid, ids, name, value, arg, context=None):
+        """ Calculates planned date if it is less than 'value'.
+        @param name: Name of field
+        @param value: Value of field
+        @param arg: User defined argument
+        @return: True or False
+        """
+        if not value:
+            return False
+        if isinstance(ids, (int, long)):
+            ids = [ids]
+        for pick in self.browse(cr, uid, ids, context=context):
+            sql_str = """update stock_move set
+                    date_expected='%s'
+                where
+                    picking_id=%s """ % (value, pick.id)
+            if pick.min_date:
+                sql_str += " and (date_expected='" + pick.min_date + "')"
+            cr.execute(sql_str)
+        return True
+    
+    #Redefine By BPSO
+    def get_min_max_date(self, cr, uid, ids, field_name, arg, context=None):
+        """ Finds minimum and maximum dates for picking.
+        @return: Dictionary of values
+        """
+        res = {}
+        for id in ids:
+            res[id] = {'min_date': False, 'max_date': False}
+        if not ids:
+            return res
+        cr.execute("""select
+                picking_id,
+                min(date_expected),
+                max(date_expected)
+            from
+                stock_move
+            where
+                picking_id IN %s
+            group by
+                picking_id""",(tuple(ids),))
+        for pick, dt1, dt2 in cr.fetchall():
+            res[pick]['min_date'] = dt1
+            res[pick]['max_date'] = dt2
+        return res
+    
+    #Redefine By BPSO
+    def _get_pickings(self, cr, uid, ids, context=None):
+        res = set()
+        for move in self.browse(cr, uid, ids, context=context):
+            if move.picking_id and not move.picking_id.min_date < move.date_expected < move.picking_id.max_date:
+                res.add(move.picking_id.id)
+        return list(res)
 
     _columns = {
         'warning': fields.function(_get_warning_message, methode=True, type='text', store=True, readonly=True,
@@ -77,7 +160,17 @@ class StockPicking(osv.osv):
         'etd': fields.date('ETD'),
         'eta': fields.date('ETA'),
         'partner_ref':fields.related('purchase_id','partner_ref',type='char',string='Partner reference'),
+        
+        'min_date': fields.function(get_min_max_date, fnct_inv=_set_minimum_date, multi="min_max_date",
+                 store={'stock.move': (_get_pickings, ['date_expected', 'picking_id'], 20),
+                 'stock.picking.in':(_get_myself_pickings, ['min_date'],20), 'stock.picking.out':(_get_myself_pickings,['min_date'],20)},
+                 type='datetime', string='Scheduled Time', select=1, help="Scheduled time for the shipment to be processed"),
+        'max_date': fields.function(get_min_max_date, fnct_inv=_set_maximum_date, multi="min_max_date",
+                 store={'stock.move': (_get_pickings, ['date_expected', 'picking_id'], 20),
+                 'stock.picking.in':(_get_myself_pickings, ['min_date'],20), 'stock.picking.out':(_get_myself_pickings,['min_date'],20)},
+                 type='datetime', string='Max. Expected Date', select=2),
     }
+    
     
     def _prepare_invoice(self, cr, uid, picking, partner, inv_type, journal_id, context=None):
         res = super(StockPicking, self)._prepare_invoice(cr, uid, picking, partner, inv_type, journal_id, context)
