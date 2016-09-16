@@ -71,7 +71,7 @@
 											attrs="{'readonly':[('enable_dimension','=',False)]}" />
 										<field name="height"
 											attrs="{'readonly':[('enable_dimension','=',False)]}" />
-										<field name="width"
+										<field name="width" string="Épaisseur"
 											attrs="{'readonly':[('enable_dimension','=',False)]}" />
 									</group>
 									<group>
@@ -96,7 +96,7 @@
 									<label for="warranty" />
 									<div>
 										<field name="warranty" class="oe_inline" />
-										year
+										Year
 									</div>
 								</group>
 							</page>
@@ -104,7 +104,8 @@
 								<group col="2">
 									<group>
 										<field name="wheel_number" attrs="{'readonly':[('enable_wheel','=',False)]}" />
-										<field name="wheel_diameter_front" attrs="{'readonly':[('enable_wheel','=',False)]}" />
+										<field name="wheel_diameter_front" string="Diamètre des roues avant"
+											attrs="{'readonly':[('enable_wheel','=',False)]}" />
 										<field name="wheel_diameter_rear" attrs="{'readonly':[('enable_wheel','=',False)]}" />
 
 										<field name="wheel_relativeweight" attrs="{'readonly':[('enable_wheel','=',False)]}" />
@@ -113,9 +114,9 @@
 										<field name="wheel_removable" attrs="{'readonly':[('enable_wheel','=',False)]}" />
 									</group>
 									<group>
-										<field name="wheel_front" widget="selection"
+										<field name="wheel_front" widget="selection" string="Roues avant"
 											attrs="{'readonly':[('enable_wheel','=',False)]}" />
-										<field name="wheel_back" widget="selection"
+										<field name="wheel_back" widget="selection" string="Roues arrière"
 											attrs="{'readonly':[('enable_wheel','=',False)]}" />
 										<field name="wheel_fixed" widget="selection"
 											attrs="{'readonly':[('enable_wheel','=',False)]}" />
@@ -171,13 +172,13 @@
 									<group string="Laptop Compartment">
 										<field name="computer"
 											attrs="{'readonly':[('enable_computer','=',False)]}" />
+										<field name="computer_size" widget="selection"
+											attrs="{'readonly':[('enable_computer','=',False)]}" />
 										<field name="computer_length"
 											attrs="{'readonly':[('enable_computer','=',False)]}" />
 										<field name="computer_height"
 											attrs="{'readonly':[('enable_computer','=',False)]}" />
 										<field name="computer_width"
-											attrs="{'readonly':[('enable_computer','=',False)]}" />
-										<field name="computer_size" widget="selection"
 											attrs="{'readonly':[('enable_computer','=',False)]}" />
 									</group>
 									<group string="Tablet Pocket">
@@ -230,7 +231,7 @@
 									<group>
 										<field name="accessory_elastic"
 											attrs="{'readonly':[('enable_accessory_elastic','=',False)]}" />
-										<field name="accessory_mirror"
+										<field name="accessory_mirror" string="Miroir"
 											attrs="{'readonly':[('enable_accessory_mirror','=',False)]}" />
 										<field name="accessory_shoulderstrap"
 											attrs="{'readonly':[('enable_accessory_shoulderstrap','=',False)]}" />
@@ -274,7 +275,7 @@
 											attrs="{'readonly':[('enable_puller_folding','=',False)]}" />
 									</group>
 									<group>
-										<field name="puller_adjustable"
+										<field name="puller_adjustable" string="Ajustable"
 											attrs="{'readonly':[('enable_puller_adjustable','=',False)]}" />
 										<field name="puller_fixed"
 											attrs="{'readonly':[('enable_puller_fixed','=',False)]}" />
@@ -1238,7 +1239,7 @@
 			<field name="name">Product Company Tree View</field>
 			<field name="model">product.product.company</field>
 			<field name="arch" type="xml">
-				<tree string="Companies" version="7.0">
+				<tree string="Compagnies aériennes" version="7.0">
 					<field name="name" />
 					<field name="code" />
 					<field name="luggage_h" />
@@ -1253,11 +1254,11 @@
 			<field name="name">Product Company Form View</field>
 			<field name="model">product.product.company</field>
 			<field name="arch" type="xml">
-				<form string="Company" version="7.0">
+				<form string="Compagnies aériennes" version="7.0">
 					<sheet>
 						<div class="oe_title">
 							<h1>
-								Company
+								Compagnie aérienne
 							</h1>
 						</div>
 						<group>
@@ -1281,7 +1282,7 @@
 			<field name="name">Product Company Search View</field>
 			<field name="model">product.product.company</field>
 			<field name="arch" type="xml">
-				<search string="Companies" version="7.0">
+				<search string="Compagnies aériennes" version="7.0">
 					<field name="name"
 						filter_domain="['|', ('name','ilike',self), ('name','ilike',self)]"
 						string="Name" />
@@ -1294,14 +1295,14 @@
 		</record>
 
 		<record id="action_bpso_product_company" model="ir.actions.act_window">
-			<field name="name">Products Companies</field>
+			<field name="name">Compagnies aériennes</field>
 			<field name="type">ir.actions.act_window</field>
 			<field name="res_model">product.product.company</field>
 			<field name="view_type">form</field>
 		</record>
 
 		<menuitem action="action_bpso_product_company" id="menu_bpso_product_referential_company"
-			parent="base.menu_base_config" name="Companies" />
+			parent="base.menu_base_config" name="Compagnies aériennes" />
 
 
 	</data>

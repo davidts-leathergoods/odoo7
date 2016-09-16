@@ -719,7 +719,7 @@ msgstr "Largeur tablette: Exp. 15"
 #: field:product.template,enable_organizer:0
 #: field:product.template,organizer:0
 msgid "Organizer"
-msgstr "Agenda"
+msgstr "Organizer"
 
 #. module: davidts_product_referential
 #: model:ir.actions.act_window,name:davidts_product_referential.action_bpso_product_wheel
@@ -778,6 +778,13 @@ msgstr "mois"
 #: view:product.template:0
 msgid "year"
 msgstr "année"
+
+#. module: davidts_product_referential
+#: view:product.product:0
+#: view:product.template:0
+msgid "Year"
+msgstr "Années"
+
 
 #. module: davidts_product_referential
 #: view:product.product.box:0
@@ -1124,12 +1131,6 @@ msgstr "Nombre d'éléments rangeables"
 #: model:res.groups,name:davidts_product_referential.group_davidts_manager
 msgid "Davidts Manager"
 msgstr "Davidts - Gérant"
-
-#. module: davidts_product_referential
-#: model:ir.ui.menu,name:davidts_product_referential.menu_bpso_product_referential_company
-#: view:product.product.company:0
-msgid "Companies"
-msgstr "Sociétés"
 
 #. module: davidts_product_referential
 #: field:davidts.metier,enable_accessory_elastic:0
