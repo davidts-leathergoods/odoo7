@@ -200,12 +200,13 @@ class DavidtsProductTemplate(osv.osv):
     def _detect_luggage_change_t (self,cr,uid,ids,context) :
  
         return ids
+    
     _columns = {
         'measure_capacity': fields.float('Capacity', help="Liter capacity (content): Exp. 25",select=True),
         'measure_payload': fields.integer('Payload', help="Payload (maximum weight allowed): Exp. 25",select=True),
         'wheel_number': fields.integer('Numbers of wheels', help="Numbers of wheels: Exp. 1",select=True),
-        'wheel_diameter_front': fields.integer('Front wheel size', help="Diameters of the wheels (different diameter to the front and rear wheels possible!): Exp. 7",select=True),
-        'wheel_diameter_rear': fields.integer('Rear wheel size', help="Diameters of the wheels (different diameter to the front and rear wheels possible!): Exp. 7",select=True),
+        'wheel_diameter_front': fields.float('Front wheel size', help="Diameters of the wheels (different diameter to the front and rear wheels possible!): Exp. 7",select=True),
+        'wheel_diameter_rear': fields.float('Rear wheel size', help="Diameters of the wheels (different diameter to the front and rear wheels possible!): Exp. 7",select=True),
  
         'wheel_relativeweight': fields.float('Relative weight (g/l)', help="Relative weight ( weight / capacity) (grams per liter ): Exp. 5 g/l",select=True),
         'wheel_front': fields.many2one('product.product.wheel', 'Front Wheels', domain=[('code','=','WF')], help="Front wheel multidirectional (single / double)",select=True),
@@ -248,13 +249,13 @@ class DavidtsProductTemplate(osv.osv):
         'compartment_sorter': fields.boolean('Sorter', help="Insulated compartment (7.1, 7.2, 7.3, ...)",select=True),
         'pocket_floating': fields.boolean('Floating pocket', help="Floating pocket (7.1, 7.2, 7.3, ...)",select=True),
         'computer': fields.boolean('Compartment for laptop?', help="Presence of computer compartment ?",select=True),
-        'computer_height': fields.integer('Computer height', help="Computer height :Exp. 35",select=True),
-        'computer_length': fields.integer('Computer length', help="Computer length: Exp. 27",select=True),
-        'computer_width': fields.integer('Computer width', help="Computer width: Exp. 24",select=True),
+        'computer_height': fields.float('Computer height', help="Computer height :Exp. 35",select=True),
+        'computer_length': fields.float('Computer length', help="Computer length: Exp. 27",select=True),
+        'computer_width': fields.float('Computer width', help="Computer width: Exp. 24",select=True),
         'computer_size': fields.many2one('product.product.computer_size', 'Computer size', help="Computer size: Exp. 15 pouces",select=True),
         'tablet': fields.boolean('Compartment for tablet?', help="Presence of tablet compartment ?",select=True),
-        'tablet_height': fields.integer('Tablet height', help="Tablet height: Exp. 25",select=True),
-        'tablet_width': fields.integer('Tablet width', help="Tablet width: Exp. 15",select=True),
+        'tablet_height': fields.float('Tablet height', help="Tablet height: Exp. 25",select=True),
+        'tablet_width': fields.float('Tablet width', help="Tablet width: Exp. 15",select=True),
         'tablet_size': fields.many2one('product.product.tablet_size', 'Tablet size', help="Tablet size: Exp. 8 pouces",select=True),
         
         'clothing_hanger': fields.boolean('Hangers', help="Hangers Compartment ?",select=True),
@@ -303,11 +304,9 @@ class DavidtsProductTemplate(osv.osv):
         'watchwinder_compartment': fields.integer('Additional compartment?', help="Additional compartment?: Exp. 1",select=True),
         'watchwinder_timer': fields.boolean('Timer', help="Timer?",select=True),
         'watchwinder_plug': fields.many2one('product.product.winder', 'Plug or power supply?',domain=[('code','=','WP')], help="Plug or power supply (pile | secteur | pile et secteur..)",select=True),
-    
-        'weight': fields.integer('Weight', help="Weight",select=True),
-
-    
-    
+        
+        'weight': fields.float('Weight', help="Weight",select=True),
+        
         'enable_measure_capacity': fields.related('metier_id','enable_measure_capacity'  ,type="boolean",string='Capacity'),
         'enable_measure_payload': fields.related('metier_id','enable_measure_payload'  ,type="boolean",string='Payload'),
         'enable_wheel': fields.related('metier_id','enable_wheel'  ,type="boolean",string='Enable wheels'),
