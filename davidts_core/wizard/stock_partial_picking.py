@@ -11,3 +11,9 @@ class stock_partial_picking(osv.osv_memory):
         if move.picking_id.type == 'out' or move.picking_id.type == 'in':
             partial_move.update({'quantity': move.wms_qty if move.state == 'assigned' else 0})
         return partial_move
+
+    # latest version of Odoo7 opens the picking that has been done instead of keeping the remaining one
+    # just closing is enought to satisfy davidts
+    def do_partial(self, cr, uid, ids, context=None):
+        super(self,stock_partial_picking)
+        return {'type': 'ir.actions.act_window_close'}
