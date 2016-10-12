@@ -1768,3 +1768,8 @@ msgstr "Nombre de montres"
 msgid "Total"
 msgstr "Total"
 
+#. module: davidts_product_referential
+#: view:product.product.company:0
+msgid "Compagnie aérienne"
+msgstr "Compagnie aérienne"
+
