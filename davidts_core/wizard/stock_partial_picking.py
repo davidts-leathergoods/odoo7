@@ -15,5 +15,5 @@ class stock_partial_picking(osv.osv_memory):
     # latest version of Odoo7 opens the picking that has been done instead of keeping the remaining one
     # just closing is enought to satisfy davidts
     def do_partial(self, cr, uid, ids, context=None):
-        super(self,stock_partial_picking)
+        super(stock_partial_picking,self).do_partial(cr,uid,ids,context=None)
         return {'type': 'ir.actions.act_window_close'}
