@@ -346,7 +346,7 @@ class stock_picking_in(osv.osv):
         ad_paths = map(lambda m: os.path.abspath(m.strip()),config['addons_path'].split(','))
         _logger.debug("Searching wms import script purchase_opener.sh")
         for p in ad_paths :
-           tsp = p + "/openerp_wms/sale_openerpwms/purchase_openerpwms/purchase_openerpwms_run.sh"
+           tsp = p + "/openerp_wms/purchase_openerpwms/purchase_openerpwms/purchase_openerpwms_run.sh"
            if os.path.isfile(tsp) :
                 PATH_JOB = tsp
                 _logger.debug("Adjusted PATH purchase_openerpwms_run.sh to %s" %tsp)
