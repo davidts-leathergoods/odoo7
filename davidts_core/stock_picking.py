@@ -344,9 +344,9 @@ class stock_picking_in(osv.osv):
         parameter_obj = self.pool.get("ir.config_parameter")
         PATH_JOB = '../../project_addons/openerp_wms/purchase_openerpwms/purchase_openerpwms/purchase_openerpwms_run.sh'
         ad_paths = map(lambda m: os.path.abspath(m.strip()),config['addons_path'].split(','))
-        _logger.debug("Searching wms import script sale_openerpwms_run.sh")
+        _logger.debug("Searching wms import script purchase_opener.sh")
         for p in ad_paths :
-           tsp = p + "/openerp_wms/sale_openerpwms/sale_openerpwms/sale_openerpwms_run.sh"
+           tsp = p + "/openerp_wms/sale_openerpwms/purchase_openerpwms/purchase_openerpwms_run.sh"
            if os.path.isfile(tsp) :
                 PATH_JOB = tsp
                 _logger.debug("Adjusted PATH purchase_openerpwms_run.sh to %s" %tsp)
