@@ -137,6 +137,8 @@ class DavidtsProductWinder(osv.osv):
 DavidtsProductWinder()
 
 
+
+
 class DavidtsProductCompany(osv.osv):
 
     _name = 'product.product.company'
@@ -152,7 +154,15 @@ class DavidtsProductCompany(osv.osv):
    
 DavidtsProductCompany()
 
+class DavidtsProductType(osv.osv):
 
+    _name = 'product.product.type'
+
+    _columns = {
+        'name': fields.char('Name',size=128, required=True),
+    }
+   
+DavidtsProductType()
 
 class DavidtsProductTemplate(osv.osv):
 
@@ -202,6 +212,12 @@ class DavidtsProductTemplate(osv.osv):
         return ids
     
     _columns = {
+
+		'product_type': fields.many2one('product.product.type', 'Product type', help="Type of product",select=True),
+		
+        'recommended_price' : fields.float('Recommended price', help="Price to end customer", select=True),
+		
+		
         'measure_capacity': fields.float('Capacity', help="Liter capacity (content): Exp. 25",select=True),
         'measure_payload': fields.integer('Payload', help="Payload (maximum weight allowed): Exp. 25",select=True),
         'wheel_number': fields.integer('Numbers of wheels', help="Numbers of wheels: Exp. 1",select=True),
