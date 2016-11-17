@@ -8,6 +8,9 @@ bpso_product_luggage_admin,Davidts Product Luggage Admin,product.product.luggage
 bpso_product_computer_size_manager,Davidts Product Computer Size Manager,product.product.computer_size,group_davidts_manager,1,1,1,1
 bpso_product_computer_size_user,Davidts Product Computer Size Manager Users,product.product.computer_size,group_davidts_user,1,1,1,0
 bpso_product_computer_size_admin,Davidts Product Computer Size Admin,product.product.computer_size,base.group_system,1,1,1,1
+bpso_product_tablet_size,Davidts Product Tablet Size Manager,product.product.tablet_size,group_davidts_manager,1,1,1,1
+bpso_product_tablet_size,Davidts Product Tablet Size Manager Users,product.product.tablet_size,group_davidts_user,1,1,1,1
+bpso_product_tablet_size,Davidts Product Tablet Size Admin,product.product.tablet_size,base.group_system,1,1,1,1
 bpso_product_lock_manager,Davidts Product Lock Manager,product.product.lock,group_davidts_manager,1,1,1,1
 bpso_product_lock_user,Davidts Product Lock Manager Users,product.product.lock,group_davidts_user,1,1,1,0
 bpso_product_lock_admin,Davidts Product Lock Admin,product.product.lock,base.group_system,1,1,1,1
@@ -20,3 +23,6 @@ bpso_product_insert_admin,Davidts Product Insert Admin,product.product.insert,ba
 bpso_product_winder_manager,Davidts Product Winder Manager,product.product.winder,group_davidts_manager,1,1,1,1
 bpso_product_winder_user,Davidts Product Winder Manager Users,product.product.winder,group_davidts_user,1,1,1,0
 bpso_product_winder_admin,Davidts Product Winder Admin,product.product.winder,base.group_system,1,1,1,1
+bpso_product_type,Davidts Product Type Manager,product.product.type,group_davidts_manager,1,1,1,1
+bpso_product_type,Davidts Product Type Manager Users,product.product.type,group_davidts_user,1,1,1,1
+bpso_product_type,Davidts Product Type Admin,product.product.type,base.group_system,1,1,1,1
