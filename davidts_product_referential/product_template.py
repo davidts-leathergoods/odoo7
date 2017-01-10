@@ -165,6 +165,20 @@ class DavidtsProductType(osv.osv):
    
 DavidtsProductType()
 
+class DavidtsProduct(osv.osv):
+
+	_name = 'product.product'
+	
+	_inherit = 'product.product'
+	
+	_columns = {
+		'is_published_b2c' : fields.boolean('E-commerce', help="This item is published on website B2C."),
+		'not_published_b2c' : fields.boolean('Not E-commerce', help="This item should not be published on website B2C."),
+		'is_published_catalog' : fields.boolean('Paper Catalog', help="This item is published into Paper Catalog."),
+	}
+	
+DavidtsProduct()
+
 class DavidtsProductTemplate(osv.osv):
 
     _name = 'product.template'
