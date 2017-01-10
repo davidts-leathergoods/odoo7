@@ -17,7 +17,10 @@
 				</xpath>
 				
 				<xpath expr="//field[@name='default_code']" position="before">
-					<field name="product_type" widget="selection" />
+					<field name="is_published_b2c" />
+					<field name="not_published_b2c" />
+					<field name="is_published_catalog" />
+					<field name="product_type" />
 				</xpath>
 				
 				<xpath expr="//field[@name='list_price']" position="after">
