@@ -106,9 +106,9 @@
 									<field name="garantee"
 										attrs="{'readonly':[('enable_garantee','=',False)]}"
 										invisible="1" />
-									<label for="warranty" />
+									<label for="garantee" />
 									<div>
-										<field name="warranty" class="oe_inline" />
+										<field name="garantee" class="oe_inline" />
 										Year
 									</div>
 								</group>
@@ -464,9 +464,9 @@
 									<field name="garantee"
 										attrs="{'readonly':[('enable_garantee','=',False)]}"
 										invisible="1" />
-									<label for="warranty" />
+									<label for="garantee" />
 									<div>
-										<field name="warranty" class="oe_inline" />
+										<field name="garantee" class="oe_inline" />
 										year
 									</div>
 								</group>
