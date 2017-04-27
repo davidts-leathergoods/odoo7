@@ -179,6 +179,17 @@ class DavidtsProduct(osv.osv):
 	
 DavidtsProduct()
 
+class DavidtsCategoryDescription(osv.osv):
+
+	_name = 'product.category'
+	
+	_inherit = 'product.category'
+	
+	_columns = {
+		'category_description' : fields.text('Description',translate=True,help='This is the description of category'),
+	}
+DavidtsCategoryDescription()
+
 class DavidtsProductTemplate(osv.osv):
 
     _name = 'product.template'
