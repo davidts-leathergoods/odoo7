@@ -155,8 +155,7 @@
 				<xpath
 					expr="//form/sheet/notebook/page[@string='Sales &amp; Purchases']/group/group/field[@name='date']"
 					position="after">
-					<field name="sageecommerce" string="Login E-commerce" /> 
-					<field name="pwecommerce" string="Password E-Commerce"/>
+					<field name="fact_elec" string="Facture electronique" />
 					<!--Begin Evolution #45659 -->
 					<field name="delay_appro" string="Procurement lead time" />
 					<!--End Evolution #45659 -->
