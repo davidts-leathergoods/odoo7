@@ -24,6 +24,7 @@ class res_partner(osv.osv):
         'shipping_adress_sequence': fields.integer("Numero de sequence"),
         'sageecommerce': fields.char('sageecommerce', size=32),
         'pwecommerce': fields.char('pwecommerce', size=32),
+		'fact_elec': fields.boolean('Facture email', help="Facture par email ?"),
         #Taux d'escompte client
         'taux_escompte': fields.float('Discount rate'),
         'delay_appro': fields.integer('Delay appro'),
